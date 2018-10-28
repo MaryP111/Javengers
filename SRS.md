@@ -51,13 +51,13 @@ Electrical engineering and computer science [https://www.ece.ntua.gr]
 
 **Version control system tool: git**
 
-**Overwhelmingly the leading version control system tool. It's main characteristics are:**
+Overwhelmingly the leading version control system tool. It's main characteristics are:
 
-    i. Distributed development. Each developer get his own local repository that points to a single central repository.
-    ii. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
-    iii. Data integrity
-    iv. Efficiency compared to other DVCS
-    v. Free and open source
+    a. Distributed development. Each developer get his own local repository that points to a single central repository.
+    b. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
+    c. Data integrity
+    d. Efficiency compared to other DVCS
+    e. Free and open source
 
 **Build automation system: gradle**
 
@@ -95,9 +95,9 @@ A registered user should be able to communicate with other users and the adminis
 
 **Types of users**
 
-  i. Registered user: update information via the user interface and the RESTful API
-  ii. Administrator: (Special type of password required) manage the accounts
-  iii. Visitor: query our database with several criteria, such as location, time stamp and type of products
+    a. Registered user: update information via the user interface and the RESTful API
+    b. Administrator: (Special type of password required) manage the accounts
+    c. Visitor: query our database with several criteria, such as location, time stamp and type of products
 
   *General description*
 
@@ -137,23 +137,24 @@ A registered user should be able to communicate with other users and the adminis
 
 **Registered User**
 
-  i. User name: unique
-  ii. Full Name: constraints?
-  iii. Password: How many and which characters should be included
-  iv. email address
-  v. Address: City-Street-Number-Postal Code
-  vi. Phone number: Not a mandatory field
-  vii. Some form of authentication: An id like SSN that can serve as the primary key
+    i. User name: unique
+    ii. Full Name: constraints?
+    iii. Password: How many and which characters should be included
+    iv. email address
+    v. Address: City-Street-Number-Postal Code
+    vi. Phone number: Not a mandatory field
+    vii. Some form of authentication: An id like SSN that can serve as the primary key
 
 **Administrator**
 
-  i. User name: sysadmin
-  ii. Private key that redirects to the administrator page
-  *Can he change his private key?* <br/>
-  *Other fields that are not significant* <br/>
-  *The administrator is unique?* <br/>
-  *Can he modify his private key?* <br/>
-  *Can he add other administrators or delete his own account?*
+    i. User name: sysadmin
+    ii. Private key that redirects to the administrator page
+
+    *Can he change his private key?* <br/>
+    *Other fields that are not significant* <br/>
+    *The administrator is unique?* <br/>
+    *Can he modify his private key?* <br/>
+    *Can he add other administrators or delete his own account?*
 
 **Visitor**
 
@@ -162,13 +163,13 @@ A registered user should be able to communicate with other users and the adminis
 
 ## Product attributes
 
-  i. id: Serve as a primary key and is not visible to the user
-  ii. Name: User visible identifier
-  iii. Category: Drop down list
-  iv. Manufacturer
-  v. Value: Within a reasonable range
-  vi. Time stamp
-  vii. Store/Location
+    i. id: Serve as a primary key and is not visible to the user
+    ii. Name: User visible identifier
+    iii. Category: Drop down list
+    iv. Manufacturer
+    v. Value: Within a reasonable range
+    vi. Time stamp
+    vii. Store/Location
 
   <br/>*How do we check if a location is valid?* <br/>
   *In what form is the location given? Address form or google-maps entry for example* <br/>
@@ -191,8 +192,9 @@ A registered user should be able to communicate with other users and the adminis
   Define the entities, their dependencies and their relationship in general.
 
   For example:
-    a. Entities: user, administrator, products, card...
-    b. Relationships: user_is_registered, user_bought_product, user_registered_product, user_has_card...
+
+      a. Entities: user, administrator, products, card...
+      b. Relationships: user_is_registered, user_bought_product, user_registered_product, user_has_card...
 
 *Should the administrator modify our database or it is entirely our users responsibility?*
 
