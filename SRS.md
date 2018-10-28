@@ -51,7 +51,7 @@ Electrical engineering and computer science [https://www.ece.ntua.gr]
 
 **Version control system tool: git**
 
-Overwhelmingly the leading version control system tool. It's main characteristics are:
+**Overwhelmingly the leading version control system tool. It's main characteristics are:**
 
   i. Distributed development. Each developer get his own local repository that points to a single central repository.
   ii. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
