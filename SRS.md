@@ -69,7 +69,7 @@ Overwhelmingly the leading version control system tool. It's main characteristic
 
 Register and examine information on several products found on nearby stores through our web service. The application is based on the method of crowdsourcing. In our case, our goal is to keep track of the quality and the value of different products and optimize the customers choice.
 
-## System and software interfaces**
+## System and software interfaces
 
 ### User interfaces
 
@@ -95,11 +95,11 @@ A registered user should be able to communicate with other users and the adminis
 
 **Types of users**
 
-*General description*
-
   a. Registered user: update information via the user interface and the RESTful API
   b. Administrator: (Special type of password required) manage the accounts
   c. Visitor: query our database with several criteria, such as location, time stamp and type of products
+
+  *General description*
 
 **Users actions**
 
@@ -116,9 +116,10 @@ A registered user should be able to communicate with other users and the adminis
 
     i. Perform visitors actions
     ii. Verify administrator privileges through the use of a private key
-    *Should the administrator sign in from the users form or from a completely different one?*
     iii. Access users information and track their history
     iv. Delete, modify or restore user accounts after their request
+
+    *Should the administrator sign in from the users form or from a completely different one?*
 
 **c. Visitor**
 
@@ -127,31 +128,31 @@ A registered user should be able to communicate with other users and the adminis
 
 **The search should be based on:**
 
-        i. His location: Sort the results, in order to present the entries that are close to him
-        ii. Key words: We need some sort of search engine
-        iii. Categories and criteria
-        iv. Time stamp
+    i. His location: Sort the results, in order to present the entries that are close to him
+    ii. Key words: We need some sort of search engine
+    iii. Categories and criteria
+    iv. Time stamp
 
 ## Users attributes
 
 **Registered User**
 
-  a. User name *unique*
-  b. Full Name *constraints?*
-  c. Password *How many and which characters should be included*
+  a. User name: unique
+  b. Full Name: constraints?
+  c. Password: How many and which characters should be included
   d. email address
-  e. Address *City-Street-Number-Postal Code*
-  f. Phone number *Not a mandatory field*
-  g. Some form of authentication *An id like SSN that can serve as the primary key*
+  e. Address: City-Street-Number-Postal Code
+  f. Phone number: Not a mandatory field
+  g. Some form of authentication: An id like SSN that can serve as the primary key
 
 **Administrator**
 
   a. User name: sysadmin
   b. Private key that redirects to the administrator page
-    *Can he change his private key?*
-  c. *Other fields that are not significant*
-  *The administrator is unique?*
-  *Can he modify his private key?*
+  *Can he change his private key?* <br/>
+  *Other fields that are not significant* <br/>
+  *The administrator is unique?* <br/>
+  *Can he modify his private key?* <br/>
   *Can he add other administrators or delete his own account?*
 
 **Visitor**
@@ -161,23 +162,22 @@ A registered user should be able to communicate with other users and the adminis
 
 ## Product attributes
 
-*The following fields are required*
-
-  a. id *Serve as a primary key and is not visible to the user*
-  b. Name *User visible identifier*
-  c. Category *Drop down list*
+  a. id: Serve as a primary key and is not visible to the user
+  b. Name: User visible identifier
+  c. Category: Drop down list
   d. Manufacturer
-  e. Value *Within a reasonable range*
+  e. Value: Within a reasonable range
   f. Time stamp
   g. Store/Location
-  *How do we check if a location is valid?*
-  *In what form is the location given? Address form or google-maps entry for example*
-  *Store attribute should probably be a foreign key*
+
+  <br/>*How do we check if a location is valid?* <br/>
+  *In what form is the location given? Address form or google-maps entry for example* <br/>
+  *Store attribute should probably be a foreign key* <br/>
 
 
 ## Stores
 
-  *Should the store be a separate entity and if so what are its attributes?*
+  <br/>*Should the store be a separate entity and if so what are its attributes?* <br/>
   *Can the user add a store in our database?*
 
 ## e-wallet
