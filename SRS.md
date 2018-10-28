@@ -12,17 +12,22 @@ This document was created at the inception of the project in order to specify th
 
 **Web application name, logo and motto:**
 
-**What do we offer:** <br/>
-*On an abstract level* <br/>
+**What do we offer:**
+
+*On an abstract level*
+
   Reliable, accurate, efficient, up-to-date, easy and fast to access information, secure transactions system and a chance to be a part of an interactive crowdsourcing community.
 
 **What makes as different from existing services:**
 
-**Main purpose:** <br/>
-*On a technical level* <br/>
+**Main purpose:**
+
+*On a technical level*
+
   Develop a web application that presents several information about different products, based on the input from the users, and allow the user to complete secure transactions.
 
 **What types of products should we focus on:**
+
     i. General approach, include every possible product that is  registered by the users.
     ii. Focus on a certain type of products, for example:
       a. Technology
