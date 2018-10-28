@@ -39,7 +39,7 @@ This document was created at the inception of the project in order to specify th
 **Should we focus on a certain group of people or adopt a more general approach?**
 
 
-#### References
+### References
 
 **Our university**
 National Technical University of Athens [https://www.ntua.gr]
@@ -52,6 +52,7 @@ Electrical engineering and computer science [https://www.ece.ntua.gr]
 **Version control system tool: git**
 
 Overwhelmingly the leading version control system tool. It's main characteristics are:
+
   a. Distributed development. Each developer get his own local repository that points to a single central repository.
   b. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
   c. Data integrity
@@ -60,20 +61,24 @@ Overwhelmingly the leading version control system tool. It's main characteristic
 
 **Build automation system: gradle**
 
-### Overall description, product perspective and function
+## Overall description, product perspective and function
 
-#### Software description:
+### Software description:
+
 *On a high level*
+
 Register and examine information on several products found on nearby stores through our web service. The application is based on the method of crowdsourcing. In our case, our goal is to keep track of the quality and the value of different products and optimize the customers choice.
 
-### System and software interfaces**
+## System and software interfaces**
 
-#### User interfaces
+### User interfaces
 
 *The user interface will be set in greek*
 
 **Each registered user should have a profile page**
+
     *What should we include in it?*
+
     a. Personal information: full name, email, a sort bio and description, a profile image.
     b. Registration history, the amount of registered and bought products. Each user should also possess a bonus card which will keep track of his activity.  
 
@@ -82,46 +87,55 @@ Register and examine information on several products found on nearby stores thro
 In order to present reliable information, each registration will have a review, so if it drops below a certain amount it will be automatically removed. In that way, we remove the biased and the info that is not up-to-date. In that sense, our page will have an autocorrection mechanism, based entirely on our users activity and feedback.  
 
 
-### Communication interfaces
+## Communication interfaces
 
 A registered user should be able to communicate with other users and the administrator, in order to send feedback and review several aspects of the application
 
-
-
-### User characteristics
+## User characteristics
 
 **Types of users**
+
 *General description*
+
   a. Registered user: update information via the user interface and the RESTful API
   b. Administrator: (Special type of password required) manage the accounts
   c. Visitor: query our database with several criteria, such as location, time stamp and type of products
 
 **Users actions**
+
 **a. Registered user**
+
     i. Perform visitors actions
     ii. Create an account
     iii. Connect using a username and an Password
     iv. Visit his profile page where he can manage and update his profile and delete his account
     v. Register products with a time stamp, a location, a value and possibly some general comments
     vi. Communicate with the administrator and other users and send feedback
+
 **b. Administrator**
+
     i. Perform visitors actions
     ii. Verify administrator privileges through the use of a private key
     *Should the administrator sign in from the users form or from a completely different one?*
     iii. Access users information and track their history
     iv. Delete, modify or restore user accounts after their request
+
 **c. Visitor**
+
     i. Become a registered user
     ii. Query our database based on several criteria
+
 **The search should be based on:**
+
         i. His location: Sort the results, in order to present the entries that are close to him
         ii. Key words: We need some sort of search engine
         iii. Categories and criteria
         iv. Time stamp
 
-### Users attributes
+## Users attributes
 
 **Registered User**
+
   a. User name *unique*
   b. Full Name *constraints?*
   c. Password *How many and which characters should be included*
@@ -131,6 +145,7 @@ A registered user should be able to communicate with other users and the adminis
   g. Some form of authentication *An id like SSN that can serve as the primary key*
 
 **Administrator**
+
   a. User name: sysadmin
   b. Private key that redirects to the administrator page
     *Can he change his private key?*
@@ -140,10 +155,11 @@ A registered user should be able to communicate with other users and the adminis
   *Can he add other administrators or delete his own account?*
 
 **Visitor**
+
   *Can a visitor perform a transaction?*
   If not, we are not interested in modeling his attributes
 
-### Product attributes
+## Product attributes
 
 *The following fields are required*
 
@@ -159,14 +175,16 @@ A registered user should be able to communicate with other users and the adminis
   *Store attribute should probably be a foreign key*
 
 
-### Stores
+## Stores
+
   *Should the store be a separate entity and if so what are its attributes?*
   *Can the user add a store in our database?*
 
-### e-wallet
+## e-wallet
+
   *Better definition of the transaction process*
 
-### Database info
+## Database info
 
 **UML Diagram:**
 
@@ -179,7 +197,7 @@ A registered user should be able to communicate with other users and the adminis
 *Should the administrator modify our database or it is entirely our users responsibility?*
 
 
-### Constraints, assumptions and dependencies
+## Constraints, assumptions and dependencies
 
 **Time, budget and human resources constraints:**
 
@@ -189,24 +207,26 @@ A registered user should be able to communicate with other users and the adminis
 
     a. Keep a percentage (5-10%) from the sales
     b. Use advertises, possibly with a dynamic approach based on the user preferences  
+
 **The problem of parallel transactions, two or more people attempting to buy the same product.**
 
-### Specific requirements
+## Specific requirements
 
-### Software system attributes
-#### Reliability:
+## Software system attributes
+
+### Reliability:
   Present reliable information.
-#### Availability:
+### Availability:
   The application has to be constantly available. Every request has to receive an answer, not necessarily the most recent one.   
-#### Security:
+### Security:
   Use the secure version of http, which is https and it means that all communications between the website and the browser are encrypted. In that way, customers information like credit card numbers cannot be intercepted and potential customers are more likely to trust use. To achieve that, security certificate (SSL) that can be verified by the certificate authorities must be installed. The use of https protocol, will also favor our application on search engines results
-#### Maintainability:
+### Maintainability:
   After the completion of the project, a regular functional control of the application to detect any abnormalities.
-#### Portability:
+### Portability:
   Mobile/tablet app or web service?
 
-### ACID transactions
-#### Atomicity
-#### Consistency
-#### Isolation
-#### Durability  
+## ACID transactions
+### Atomicity
+### Consistency
+### Isolation
+### Durability  
