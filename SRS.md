@@ -150,10 +150,10 @@ A registered user should be able to communicate with other users and the adminis
     i. User name: sysadmin
     ii. Private key that redirects to the administrator page
 
-    Can he change his private key? 
-    Other fields that are not significant <br/>
-    The administrator is unique? <br/>
-    Can he modify his private key? <br/>
+    Can he change his private key?
+    Other fields that are not significant
+    The administrator is unique?
+    Can he modify his private key?
     Can he add other administrators or delete his own account?
 
 **Visitor**
