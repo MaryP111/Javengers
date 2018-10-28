@@ -53,11 +53,11 @@ Electrical engineering and computer science [https://www.ece.ntua.gr]
 
 Overwhelmingly the leading version control system tool. It's main characteristics are:
 
-  a. Distributed development. Each developer get his own local repository that points to a single central repository.
-  b. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
-  c. Data integrity
-  d. Efficiency compared to other DVCS
-  e. Free and open source
+  i. Distributed development. Each developer get his own local repository that points to a single central repository.
+  ii. Non linear, branch workflow. Organizational benefits and ensuring the master branch always contains production quality code.
+  iii. Data integrity
+  iv. Efficiency compared to other DVCS
+  v. Free and open source
 
 **Build automation system: gradle**
 
@@ -77,10 +77,10 @@ Register and examine information on several products found on nearby stores thro
 
 **Each registered user should have a profile page**
 
-    *What should we include in it?*
+    What should we include in it?
 
-    a. Personal information: full name, email, a sort bio and description, a profile image.
-    b. Registration history, the amount of registered and bought products. Each user should also possess a bonus card which will keep track of his activity.  
+    i. Personal information: full name, email, a sort bio and description, a profile image.
+    ii. Registration history, the amount of registered and bought products. Each user should also possess a bonus card which will keep track of his activity.  
 
 **How to ensure the quality of the presented information**
 
@@ -95,9 +95,9 @@ A registered user should be able to communicate with other users and the adminis
 
 **Types of users**
 
-  a. Registered user: update information via the user interface and the RESTful API
-  b. Administrator: (Special type of password required) manage the accounts
-  c. Visitor: query our database with several criteria, such as location, time stamp and type of products
+  i. Registered user: update information via the user interface and the RESTful API
+  ii. Administrator: (Special type of password required) manage the accounts
+  iii. Visitor: query our database with several criteria, such as location, time stamp and type of products
 
   *General description*
 
@@ -137,18 +137,18 @@ A registered user should be able to communicate with other users and the adminis
 
 **Registered User**
 
-  a. User name: unique
-  b. Full Name: constraints?
-  c. Password: How many and which characters should be included
-  d. email address
-  e. Address: City-Street-Number-Postal Code
-  f. Phone number: Not a mandatory field
-  g. Some form of authentication: An id like SSN that can serve as the primary key
+  i. User name: unique
+  ii. Full Name: constraints?
+  iii. Password: How many and which characters should be included
+  iv. email address
+  v. Address: City-Street-Number-Postal Code
+  vi. Phone number: Not a mandatory field
+  vii. Some form of authentication: An id like SSN that can serve as the primary key
 
 **Administrator**
 
-  a. User name: sysadmin
-  b. Private key that redirects to the administrator page
+  i. User name: sysadmin
+  ii. Private key that redirects to the administrator page
   *Can he change his private key?* <br/>
   *Other fields that are not significant* <br/>
   *The administrator is unique?* <br/>
@@ -162,13 +162,13 @@ A registered user should be able to communicate with other users and the adminis
 
 ## Product attributes
 
-  a. id: Serve as a primary key and is not visible to the user
-  b. Name: User visible identifier
-  c. Category: Drop down list
-  d. Manufacturer
-  e. Value: Within a reasonable range
-  f. Time stamp
-  g. Store/Location
+  i. id: Serve as a primary key and is not visible to the user
+  ii. Name: User visible identifier
+  iii. Category: Drop down list
+  iv. Manufacturer
+  v. Value: Within a reasonable range
+  vi. Time stamp
+  vii. Store/Location
 
   <br/>*How do we check if a location is valid?* <br/>
   *In what form is the location given? Address form or google-maps entry for example* <br/>
