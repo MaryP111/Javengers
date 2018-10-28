@@ -1,10 +1,10 @@
-**Introduction and purpose**
+## Introduction and purpose
 
-This document was created at the inception of the project in order to specify the desired software characteristics and clarify the functional and business requirements. Due to the dynamic nature of every software development process, this document was modified and updated with every new step of the development process.
+This document was created at the inception of the project in order to specify the desired software characteristics and clarify the functional and business requirements. Due to the dynamic nature of every software development process, this document was modified and updated at every new step of the development process.
 
 **Definitions**
 
-#Crowdsourcing:
+# Crowdsourcing:
   The practice where a large number of people combine information to achieve a common goal, usually via the internet
 
 **System overview**
