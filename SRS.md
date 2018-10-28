@@ -1,24 +1,25 @@
-### Introduction and purpose
+## Introduction and purpose
 
 This document was created at the inception of the project in order to specify the desired software characteristics and clarify the functional and business requirements. Due to the dynamic nature of every software development process, this document was modified and updated at every new step of the development process.
 
-#### Definitions
+### Definitions
 
 **Crowdsourcing:**
+
   The practice where a large number of people combine information to achieve a common goal, usually via the internet
 
-#### System overview
+### System overview
 
 **Web application name, logo and motto:**
 
-**What do we offer:**
-*On an abstract level*
+**What do we offer:** <br/>
+*On an abstract level* <br/>
   Reliable, accurate, efficient, up-to-date, easy and fast to access information, secure transactions system and a chance to be a part of an interactive crowdsourcing community.
 
 **What makes as different from existing services:**
 
-**Main purpose:**
-*On a technical level*
+**Main purpose:** <br/>
+*On a technical level* <br/>
   Develop a web application that presents several information about different products, based on the input from the users, and allow the user to complete secure transactions.
 
 **What types of products should we focus on:**
