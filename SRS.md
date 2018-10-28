@@ -119,7 +119,7 @@ A registered user should be able to communicate with other users and the adminis
     iii. Access users information and track their history
     iv. Delete, modify or restore user accounts after their request
 
-    *Should the administrator sign in from the users form or from a completely different one?*
+    Should the administrator sign in from the users form or from a completely different one?  
 
 **c. Visitor**
 
@@ -150,11 +150,11 @@ A registered user should be able to communicate with other users and the adminis
     i. User name: sysadmin
     ii. Private key that redirects to the administrator page
 
-    *Can he change his private key?* <br/>
-    *Other fields that are not significant* <br/>
-    *The administrator is unique?* <br/>
-    *Can he modify his private key?* <br/>
-    *Can he add other administrators or delete his own account?*
+    Can he change his private key? <br/>
+    Other fields that are not significant <br/>
+    The administrator is unique? <br/>
+    Can he modify his private key? <br/>
+    Can he add other administrators or delete his own account?
 
 **Visitor**
 
