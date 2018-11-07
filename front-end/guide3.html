@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width = device-width, initial-scale = 1">
+<title>Bootstrap Guide</title>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<style type="text/css">
+body {
+  font-size: 62.5%;
+  font-family: arial, sans-serif;
+}
+#nttLogo{
+  height: 100px;
+  width: 100px;
+}
+#websiteTitle{
+  font-size: 10em;
+  vertical-align: middle;
+  font-family: 'Pacifico', cursive;
+  padding-left: 15px;
+  color: #191970;
+}
+#websiteSlogan{
+  font-size: 5.4em;
+}
+/* Carousel Styling */
+.slide1{
+  background-image: url('https://www.usnews.com/dims4/USNEWS/2ffb4ff/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F33%2Fdc%2Fc70106214b8c9fd1df474942fafc%2F18-milford-sound-fjords-national-park.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide2{
+  background-image: url('https://www.usnews.com/dims4/USNEWS/3da5344/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fff%2F6d%2Fabb5206e42b4932cf58355abad4b%2F1-intro-iguazu-falls.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide3{
+  background-image: url('https://www.usnews.com/dims4/USNEWS/7733ad8/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fb7%2F9a%2F30e6e1604e17a8eac689caaf9974%2F14-mount-desert-island-maine.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.carousel-caption h1{
+  font-size: 5.4em;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: .4em;
+}
+.carousel-caption p{
+  font-size: 2em;
+}
+</style>
+</head>
+<body>
+<!--
+<div class="container">
+  <div class="jumbotron">
+  <img src="ntt-logo.png" id="nttLogo" alt="New Think Tank Logo">
+  <span id="websiteTitle">New Think Tank</span>
+  <p id="websiteSlogan">Video Tutorials on just about Anything</p>
+  </div>
+</div>
+-->
+
+<!-- Carousel -->
+<!-- Surround everything with a div with the class carousel slide -->
+<div id="theCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Define how many slides to put in the carousel -->
+  <ol class="carousel-indicators">
+    <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+    <li data-target="#theCarousel" data-slide-to="1"> </li>
+    <li data-target ="#theCarousel" data-slide-to="2"> </li>
+  </ol >
+
+  <!-- Define the text to place over the image -->
+  <div class="carousel-inner">
+    <div class="item active" >
+    <div class ="slide1"></div>
+    <div class="carousel-caption">
+      <h1>Amazing Backgrounds</h1>
+      <p>Thousands of Backgrounds for Free</p>
+      <p><a href="#" class="btn btn-primary btn-sm">Get them Now</a></p>
+    </div>
+  </div>
+  <div class="item">
+  <div class="slide2"></div>
+  <div class="carousel-caption">
+    <h1>Thousands of Colors</h1>
+    <p>Every Color you can Imagine</p>
+  </div>
+  </div>
+  <div class="item">
+  <div class="slide3"></div>
+  <div class="carousel-caption">
+  <h1>Amazing Illustrations</h1>
+  <p>And they are All Free</p>
+  </div>
+  </div>
+  </div>
+
+  <!-- Set the actions to take when the arrows are clicked -->
+  <a class="left carousel-control" href="#theCarousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"> </span>
+  </a>
+  <a class="right carousel-control" href="#theCarousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
