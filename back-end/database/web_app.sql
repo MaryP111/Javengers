@@ -15,6 +15,41 @@ CREATE TABLE IF NOT EXISTS user (
 
 /* Passoword constraint, consists of at least 10 characters */
 
+CREATE TABLE IF NOT EXISTS product (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(20) NOT NULL UNIQUE,
+  company VARCHAR(20) NOT NULL,
+  category VARCHAR(20) NOT NULL,
+  sub_category VARCHAR(20) NOT NULL,
+  stars /* 0.5, 1 ... 5 */,
+);
+
+CREATE TABLE IF NOT EXISTS store (
+
+  id INT AUTO_INCREMENT PRIMARY_KEY,
+  name VARCHAR(20) NOT NULL,
+  /* Address */
+);
+
+CREATE TABLE IF NOT EXISTS has_product (
+
+  FOREIGN KEY user_id(id)
+  REFERENCES user(id),
+  FOREIGN KEY product_id(id)
+  REFERENCES product(id),
+  FOREIGN KEY store_id (id)
+  REFERENCES store(id),
+  price DOUBLE(5,2) NOT NULL,
+  date DATE NOT NULL
+  stars NOT NULL /*0.5 1 ...5 */
+);
+
+
+
+
+
+
+
 DELIMITER $$
 
 CREATE PROCEDURE `check_password`(IN password VARCHAR(20))
