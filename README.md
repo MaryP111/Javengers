@@ -1,2 +1,10 @@
-# Javocado
-A repository created by Javengers in order to efficiently coordinate the development of a web application for educational purposes.
+**Software Technology 2018-2019**
+
+**Javengers**
+
+Ιωάννης Αναγνωστίδης 03115094
+Αριστομένης Θεοδωρίδης 03115632
+Μιχάλης Καλντής 03115123
+Ελένη Παπαδοπούλου 03115154
+Μαρία Παρέλλη 03115155
+Ελισσαίος Σαρμάς 03115111
