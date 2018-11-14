@@ -1,0 +1,6 @@
+Public IPv4: 83.212.96.151
+Password: eMTxUnyk77
+Connect via terminal: ssh user@snf-848828.vm.okeanos.grnet.gr
+
+MySQL user: user
+MYSQL user passowrd: user
