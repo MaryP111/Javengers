@@ -208,7 +208,11 @@ END$$
 DELIMITER ;
 
 INSERT INTO product (name, company, category, stars)
-VALUES ('P8-Lite', 'Huawei', 'Mobile', 4.5);
+VALUES ('P8-Lite', 'Huawei', 'Mobile', 4.5),
+('43UK6470PLC', 'LG', 'TV', 3.5),
+('NAD20512', 'Nautica', 'Watch', 3.0),
+('E9585,1', 'Portland', 'Furniture', 2.5),
+('AW3914', 'Adidas', 'Sneakers', 3.5);
 
 INSERT INTO user (first_name, last_name, user_name, password, email, phone_number)
 VALUES ('John', 'Doe', 'johnDoe', '1234567891', 'johnDoe@ntua.gr', 1234567891),
