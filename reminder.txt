@@ -3,4 +3,7 @@ Password: eMTxUnyk77
 Connect via terminal: ssh user@snf-848828.vm.okeanos.grnet.gr
 
 MySQL user: user
-MYSQL user passowrd: user
+MySQL user passowrd: B!Bxz^V{FCCF@:dE*b2r
+MySQL database url: jdbc:mysql://83.212.96.151:3306/web_app
+
+Google Maps API key: AIzaSyAsLsF3d7bdPcNMcSwPfb8aUfcadkjOMH0
