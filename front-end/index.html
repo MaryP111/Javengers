@@ -1,179 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width = device-width, initial-scale = 1">
-<title>Javocado</title>
+<html>
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="icon" type="image/png" href="https://github.com/ioannisAnagno/Javocado/blob/front-end/images/favicon.png?raw=true">
-<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <head>
 
-<style type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-.form-control-borderless {
-  border: none;
-}
+    <title>Javatar</title>
 
-.form-control-borderless:hover, .form-control-borderless:active, form-control-borderless:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-form.search-engine input[type=text] {
-  padding: 9px;
-  font-size: 16px;
-  border: 1px solid grey;
-  width: 40%;
-  background: #f1f1f1;
-  float: center;
-}
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-/* Style the submit button */
-form.search-engine button {
-  float: center;
-  width: 5%;
-  padding: 9px;
-  background: #477d2c;
-  color: white;
-  font-size: 16px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
-}
+    <!-- Custom styles for this template -->
+    <link href="css/homepage-styles.css" rel="stylesheet">
 
-form.search-engine button:hover {
-  background: #0b7dda;
-}
+  </head>
 
-body {
-  text-align: center;
-  font-size: 62.5%;
-  font-family: arial, sans-serif;
-  background-color: #EBECE5;
-}
+  <body id="page-top">
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Homepage</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          ΜΕΝΟΥ
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#categories">ΚΑΤΗΓΟΡΙΕΣ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Η ΙΣΤΟΡΙΑ ΜΑΣ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Η ΟΜΑΔΑ ΜΑΣ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">ΕΠΙΚΟΙΝΩΝΗΣΕ ΜΑΖΙ ΜΑΣ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-#nttLogo{
-  height: 100px;
-  width: 100px;
-}
-#websiteTitle{
-  font-size: 10em;
-  vertical-align: middle;
-  font-family: 'Pacifico', cursive;
-  padding-left: 15px;
-  color: #191970;
-}
-#websiteSlogan{
-  font-size: 5.4em;
-}
-/* Carousel Styling */
-.slide1{
-  background-image: url('https://www.usnews.com/dims4/USNEWS/2ffb4ff/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F33%2Fdc%2Fc70106214b8c9fd1df474942fafc%2F18-milford-sound-fjords-national-park.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.slide2{
-  background-image: url('https://www.usnews.com/dims4/USNEWS/3da5344/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fff%2F6d%2Fabb5206e42b4932cf58355abad4b%2F1-intro-iguazu-falls.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.slide3{
-  background-image: url('https://www.usnews.com/dims4/USNEWS/7733ad8/2147483647/resize/1200x%3E/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fb7%2F9a%2F30e6e1604e17a8eac689caaf9974%2F14-mount-desert-island-maine.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.carousel-caption h1{
-  font-size: 5.4em;
-  font-family: 'Pacifico', cursive;
-  padding-bottom: .4em;
-}
-.carousel-caption p{
-  font-size: 2em;
-}
-</style>
-</head>
-<body>
-  <img align="center" src="https://github.com/ioannisAnagno/Javocado/blob/front-end/images/logo.png?raw=true" style="width:600px;height:300px;">
-  <form class="search-engine" action="ProductControllerServlet.java">
-    <input type="text" placeholder="Search for Products" name="SEARCH">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Καλώς ήρθες στη σελίδα μας!</div>
+          <div class="intro-heading text-uppercase">ΒΡΕΣ ΧΙΛΙΑΔΕΣ ΠΡΟΙΟΝΤΑ</div>
+          <div class="input-group md-form form-sm form-2 pl-0">
+            <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Αναζήτησε προϊόντα..." aria-label="Search">
+            <div class="input-group-append">
+              <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey"
+                aria-hidden="true"></i></span>
+            </div>
+          </div>
 
-  <br/>
-  <br/>
-
-  <button type="submit" class = "btn-primary btn-lg">Login</button>
+        </div>
+      </div>
+    </header>
 
 
-<!--
-<div class="container">
-  <div class="jumbotron">
-  <img src="ntt-logo.png" id="nttLogo" alt="New Think Tank Logo">
-  <span id="websiteTitle">New Think Tank</span>
-  <p id="websiteSlogan">Video Tutorials on just about Anything</p>
-  </div>
-</div>
--->
+    <!-- Categories Grid -->
+    <section class="bg-light" id="categories">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">ΚΑΤΗΓΟΡΙΕΣ</h2>
+            <h3 class="section-subheading text-muted">Κατεύθυνε την αναζήτησή σου με βάσει τις ακόλουθες κατηγορίες.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal1">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/technology.png" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Τεχνολογία</h4>
+              <p class="text-muted">Κινητά Τηλέφωνα </br> Τηλεοράσεις </br> Laptops</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal2">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/fashion.jpg" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Μόδα</h4>
+              <p class="text-muted">Ρούχα </br> Ρολόγια </br> Παπούτσια </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal3">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/cosmetics.png" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Καλλυντικά</h4>
+              <p class="text-muted">Makeup </br> Mascara </br> Lip Gloss </br></p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal4">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/sports.jpg" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Αθλητισμός</h4>
+              <p class="text-muted">Αθλητικά ρούχα </br> Αθλητικά Παπούτσια </br> Αθλητικά είδη </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal5">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/automotive.jpg" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Auto-Moto</h4>
+              <p class="text-muted"> Λάστιχα <br/> Ηχοσυστήματα </br> Κράνη μηχανής </br></p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 categories-item">
+            <a class="categories-link" data-toggle="modal" href="#categoriesModal6">
+              <div class="categories-hover">
+                <div class="categories-hover-content">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/categories/home.png" alt="">
+            </a>
+            <div class="categories-caption">
+              <h4>Σπίτι</h4>
+              <p class="text-muted">Έπιπλα </br> Φωτιστικά </br> Ηλεκτρικές συσκευές </br> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Carousel -->
-<!-- Surround everything with a div with the class carousel slide -->
-<div id="theCarousel" class="carousel slide" data-ride="carousel">
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">ΣΧΕΤΙΚΑ ΜΕ ΤΗΝ ΣΕΛΙΔΑ ΜΑΣ</h2>
+            <h3 class="section-subheading text-muted">Το χρονικό πλαίσιο σύλληψης, υλοποίησης και εξέλιξης του οράματός μας, σχετικά με τη δημιουργία ενός δικτυακού παρατηρητήριου τιμών που βασίζεται στη μέθοδο του crowdsourcing  .</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>20015-2016</h4>
+                    <h4 class="subheading">Η Σύλληψη</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Η συγκρότηση της ομάδας μας, και οι πρώτες συζητήσεις σχετικά με την υλοποίηση ενός online παρατηρητηρίου τιμών</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4> Οκτώβρης 2018</h4>
+                    <h4 class="subheading">Τα Πρώτα Βήματα</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Στα πλαίσια ενός σχολικού μαθήματος, ξεκινήσαμε την ανάπτυξη και την υλοποίηση της σελίδας μας</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Μάρτιος 2019</h4>
+                    <h4 class="subheading">Εκκίνηση της Λειτουργίας της Σελίδας</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Μετά από πολλούς μήνες ανάπτυξης και σχεδίασης, η δικτυακή μας πλατφόρμα ξεκινάει τη λειτουργία της και είναι έτοιμη να φιλοξενήσει χιλιάδες νέους χρήστες που να εξυπηρετήσει ακόμα περισσότερους επισκέπτες που αναζητούν οικονομικά και πλούσιου εύρους προϊόντα</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Νοέμβριος 2019</h4>
+                    <h4 class="subheading">Επέκταση της Σελίδας</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">Μετά από την μεγάλη επιτυχία που σημείωσε η σελίδα και η ανταπόκριση από τους χρήστες στους πρώτους μήνες της λειτουργίας της, υπάρχουν οι προϋποθέσεις επέκτασης και επαναπροσδιορισμού των υπηρεσιών που προσφέρονται, καθώς και των λειτουργικών αρχών που μας ορίζουν</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <h4>Γίνε Τμήμα
+                    <br>Της Ιστορίας
+                    <br>Μας!</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Define how many slides to put in the carousel -->
-  <ol class="carousel-indicators">
-    <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
-    <li data-target="#theCarousel" data-slide-to="1"> </li>
-    <li data-target ="#theCarousel" data-slide-to="2"> </li>
-  </ol >
+    <!-- Team -->
+    <section class="bg-light" id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Η ΟΜΑΔΑ ΜΑΣ</h2>
+            <h3 class="section-subheading text-muted">Η βασική ομάδα σύλληψης, ανάπτυξης και συντήρησης της σελίδας.</h3>
+          </div>
+        </div>
+        <div class="row">
 
-  <!-- Define the text to place over the image -->
-  <div class="carousel-inner">
-    <div class="item active" >
-    <div class ="slide1"></div>
-    <div class="carousel-caption">
-      <h1>Amazing Backgrounds</h1>
-      <p>Thousands of Backgrounds for Free</p>
-    </div>
-  </div>
-  <div class="item">
-  <div class="slide2"></div>
-  <div class="carousel-caption">
-    <h1>Thousands of Products</h1>
-    <p>Every Color you can Imagine</p>
-  </div>
-  </div>
-  <div class="item">
-  <div class="slide3"></div>
-  <div class="carousel-caption">
-  <h1>Amazing Illustrations</h1>
-  <p>And they are All Free</p>
-  </div>
-  </div>
-  </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+              <h4>Kay Garland</h4>
+              <p class="text-muted">Lead Designer</p>
+            </div>
+          </div>
 
-  <!-- Set the actions to take when the arrows are clicked -->
-  <a class="left carousel-control" href="#theCarousel" data-slide="prev">
-  <span class="glyphicon glyphicon-chevron-left"> </span>
-  </a>
-  <a class="right carousel-control" href="#theCarousel" data-slide="next">
-  <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-  </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+              <h4>Larry Parker</h4>
+              <p class="text-muted">Lead Marketer</p>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <h4>Diana Pertersen</h4>
+              <p class="text-muted">Lead Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
+              <h4>Kay Garland</h4>
+              <p class="text-muted">Lead Designer</p>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+              <h4>Larry Parker</h4>
+              <p class="text-muted">Lead Marketer</p>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+              <h4>Diana Pertersen</h4>
+              <p class="text-muted">Lead Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="large text-muted">Η ανάπτυξη της ιστοσελίδας καθώς και η συντήρησή της πραγματοποιείται εθελοντικά και μη κερδοσκοπικά, με σκοπό την κοινωική προσφορά.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">ΕΠΙΚΟΙΝΩΝΗΣΕ ΜΑΖΙ ΜΑΣ</h2>
+            <h3 class="section-subheading text-muted">Συνέβαλε ενεργητικά στη εξέλιξη της σελίδας μεταφέροντας την άποψή σου σχετικά με την προσφορά της σελίδας.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Το Όνομά σας *" required="required" data-validation-required-message="Παρακαλώ πρόσθεστε το όνομά σας.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Το Email σας *" required="required" data-validation-required-message="Παρακαλώ πρόσθεστε το email σας.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="phone" type="tel" placeholder="Το Τηλέφωνό σας *" required="required" data-validation-required-message="Παρακαλώ προσθέστε το τηλέφωνό σας.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Το Μήνυμά σας *" required="required" data-validation-required-message="Παρακαλώ προσθέστε το μήνυμά σας."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</body>
+    <!-- Footer -->
+    <footer>
+      <span class="copyright">Copyright &copy; Our Website 2018</span>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
 </html>
