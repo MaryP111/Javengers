@@ -4,25 +4,38 @@ CREATE DATABASE IF NOT EXISTS web_app;
 
 USE web_app;
 
+/* User could have some additional optional information, like a sort bio or a profile image */
+
+
 CREATE TABLE IF NOT EXISTS user (
   id INT AUTO_INCREMENT PRIMARY KEY, /* Not visible to the user */
-  first_name VARCHAR(15) NOT NULL,
+  first_name VARCHAR(15) NOT NULL,  /* first_name and last_name contain only alphabetic characters */
   last_name VARCHAR(20) NOT NULL,
   user_name VARCHAR(20) UNIQUE, /* Should be unique */
+  /* The field password dosen't have the actual user's password,
+  but a encrypted value that we (the server) receive from the use of https protocol */
   password VARCHAR(20) NOT NULL, /* At least 10 characters */
   email VARCHAR(30) NOT NULL UNIQUE,
-  phone_number BIGINT UNIQUE
+  phone_number BIGINT UNIQUE  /* exactly 10 digits */
 );
 
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL UNIQUE,
-  description VARCHAR(100) NOT NULL,
+  name VARCHAR(20) NOT NULL UNIQUE, /* Probably related to the barcode, a unique identifier */
+  description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
   /*company VARCHAR(20) NOT NULL,*/
   category VARCHAR(20) NOT NULL,
   stars DECIMAL(2,1) NOT NULL,
+  /* In case a user chooses to delete a product,
+  withdrawn field is set to true. In that way, our database
+  has a history of the entries that have been registered */
   withdrawn BOOLEAN DEFAULT 0 /* False */
 );
+
+/* Tags will be used as key words */
+
+/* We use a seperate table in order to ensure
+that our relation is in Normal Form */
 
 CREATE TABLE IF NOT EXISTS product_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -30,6 +43,8 @@ CREATE TABLE IF NOT EXISTS product_tags (
   REFERENCES product(id),
   tag VARCHAR(20)
 );
+
+/* Some extra data for every product */
 
 CREATE TABLE IF NOT EXISTS product_data (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -42,7 +57,7 @@ CREATE TABLE IF NOT EXISTS product_data (
 CREATE TABLE IF NOT EXISTS store (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL,
-  address VARCHAR(30) NOT NULL,
+  address VARCHAR(30) NOT NULL, /* Full address of the store */
   lat DECIMAL(10,8) NOT NULL,
   lng DECIMAL(11,8) NOT NULL,
   withdrawn BOOLEAN DEFAULT 0
@@ -134,6 +149,39 @@ BEGIN
     CALL check_last_name(new.last_name);
 END$$
 DELIMITER ;
+
+/* Email constraint, ensure that the given value has the right format */
+
+DELIMITER $$
+
+CREATE PROCEDURE `check_email`(IN email VARCHAR(30))
+BEGIN
+    IF NOT(email like '%_@_%._%') THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Check constraint on user.email failed';
+    END IF;
+END$$
+
+DELIMITER ;
+
+-- Before insert
+DELIMITER $$
+CREATE TRIGGER `email_before_insert` BEFORE INSERT ON `user`
+FOR EACH ROW
+BEGIN
+    CALL check_email(new.email);
+END$$
+DELIMITER ;
+
+-- before update
+DELIMITER $$
+CREATE TRIGGER `email_before_update` BEFORE UPDATE ON `user`
+FOR EACH ROW
+BEGIN
+    CALL check_email(new.email);
+END$$
+DELIMITER ;
+
 
 
 /* Password constraint, at least 10 characters */
@@ -234,5 +282,5 @@ END$$
 DELIMITER ;
 
 INSERT INTO user (first_name, last_name, user_name, password, email, phone_number)
-VALUES ('John', 'Doe', 'johnDoe', '1234567891', 'johnDoe@ntua.gr', 1234567891),
+VALUES ('John', 'Doe', 'johnDoe', '1234567891', 'johnDoe@ntua.gr', 1234563891),
 ('Freddy', 'Milk', 'freddyMilk', '1234567891', 'freddyMilk@ntua.gr', 1234567892);
