@@ -17,19 +17,44 @@ CREATE TABLE IF NOT EXISTS user (
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL UNIQUE,
-  company VARCHAR(20) NOT NULL,
+  description VARCHAR(100) NOT NULL,
+  /*company VARCHAR(20) NOT NULL,*/
   category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1) NOT NULL
+  stars DECIMAL(2,1) NOT NULL,
+  withdrawn BOOLEAN DEFAULT 'FALSE'
 );
 
+CREATE TABLE IF NOT EXISTS product_tags (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  FOREIGN KEY product_id(id)
+  REFERENCES product(id),
+  tag VARCHAR(20)
+);
 
+CREATE TABLE IF NOT EXISTS product_data (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  FOREIGN KEY product_id(id)
+  REFERENCES product(id),
+  data VARCHAR(20)
+)
 
 
 CREATE TABLE IF NOT EXISTS store (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL
-  /* Address */
+  name VARCHAR(20) NOT NULL,
+  address VARCHAR(30) NOT NULL,
+  lat DECIMAL(10,8) NOT NULL,
+  lng DECIMAL(11,8) NOT NULL,
+  withdrawn BOOLEAN DEFAULT 'FALSE'
 );
+
+CREATE TABLE IF NOT EXISTS store_tags (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  FOREIGN KEY store_id(id)
+  REFERENCES store(id),
+  tag VARCHAR(20)
+);
+
 
 CREATE TABLE IF NOT EXISTS has_product (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,7 +65,8 @@ CREATE TABLE IF NOT EXISTS has_product (
   FOREIGN KEY store_id(id)
   REFERENCES store(id),
   price DOUBLE(5,2) NOT NULL,
-  date DATE NOT NULL,
+  date_from DATE NOT NULL, /* format: YYYY-MM-DD */
+  date_to DATE NOT NULL,
   stars DECIMAL(2,1) NOT NULL
 );
 
@@ -206,13 +232,6 @@ BEGIN
     CALL check_stars(new.stars);
 END$$
 DELIMITER ;
-
-INSERT INTO product (name, company, category, stars)
-VALUES ('P8-Lite', 'Huawei', 'Mobile', 4.5),
-('43UK6470PLC', 'LG', 'TV', 3.5),
-('NAD20512', 'Nautica', 'Watch', 3.0),
-('E9585,1', 'Portland', 'Furniture', 2.5),
-('AW3914', 'Adidas', 'Sneakers', 3.5);
 
 INSERT INTO user (first_name, last_name, user_name, password, email, phone_number)
 VALUES ('John', 'Doe', 'johnDoe', '1234567891', 'johnDoe@ntua.gr', 1234567891),
