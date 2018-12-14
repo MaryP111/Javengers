@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS product (
   /*company VARCHAR(20) NOT NULL,*/
   category VARCHAR(20) NOT NULL,
   stars DECIMAL(2,1) NOT NULL,
-  withdrawn BOOLEAN DEFAULT 'FALSE'
+  withdrawn BOOLEAN DEFAULT 0 /* False */
 );
 
 CREATE TABLE IF NOT EXISTS product_tags (
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS product_data (
   FOREIGN KEY product_id(id)
   REFERENCES product(id),
   data VARCHAR(20)
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS store (
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS store (
   address VARCHAR(30) NOT NULL,
   lat DECIMAL(10,8) NOT NULL,
   lng DECIMAL(11,8) NOT NULL,
-  withdrawn BOOLEAN DEFAULT 'FALSE'
+  withdrawn BOOLEAN DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS store_tags (
