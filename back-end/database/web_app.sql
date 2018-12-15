@@ -281,6 +281,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-INSERT INTO user (first_name, last_name, user_name, email, phone_number, password)
+INSERT INTO user(first_name, last_name, user_name, email, phone_number, password)
 VALUES ('John', 'Doe', 'johnDoe', 'johndoe@ntua.gr', 6946574623, 'somePassword'),
 ('Freddy', 'Milk', 'freddymilk', 'freddymilk@ntua.gr', 6985475647, 'anotherPassword');
