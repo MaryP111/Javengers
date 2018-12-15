@@ -12,11 +12,11 @@ CREATE TABLE IF NOT EXISTS user (
   first_name VARCHAR(15) NOT NULL,  /* first_name and last_name contain only alphabetic characters */
   last_name VARCHAR(20) NOT NULL,
   user_name VARCHAR(20) UNIQUE, /* Should be unique */
+  email VARCHAR(30) NOT NULL UNIQUE,
+  phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(20) NOT NULL, /* At least 10 characters */
-  email VARCHAR(30) NOT NULL UNIQUE,
-  phone_number BIGINT UNIQUE  /* exactly 10 digits */
+  password VARCHAR(20) NOT NULL /* At least 10 characters */
 );
 
 CREATE TABLE IF NOT EXISTS product (
@@ -281,6 +281,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-INSERT INTO user (first_name, last_name, user_name, password, email, phone_number)
-VALUES ('John', 'Doe', 'johnDoe', '1234567891', 'johnDoe@ntua.gr', 1234563891),
-('Freddy', 'Milk', 'freddyMilk', '1234567891', 'freddyMilk@ntua.gr', 1234567892);
+INSERT INTO user (first_name, last_name, user_name, email, phone_number, password)
+VALUES ('John', 'Doe', 'johnDoe', 'johndoe@ntua.gr', 6946574623, 'somePassword'),
+('Freddy', 'Milk', 'freddymilk', 'freddymilk@ntua.gr', 6985475647, 'anotherPassword');
