@@ -26,11 +26,7 @@ CREATE TABLE IF NOT EXISTS product (
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
   /*company VARCHAR(20) NOT NULL,*/
   category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1) NOT NULL,
-  /* In case a user chooses to delete a product,
-  withdrawn field is set to true. In that way, our database
-  has a history of the entries that have been registered */
-  withdrawn BOOLEAN DEFAULT 0 /* False */
+  stars DECIMAL(2,1) NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -60,8 +56,7 @@ CREATE TABLE IF NOT EXISTS store (
   name VARCHAR(20) NOT NULL,
   address VARCHAR(30) NOT NULL, /* Full address of the store */
   lat DECIMAL(10,8) NOT NULL,
-  lng DECIMAL(11,8) NOT NULL,
-  withdrawn BOOLEAN DEFAULT 0
+  lng DECIMAL(11,8) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS store_tags (
@@ -83,7 +78,8 @@ CREATE TABLE IF NOT EXISTS has_product (
   price DOUBLE(5,2) NOT NULL,
   date_from DATE NOT NULL, /* format: YYYY-MM-DD */
   date_to DATE NOT NULL,
-  stars DECIMAL(2,1) NOT NULL
+  stars DECIMAL(2,1) NOT NULL,
+  withdrawn BOOLEAN DEFAULT 0
 );
 
 
