@@ -24,9 +24,8 @@ CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL UNIQUE, /* Probably related to the barcode, a unique identifier */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
-  /*company VARCHAR(20) NOT NULL,*/
-  category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1) NOT NULL
+  company VARCHAR(20) NOT NULL,
+  category VARCHAR(20) NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -78,7 +77,6 @@ CREATE TABLE IF NOT EXISTS has_product (
   price DOUBLE(5,2) NOT NULL,
   date_from DATE NOT NULL, /* format: YYYY-MM-DD */
   date_to DATE NOT NULL,
-  stars DECIMAL(2,1) NOT NULL,
   withdrawn BOOLEAN DEFAULT 0
 );
 
@@ -245,6 +243,8 @@ DELIMITER ;
 
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
 
+/*
+
 DELIMITER $$
 
 CREATE PROCEDURE `check_stars`(IN stars DECIMAL(2,1))
@@ -274,6 +274,8 @@ BEGIN
     CALL check_stars(new.stars);
 END$$
 DELIMITER ;
+
+*/
 
 INSERT INTO user(first_name, last_name, user_name, email, phone_number, password)
 VALUES ('John', 'Doe', 'johnDoe', 'johndoe@ntua.gr', 6946574623, 'somePassword'),
