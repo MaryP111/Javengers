@@ -16,7 +16,15 @@ CREATE TABLE IF NOT EXISTS user (
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(20) NOT NULL /* At least 10 characters */
+  password VARCHAR(20) NOT NULL, /* At least 10 characters */
+
+  /* Some addition optional fields */
+
+  age TINYINT,
+  university VARCHAR(20),
+  profession VARCHAR(25),
+  city VARCHAR(20),
+  website VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS product (
@@ -185,7 +193,7 @@ DELIMITER ;
 
 
 /* Password constraint, at least 10 characters */
-
+/*
 DELIMITER $$
 
 CREATE PROCEDURE `check_password`(IN password VARCHAR(20))
@@ -215,6 +223,7 @@ BEGIN
     CALL check_password(new.password);
 END$$
 DELIMITER ;
+*/
 
 /* Phone number constraint, exactly 10 numbers */
 
@@ -247,7 +256,37 @@ BEGIN
 END$$
 DELIMITER ;
 
+/* Age constraint, only ages between 12 and 125 are allowed */
 
+DELIMITER $$
+
+CREATE PROCEDURE `check_age`(IN age TINYINT)
+BEGIN
+    IF (age > 125 OR age < 12) THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Check constraint on age failed';
+    END IF;
+END$$
+
+DELIMITER ;
+
+-- Before insert
+DELIMITER $$
+CREATE TRIGGER `age_before_insert` BEFORE INSERT ON `user`
+FOR EACH ROW
+BEGIN
+    CALL check_age(new.age);
+END$$
+DELIMITER ;
+
+-- before update
+DELIMITER $$
+CREATE TRIGGER `age_before_update` BEFORE UPDATE ON `user`
+FOR EACH ROW
+BEGIN
+    CALL check_age(new.age);
+END$$
+DELIMITER ;
 
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
 
