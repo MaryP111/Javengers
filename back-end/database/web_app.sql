@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS user (
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(20) NOT NULL, /* At least 10 characters */
+  password VARCHAR(256) NOT NULL, /* At least 10 characters */
 
   /* Some addition optional fields */
 
@@ -27,17 +27,13 @@ CREATE TABLE IF NOT EXISTS user (
   website VARCHAR(50)
 );
 
+
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL UNIQUE, /* Probably related to the barcode, a unique identifier */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
-  /*company VARCHAR(20) NOT NULL,*/
-  category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1) NOT NULL,
-  /* In case a user chooses to delete a product,
-  withdrawn field is set to true. In that way, our database
-  has a history of the entries that have been registered */
-  withdrawn BOOLEAN DEFAULT 0 /* False */
+  company VARCHAR(20) NOT NULL,
+  category VARCHAR(20) NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -67,8 +63,7 @@ CREATE TABLE IF NOT EXISTS store (
   name VARCHAR(20) NOT NULL,
   address VARCHAR(30) NOT NULL, /* Full address of the store */
   lat DECIMAL(10,8) NOT NULL,
-  lng DECIMAL(11,8) NOT NULL,
-  withdrawn BOOLEAN DEFAULT 0
+  lng DECIMAL(11,8) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS store_tags (
@@ -90,8 +85,9 @@ CREATE TABLE IF NOT EXISTS has_product (
   price DOUBLE(5,2) NOT NULL,
   date_from DATE NOT NULL, /* format: YYYY-MM-DD */
   date_to DATE NOT NULL,
-  stars DECIMAL(2,1) NOT NULL
+  withdrawn BOOLEAN DEFAULT 0
 );
+
 
 /* First name constraint, only alphabetic characters are allowed */
 
@@ -124,7 +120,6 @@ BEGIN
     CALL check_first_name(new.first_name);
 END$$
 DELIMITER ;
-
 
 /* Last name constraint, only alphabetic characters are allowed */
 
@@ -191,9 +186,14 @@ END$$
 DELIMITER ;
 
 
+<<<<<<< HEAD
 
 /* Password constraint, at least 10 characters */
 /*
+=======
+/*
+
+>>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
 DELIMITER $$
 
 CREATE PROCEDURE `check_password`(IN password VARCHAR(20))
@@ -223,6 +223,8 @@ BEGIN
     CALL check_password(new.password);
 END$$
 DELIMITER ;
+*/
+
 */
 
 /* Phone number constraint, exactly 10 numbers */
@@ -256,6 +258,7 @@ BEGIN
 END$$
 DELIMITER ;
 
+<<<<<<< HEAD
 /* Age constraint, only ages between 12 and 125 are allowed */
 
 DELIMITER $$
@@ -288,7 +291,11 @@ BEGIN
 END$$
 DELIMITER ;
 
+=======
+>>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
+
+/*
 
 DELIMITER $$
 
@@ -320,6 +327,4 @@ BEGIN
 END$$
 DELIMITER ;
 
-INSERT INTO user(first_name, last_name, user_name, email, phone_number, password)
-VALUES ('John', 'Doe', 'johnDoe', 'johndoe@ntua.gr', 6946574623, 'somePassword'),
-('Freddy', 'Milk', 'freddymilk', 'freddymilk@ntua.gr', 6985475647, 'anotherPassword');
+*/
