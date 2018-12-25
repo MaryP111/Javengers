@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS user (
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(256) NOT NULL, /* At least 10 characters */
+  password VARCHAR(256) NOT NULL,
 
   /* Some addition optional fields */
 
@@ -188,12 +188,7 @@ DELIMITER ;
 
 <<<<<<< HEAD
 
-/* Password constraint, at least 10 characters */
 /*
-=======
-/*
-
->>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
 DELIMITER $$
 
 CREATE PROCEDURE `check_password`(IN password VARCHAR(20))
@@ -225,7 +220,6 @@ END$$
 DELIMITER ;
 */
 
-*/
 
 /* Phone number constraint, exactly 10 numbers */
 
@@ -258,7 +252,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-<<<<<<< HEAD
 /* Age constraint, only ages between 12 and 125 are allowed */
 
 DELIMITER $$
@@ -291,8 +284,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-=======
->>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
 
 /*
