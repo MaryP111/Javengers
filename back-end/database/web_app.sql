@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS user (
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(20) NOT NULL /* At least 10 characters */
+  password VARCHAR(256) NOT NULL
 );
 
 
@@ -178,7 +178,7 @@ END$$
 DELIMITER ;
 
 
-/* Password constraint, at least 10 characters */
+/*
 
 DELIMITER $$
 
@@ -209,6 +209,8 @@ BEGIN
     CALL check_password(new.password);
 END$$
 DELIMITER ;
+
+*/
 
 /* Phone number constraint, exactly 10 numbers */
 
@@ -276,7 +278,3 @@ END$$
 DELIMITER ;
 
 */
-
-INSERT INTO user(first_name, last_name, user_name, email, phone_number, password)
-VALUES ('John', 'Doe', 'johnDoe', 'johndoe@ntua.gr', 6946574623, 'somePassword'),
-('Freddy', 'Milk', 'freddymilk', 'freddymilk@ntua.gr', 6985475647, 'anotherPassword');
