@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS user (
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
   but a encrypted value that we (the server) receive from the use of https protocol */
-  password VARCHAR(256) NOT NULL, /* At least 10 characters */
+  password VARCHAR(256) NOT NULL,
 
   /* Some addition optional fields */
 
@@ -30,10 +30,16 @@ CREATE TABLE IF NOT EXISTS user (
 
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL UNIQUE, /* Probably related to the barcode, a unique identifier */
+
+  /* There are several ways of representing the barcode */
+
+  barcode VARCHAR(20) NOT NULL UNIQUE,
+  name VARCHAR(20) NOT NULL, /* A name to identify the product */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
-  company VARCHAR(20) NOT NULL,
-  category VARCHAR(20) NOT NULL
+  manufacturer VARCHAR(20) NOT NULL,
+  category VARCHAR(20) NOT NULL,
+  stars DECIMAL(2,1) NOT NULL,
+  number_of_ratings INT NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -185,15 +191,9 @@ BEGIN
 END$$
 DELIMITER ;
 
-
-<<<<<<< HEAD
-
 /* Password constraint, at least 10 characters */
-/*
-=======
-/*
 
->>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
+/*
 DELIMITER $$
 
 CREATE PROCEDURE `check_password`(IN password VARCHAR(20))
@@ -225,7 +225,7 @@ END$$
 DELIMITER ;
 */
 
-*/
+
 
 /* Phone number constraint, exactly 10 numbers */
 
@@ -258,7 +258,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-<<<<<<< HEAD
 /* Age constraint, only ages between 12 and 125 are allowed */
 
 DELIMITER $$
@@ -291,11 +290,8 @@ BEGIN
 END$$
 DELIMITER ;
 
-=======
->>>>>>> cdc0e3aeecac612f70ff168a7c1215dc97b9d0da
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
 
-/*
 
 DELIMITER $$
 
@@ -326,5 +322,3 @@ BEGIN
     CALL check_stars(new.stars);
 END$$
 DELIMITER ;
-
-*/
