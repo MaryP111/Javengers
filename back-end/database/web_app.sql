@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS user (
   email VARCHAR(30) NOT NULL UNIQUE,
   phone_number BIGINT UNIQUE,  /* exactly 10 digits */
   /* The field password dosen't have the actual user's password,
-  but a encrypted value that we (the server) receive from the use of https protocol */
+  but a encrypted value */
   password VARCHAR(256) NOT NULL,
 
   /* Some addition optional fields */
@@ -191,8 +191,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* Password constraint, at least 10 characters */
-
 /*
 DELIMITER $$
 
@@ -224,8 +222,6 @@ BEGIN
 END$$
 DELIMITER ;
 */
-
-
 
 /* Phone number constraint, exactly 10 numbers */
 
