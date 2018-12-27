@@ -1,0 +1,13 @@
+body {
+ background-image: url("https://steamuserimages-a.akamaihd.net/ugc/269463939060276040/F400290347611BD57A63728D10BC87131AD0D8A9/");
+ background-color: #cccccc;
+ background-size: cover;
+}
+
+.profile-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+}

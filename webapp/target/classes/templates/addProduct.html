@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title> Add an entry </title>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="/css/addProduct-styles.css">
+  <link href="/css/map-styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<form class="form-horizontal" th:aciton="@{/profile/add/entry}" method="post">
+<fieldset>
+
+<!--<legend>PRODUCTS</legend>-->
+
+  <div class="form-group">
+    <h3 align="center" th:if="${barcodeSearched == false}"> Παρακαλώ εισάγετε το barcode του προϊόντος ώστε να εξακριβώσουμε ότι υπάρχει στη βάση δεδομένων μας</h3>
+    <h3 align="center" th:if="${productExists == false}"> Το προϊόν που εισάγατε δεν υπάρχει στη βάση δεδομένων μας, παρακαλώ συμπληρώστε τις ακόλουθες πληροφορίες</h3>
+    <h3 align="center" th:if="${productExists} and ${barcodeSearched}">Το συγκεκριμένο προϊόν υπάρχει ήδη καταχωρημένο στη βάση δεδομένων μας</h3>
+    <h3 align="center" th:if="${productAdded}">Το προϊόν προστέθηκε με επιτυχία στη βάση δεδομένων μας</h3>
+    <hr>
+    <label class="col-md-4 control-label" for="productBarcode">Barcode Προϊόντος</label>
+    <div class="col-md-4">
+      <input class="form-control input-md" type="text" th:field="*{product.barcode}" id="productBarcode" name="productBarcode" placeholder="Barcode του Προϊόντος" required th:readonly="${barcodeSearched} or ${productExists} or ${productAdded}" maxlength="20">
+    </div>
+  </div>
+
+
+
+  <!-- Text input-->
+<div class="form-group" th:if = "${barcodeSearched}">
+  <label class="col-md-4 control-label" for="productName">Όνομα Προϊόντος</label>
+  <div class="col-md-4">
+  <input type="text" class="form-control input-md" th:field="*{product.name}" id="productName" name="productName" placeholder="Όνομα του Προϊόντος" required th:readonly="${productExists} or ${productAdded}">
+  </div>
+</div>
+
+
+<!-- Select Basic -->
+<div class="form-group" th:if="${barcodeSearched}">
+  <label class="col-md-4 control-label" for="productCategory">Κατηγορία Προϊόντος</label>
+  <div class="col-md-4">
+    <select class="form-control" th:field="*{product.category}" id="productCategory" name="productCategory" th:readonly="${productExists} or ${productAdded}">
+      <option th:value="Technology">Τεχνολογία</option>
+      <option th:value="Fashion">Μόδα</option>
+      <option th:value="Cosmetics">Καλλυντικά</option>
+      <option th:value="Sports">Αθλητισμός</option>
+      <option th:value="Automotive">Auto-Moto</option>
+      <option th:value="Home">Σπίτι</option>
+      <option th:value="Other">Άλλη Κατηγορία</option>
+    </select>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group" th:if="${barcodeSearched}">
+  <label class="col-md-4 control-label" for="productDescription">Περιγραφή Προϊόντος</label>
+  <div class="col-md-4">
+    <textarea class="form-control" th:field="*{product.description}" id="productDescription" name="productDescription" th:readonly="${productExists} or ${productAdded}"></textarea>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group" th:if="${barcodeSearched}">
+  <label class="col-md-4 control-label" for="productManufacturer">Κατασκευαστής</label>
+  <div class="col-md-4">
+  <input type="text" class="form-control input-md" th:field="*{product.manufacturer}" id="productManufacturer" name="productManufacturer" placeholder="Κατασκευαστής" required th:readonly="${productExists} or ${productAdded}">
+  </div>
+</div>
+
+  <!--<div class="cold-md-4">
+    <label>
+      <input type="radio" place="stars" value="1" />
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" place="stars" value="2" />
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" place="stars" value="3" />
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" place="stars" value="4" />
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+    <label>
+      <input type="radio" place="stars" value="5" />
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+      <span  class="icon">★</span>
+      <span class="icon">★</span>
+      <span class="icon">★</span>
+    </label>
+  </div>
+
+  -->
+ <!-- File Button -->
+<!--
+
+  <div class="form-group" th:if="${barcodeSearched}">
+  <label class="col-md-4 control-label" for="filebutton">Εικόνα Προϊόντος</label>
+  <div class="col-md-4">
+    <input id="filebutton" place="filebutton" class="input-file" type="file">
+  </div>
+</div>
+
+-->
+
+<div class="form-group" th:if="${productExists == false} or ${productAdded == false} or ${barcodeSearched == false}">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Καταχώρηση</button>
+  </div>
+  </div>
+
+
+
+  <div class="form-group" th:if="${productExists} or ${productAdded}">
+    <h3 align="center"> Παρακαλώ εισάγετε πληροορίες σχετικά με το κατάστημα που συναντήσατε το προϊόν</h3>
+    <hr>
+  </div>
+
+
+  <div class="container" align="center" th:if="${productExists} or ${productAdded}">
+    <button type="button" id = "mapButton" class="btn btn-primary btn-md modal-trigger" href="#" data-modal="modal-place"><b>Επιλέξτε την τοποθεσία στον χάρτη</b></button>
+  </div>
+  <div class="modal" id="modal-place" th:if="${productExists} or ${productAdded}">
+    <div class="modal-sandbox"></div>
+    <div class="modal-box">
+      <div align="center" class="modal-header">
+        <div class="close-modal">&#10006;</div>
+        <h3>Διαλέξε Τοποθεσία στο χάρτη</h3>
+      </div>
+      <div class="modal-body">
+        <!--<label class="control-label" for="address" style="font-size: 1.5em">
+          Διεύθυνση του Καταστήματος
+        </label>-->
+
+        <input id="address" type="text" class="form-control" placeholder="Διεύθυνση του Καταστήματος" th:value="${mapCenter}"/>
+        <br/>
+        <button id="creaMappa" type="button" class="btn btn-primary active" >Αναζήτηση</button>
+        <br/>
+        <br/>
+        <div class="map" id="map1"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" class="form-control" th:field="*{store.lat}" id="lat" name="lat"/>
+  <input type="hidden" class="form-control" th:field="*{store.lng}" id="lng" name="lng"/>
+  <br/>
+
+
+  <div class="form-group" th:if="${productExists} or ${productAdded}">
+    <label class="col-md-4 control-label" for="storeName">Όνομα Καταστήματος</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control input-md"loc th:field="*{store.place}" id="storeName" name="storeName" placeholder="Όνομα του Καταστήματος" maxlength="20" required >
+    </div>
+  </div>
+
+  <!--
+  <div class="form-group" >
+    <label class="col-md-4 control-label" for="storeAddress">Διεύθυνση Καταστήματος</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control input-md" th:field="*{store.address}" id="storeAddress" place="storeAddress" placeholder="Διεύθυνση του Καταστήματος" required >
+    </div>
+  </div>-->
+
+  <div class="form-group" th:if="${productExists} or ${productAdded}">
+    <label class="col-md-4 control-label" for="price">Τιμή Προϊόντος</label>
+    <div class="col-md-4">
+      <input type="number" class="form-control input-md" th:field="*{hasProduct.price}" id="price" name="price" placeholder="Η τιμή του προϊόντος" min="0" max="999999" step="0.01" required >
+    </div>
+  </div>
+
+
+  <div class="form-group" align="center" th:if="${productExists} or ${productAdded}">
+    <label class="col-md-4 control-label" for="button"></label>
+    <div class="col-md-4">
+      <button id="button" name="button" class="btn btn-success">Προσθήκη</button>
+
+  </div>
+
+
+</fieldset>
+</form>
+
+
+<!--
+<form class="form-horizontal" th:aciton="@{/profile/add/data}" method="post" th:if="${productExists} or ${productAdded}">
+  <fieldset>
+
+    <div class="form-group">
+      <h3 align="center"> Παρακαλώ προσθέστε επιπλέον δεδομένα σχετικά με το προϊόν</h3>
+      <hr>
+      <label class="col-md-4 control-label" for="productData">Επιπλέον δεδομένα σχετικά με το προϊόν</label>
+      <div class="col-md-4">
+        <input class="form-control input-md" type="text" id="productData" place="productData" placeholder="Επιπλέον δεδομένα του προϊόντος">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="singlebutton"></label>
+      <div class="col-md-4">
+        <button id="singlebutton" place="singlebutton" class="btn btn-primary">Προσθήκη</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+
+-->
+</br>
+</br>
+
+<!--
+<div class="form-group" align="center" th:if="${productExists == true} or ${productAdded == true}">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <a href="/profile" class="btn btn-primary">Επιστροφή στο Προφίλ</a>
+    <a href="/index" class="btn btn-primary">Επιστροφή στην Αρχική Σελίδα</a>
+    <a href="/profile/add/entry" class="btn btn-success">Συνέχεια Προσθήκης</a>
+  </div>
+</div>
+
+-->
+
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/addProduct.js"></script>
+<script type="text/javascript" src="/js/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLsF3d7bdPcNMcSwPfb8aUfcadkjOMH0"></script>
+</body>
+
+</html>

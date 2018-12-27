@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>User Profile</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="/css/profile-styles.css">
+</head>
+
+<body>
+
+</br>
+</br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 ">
+		     <div class="list-group ">
+
+              <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+              <a href="/home" class="list-group-item list-group-item-action">Επέστρεψε στην Αρχική Σελίδα</a>
+              <a href="/profile/add/entry" class="list-group-item list-group-item-action">Προσθήκη Καταχώρησης</a>
+              <a href="/logout" class="list-group-item list-group-item-action">Αποσυνδέσου</a>
+
+            </div>
+		</div>
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div align="center" class="col-md-12">
+		                    <h4>Το Προφίλ μου</h4>
+		                    <hr>
+		                </div>
+
+                  <img src="https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg" alt="" class="profile-image">
+
+		            </div>
+		            <div class="row">
+		                <div class="col-md-12">
+                      </br>
+                      </br>
+
+                            <form th:object="${user}" th:aciton="@{/profile}" method="post">
+                              <div class="form-group row">
+                                <label for="firstName" align="center" class="col-4 col-form-label">Όνομα</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{firstName}" id="firstName" name="firstName" placeholder="Όνομα" pattern="^[A-Za-z -]+$" maxlength="15" title="Το όνομα μπορεί να περιέχει μόνο αλφαβητικούς χαρακτήρες" required>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="lastName" align="center" class="col-4 col-form-label">Επώνυμο</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="Επώνυμο" pattern="^[A-Za-z -]+$" maxlength="20" title="Το επώνυμο μπορεί να περιέχει μόνο αλφαβητικοί χαρακτήρες" required>
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="age" align="center" class="col-4 col-form-label">Ηλικία</label>
+                                <div class="col-8">
+                                  <input type="number" class="form-control" th:field="*{age}" id="age" name="age" placeholder="Ηλικία" min="12" max="125" step="1">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="university" align="center" class="col-4 col-form-label">Πανεπιστήμιο Φοίτησης</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{university}" id="university" name="university" placeholder="Πανεπιστήμιο Φοίτησης" maxlength="20">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="profession" align="center" class="col-4 col-form-label">Επάγγελμα</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{profession}" id="profession" name="profession" placeholder="Επάγγελμα" maxlength="25">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="city" align="center" class="col-4 col-form-label">Πόλη Κατοικίας</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{city}" id="city" name="city" placeholder="Πόλη Κατοικίας" maxlength="20">
+                                </div>
+                              </div>
+
+
+                              <div class="form-group row">
+                                <label for="website" align="center" class="col-4 col-form-label">Website</label>
+                                <div class="col-8">
+                                  <input type="text" class="form-control" th:field="*{website}" id="website" name="website" placeholder="Website" maxlength="50">
+                                </div>
+                              </div>
+
+
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <button place="submit" type="submit" class="btn btn-primary">Ανανέωση</button>
+                                </div>
+                              </div>
+                            </form>
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>
