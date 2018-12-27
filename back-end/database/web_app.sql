@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS has_product (
   REFERENCES store(id),
   price DOUBLE(5,2) NOT NULL,
   date_from DATE NOT NULL, /* format: YYYY-MM-DD */
-  date_to DATE NOT NULL,
+  date_to DATE,
   withdrawn BOOLEAN DEFAULT 0
 );
 
