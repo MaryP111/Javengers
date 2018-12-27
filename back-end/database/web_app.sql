@@ -30,10 +30,16 @@ CREATE TABLE IF NOT EXISTS user (
 
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL UNIQUE, /* Probably related to the barcode, a unique identifier */
+
+  /* There are several ways of representing the barcode */
+
+  barcode VARCHAR(20) NOT NULL UNIQUE,
+  name VARCHAR(20) NOT NULL, /* A name to identify the product */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
-  company VARCHAR(20) NOT NULL,
-  category VARCHAR(20) NOT NULL
+  manufacturer VARCHAR(20) NOT NULL,
+  category VARCHAR(20) NOT NULL,
+  stars DECIMAL(2,1) NOT NULL,
+  number_of_ratings INT NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -61,7 +67,6 @@ CREATE TABLE IF NOT EXISTS product_data (
 CREATE TABLE IF NOT EXISTS store (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL,
-  address VARCHAR(30) NOT NULL, /* Full address of the store */
   lat DECIMAL(10,8) NOT NULL,
   lng DECIMAL(11,8) NOT NULL
 );
@@ -185,7 +190,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-
 /*
 DELIMITER $$
 
@@ -217,7 +221,6 @@ BEGIN
 END$$
 DELIMITER ;
 */
-
 
 /* Phone number constraint, exactly 10 numbers */
 
@@ -284,8 +287,6 @@ DELIMITER ;
 
 /* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
 
-
-
 DELIMITER $$
 
 CREATE PROCEDURE `check_stars`(IN stars DECIMAL(2,1))
@@ -315,5 +316,3 @@ BEGIN
     CALL check_stars(new.stars);
 END$$
 DELIMITER ;
-
-
