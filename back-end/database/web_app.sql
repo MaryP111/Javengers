@@ -61,9 +61,9 @@ that our relation is in Normal Form */
 CREATE TABLE IF NOT EXISTS product_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_id INT NOT NULL,
-  /*FOREIGN KEY product_id(id)
+  FOREIGN KEY product_id(id)
   REFERENCES product(id)
-  ON DELETE CASCADE,*/
+  ON DELETE CASCADE,
   tag VARCHAR(20)
 );
 
@@ -72,9 +72,9 @@ CREATE TABLE IF NOT EXISTS product_tags (
 CREATE TABLE IF NOT EXISTS product_data (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_id INT NOT NULL,
-  /*FOREIGN KEY product_id(id)
+  FOREIGN KEY product_id(id)
   REFERENCES product(id)
-  ON DELETE CASCADE,*/
+  ON DELETE CASCADE,
   data VARCHAR(20)
 );
 
@@ -89,31 +89,31 @@ CREATE TABLE IF NOT EXISTS store (
 CREATE TABLE IF NOT EXISTS store_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   store_id INT NOT NULL,
-  /*FOREIGN KEY store_id(id)
+  FOREIGN KEY store_id(id)
   REFERENCES store(id)
-  ON DELETE CASCADE,*/
+  ON DELETE CASCADE,
   tag VARCHAR(20)
 );
 
 
 CREATE TABLE IF NOT EXISTS has_product (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  no INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
   product_id INT NOT NULL,
   store_id INT NOT NULL,
   price  DOUBLE(8,2) NOT NULL,
   date_from DATE,
   date_to DATE,
-  withdrawn BOOLEAN DEFAULT 0
-  /*FOREIGN KEY user_id(id)
+  withdrawn BOOLEAN DEFAULT 0,
+  FOREIGN KEY (user_id)
   REFERENCES user(id),
-  FOREIGN KEY product_id(id)
+  FOREIGN KEY (product_id)
   REFERENCES product(id)
   ON DELETE CASCADE,
-  FOREIGN KEY store_id(id)
+  FOREIGN KEY (store_id)
   REFERENCES store(id)
-  ON DELETE CASCADE */
-);
+  ON DELETE CASCADE 
+) ENGINE=INNODB;
 
 
 /* First name constraint, only alphabetic characters are allowed */
