@@ -1,4 +1,4 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
   <head>
@@ -11,17 +11,17 @@ x<!DOCTYPE html>
     <title>Javatar</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/homepage-styles.css" rel="stylesheet"type="text/css" >
+    <link href="/css/homepage-styles.css" rel="stylesheet"type="text/css" >
 
   </head>
 
@@ -66,13 +66,14 @@ x<!DOCTYPE html>
         <div class="intro-text">
           <div class="intro-lead-in">Καλώς ήρθες στη σελίδα μας!</div>
           <div class="intro-heading text-uppercase">ΒΡΕΣ ΧΙΛΙΑΔΕΣ ΠΡΟΙΟΝΤΑ</div>
-          <div class="input-group md-form form-sm form-2 pl-0">
-            <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Αναζήτησε προϊόντα..." aria-label="Search">
-            <div class="input-group-append">
-              <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey"
-                aria-hidden="true"></i></span>
+          <form action="/product/list" method="get">
+            <div class="input-group md-form form-sm form-2 pl-0">
+              <input class="form-control my-0 py-1 lime-border" type="text" name="keyWord" placeholder="Αναζήτησε προϊόντα..." aria-label="Search">
+              <div class="input-group-append">
+                <span class="input-group-text lime lighten-2" id="mySpan" onclick="Search()"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
+              </div>
             </div>
-          </div>
+          </form>
 
         </div>
       </div>
@@ -90,13 +91,13 @@ x<!DOCTYPE html>
         </div>
         <div class="row">
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal1">
+            <a class="categories-link"  href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/technology.png" alt="">
+              <img class="img-fluid" src="img/categories/technology.png" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Τεχνολογία</h4>
@@ -104,13 +105,13 @@ x<!DOCTYPE html>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal2">
+            <a class="categories-link" href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/fashion.jpg" alt="">
+              <img class="img-fluid" src="img/categories/fashion.jpg" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Μόδα</h4>
@@ -118,13 +119,13 @@ x<!DOCTYPE html>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal3">
+            <a class="categories-link" href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/cosmetics.png" alt="">
+              <img class="img-fluid" src="img/categories/cosmetics.png" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Καλλυντικά</h4>
@@ -132,13 +133,13 @@ x<!DOCTYPE html>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal4">
+            <a class="categories-link" href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/sports.jpg" alt="">
+              <img class="img-fluid" src="img/categories/sports.jpg" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Αθλητισμός</h4>
@@ -146,13 +147,13 @@ x<!DOCTYPE html>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal5">
+            <a class="categories-link" href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/automotive.jpg" alt="">
+              <img class="img-fluid" src="img/categories/automotive.jpg" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Auto-Moto</h4>
@@ -160,13 +161,13 @@ x<!DOCTYPE html>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" data-toggle="modal" href="#categoriesModal6">
+            <a class="categories-link" href="/product/list">
               <div class="categories-hover">
-                <div class="categories-hover-content">
+                <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
-                </div>
+                </div>-->
               </div>
-              <img class="img-fluid" src="img/categories/home.png" alt="">
+              <img class="img-fluid" src="img/categories/home.png" alt="" >
             </a>
             <div class="categories-caption">
               <h4>Σπίτι</h4>
