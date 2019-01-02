@@ -54,6 +54,14 @@ public class EntryController {
         return "products";
     }
 
+    //Returns multiple products of a specific category
+    @RequestMapping(value = "/product/{category}", method = RequestMethod.GET)
+    public /*@ResponseBody*/ String getProductByCategory(@PathVariable("category") String category, Model model){
+        List<Product> products = productService.getProductByCategory(category);
+        model.addAttribute("products", products);
+        return "products";
+    }
+
     /*@RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     public @ResponseBody Optional<Product> getProductById(@PathVariable("id") Long id){
 

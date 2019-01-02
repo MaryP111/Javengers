@@ -46,5 +46,13 @@ public class ProductServiceImpl implements ProductService {
 
         return productRepository.getProductByBarcode(barcode);
     }
+
+    @Override
+    public List<Product> getProductByCategory(String category) {
+        List<Product> products = productRepository.getProductByCategory(category);
+
+        return products;
+
+    }
 }
 

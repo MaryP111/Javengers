@@ -45,7 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/error/**",
             "/console/**",
             "/signup",
-            "/product/list"
+            "/product/list",
+            "/product/**"
     };
 
     @Override
