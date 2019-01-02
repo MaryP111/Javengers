@@ -45,7 +45,7 @@ public class EntryController {
     }
 
     @RequestMapping(value = "/product/list", method = RequestMethod.GET)
-    public String listProducts(Model model) {
+    public String listProducts(@Valid String keyWord, Model model) {
 
         List<Product> products = productService.listAll();
 

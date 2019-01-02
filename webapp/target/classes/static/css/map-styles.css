@@ -7,13 +7,24 @@ iframe {
     color: black;
     border-color: white;
     border-width: thin;
-    transition-duration: 0.4s;
+    transition-duration: 0.9s;
     cursor: pointer;
 }
 #mapButton:hover {
     background-color: #e6e6e6;
     color: black;
 }
+
+#mapButton:focus {
+    background-color: #e6e6e6;
+    color: black;
+}
+
+#mapButton:visited {
+    background-color: #e6e6e6;
+    color: black;
+}
+
 
 .map {
     border: 1px solid #ccc;

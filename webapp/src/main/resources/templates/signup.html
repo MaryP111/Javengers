@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="css/signup-styles.css">
-	<link rel="stylesheet" type="text/css" href="css/homepage-styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/signup-styles.css">
+	<link rel="stylesheet" type="text/css" href="/css/homepage-styles.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 			</div>
 
 			<div class="card-body">
-				<form th:object="${user}" th:aciton="@{/signup}" method="post">
+				<form th:object="${user}" th:action="@{/signup}" method="post">
 
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -64,7 +64,7 @@
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
 						<input type="text" class="form-control" th:field="*{userName}" id="userName" placeholder="Username" maxlength="20" required>
-						<span class="bg-danger pull right" th:if="${userNameExists}">User place already exists</span>
+						<span class="bg-danger pull right" th:if="${userNameExists}">User name already exists</span>
 					</div>
 
 					<div class="input-group form-group">
