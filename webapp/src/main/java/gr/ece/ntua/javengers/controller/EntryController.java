@@ -4,10 +4,7 @@ import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
 import gr.ece.ntua.javengers.entity.User;
-import gr.ece.ntua.javengers.service.HasProductService;
-import gr.ece.ntua.javengers.service.ProductService;
-import gr.ece.ntua.javengers.service.StoreService;
-import gr.ece.ntua.javengers.service.UserService;
+import gr.ece.ntua.javengers.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,22 +33,39 @@ public class EntryController {
     private HasProductService hasProductService;
 
     @Autowired
-    public void setProductService(UserService userService, ProductService productService, StoreService storeService, HasProductService hasProductService) {
+    private ProductTagService productTagService;
+
+    @Autowired
+    public void setProductService(UserService userService, ProductService productService, StoreService storeService, HasProductService hasProductService, ProductTagService productTagService) {
 
         this.userService = userService;
         this.productService = productService;
         this.storeService = storeService;
         this.hasProductService = hasProductService;
+        this.productTagService = productTagService;
+    }
+
+    @RequestMapping(value = "/entry/list/{id}", method = RequestMethod.GET)
+    public String listProducts(@PathVariable("id") Long productId, Model model) {
+
+
+        List<HasProduct> entries = hasProductService.getEntriesById(productId);
+
+        model.addAttribute("entries", entries);
+
+        return "entries";
     }
 
     @RequestMapping(value = "/product/list", method = RequestMethod.GET)
     public String listProducts(@Valid String keyWord, Model model) {
 
-        List<Product> products = productService.listAll();
+
+        List<Product> products = productTagService.getProductsByTag(keyWord);
 
         model.addAttribute("products", products);
 
         return "products";
+
     }
 
     /*@RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
@@ -89,7 +103,7 @@ public class EntryController {
     }
 
     @RequestMapping(value = "profile/add/entry", method = RequestMethod.POST)
-    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, Model model, BindingResult bindingResult) {
+    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid String productTags, Model model, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors())
             return "error";
@@ -98,6 +112,9 @@ public class EntryController {
         Boolean addEntry = store.getPlace() != null;
 
         if (addEntry) {
+
+            productTagService.insertTags(product.getBarcode(), productTags);
+
 
             storeService.saveStore(store);
 

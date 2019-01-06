@@ -34,7 +34,7 @@
 <div class="form-group" th:if = "${barcodeSearched}">
   <label class="col-md-4 control-label" for="productName">Όνομα Προϊόντος</label>
   <div class="col-md-4">
-  <input type="text" class="form-control input-md" th:field="*{product.name}" id="productName" name="productName" placeholder="Όνομα του Προϊόντος" required th:readonly="${productExists} or ${productAdded}">
+  <input type="text" class="form-control input-md" th:field="*{product.name}" id="productName" name="productName" placeholder="Όνομα του Προϊόντος" required th:readonly="${productExists} or ${productAdded}" maxlength="20">
   </div>
 </div>
 
@@ -59,7 +59,7 @@
 <div class="form-group" th:if="${barcodeSearched}">
   <label class="col-md-4 control-label" for="productDescription">Περιγραφή Προϊόντος</label>
   <div class="col-md-4">
-    <textarea class="form-control" th:field="*{product.description}" id="productDescription" name="productDescription" th:readonly="${productExists} or ${productAdded}"></textarea>
+    <textarea class="form-control" th:field="*{product.description}" id="productDescription" name="productDescription" th:readonly="${productExists} or ${productAdded}" required maxlength="100"></textarea>
   </div>
 </div>
 
@@ -68,9 +68,16 @@
 <div class="form-group" th:if="${barcodeSearched}">
   <label class="col-md-4 control-label" for="productManufacturer">Κατασκευαστής</label>
   <div class="col-md-4">
-  <input type="text" class="form-control input-md" th:field="*{product.manufacturer}" id="productManufacturer" name="productManufacturer" placeholder="Κατασκευαστής" required th:readonly="${productExists} or ${productAdded}">
+  <input type="text" class="form-control input-md" th:field="*{product.manufacturer}" id="productManufacturer" name="productManufacturer" placeholder="Κατασκευαστής" required th:readonly="${productExists} or ${productAdded}" maxlength="20">
   </div>
 </div>
+
+  <div class="form-group" th:if="${barcodeSearched}">
+    <label class="col-md-4 control-label" for="productImageURL">Εικόνα Προϊόντος</label>
+    <div class="col-md-4">
+      <input type="text" class="form-control input-md" th:field="*{product.imageURL}" id="productImageURL" name="productImageURL" placeholder="To URL της Εικόνας" required th:readonly="${productExists} or ${productAdded}" maxlength="2048">
+    </div>
+  </div>
 
   <!--<div class="cold-md-4">
     <label>
@@ -106,14 +113,14 @@
   </div>-->
  <!-- File Button -->
 
-
-  <!--<div class="form-group" th:if="${barcodeSearched}">
+<!--
+  <div class="form-group" th:if="${barcodeSearched}">
   <label class="col-md-4 control-label" for="filebutton">Εικόνα Προϊόντος</label>
   <div class="col-md-4">
     <input id="filebutton" place="filebutton" class="input-file" type="file">
   </div>
-</div>-->
-
+</div>
+-->
 
 <div class="form-group" th:if="${productExists == false} or ${productAdded == false} or ${barcodeSearched == false}">
   <label class="col-md-4 control-label" for="singlebutton"></label>
@@ -123,6 +130,12 @@
   </div>
 
 
+  <div class="form-group" th:if="${productExists} or ${productAdded}">
+    <label class="col-md-4 control-label" for="productDescription">Πεδία Αναζήτησης του Προϊόντος</label>
+    <div class="col-md-4">
+      <textarea class="form-control" id="productTags" name="productTags" placeholder="#tag1 #tag2 ..." required maxlength="100"></textarea>
+    </div>
+  </div>
 
   <div class="form-group" th:if="${productExists} or ${productAdded}">
     <h3 align="center"> Παρακαλώ εισάγετε πληροορίες σχετικά με το κατάστημα που συναντήσατε το προϊόν</h3>

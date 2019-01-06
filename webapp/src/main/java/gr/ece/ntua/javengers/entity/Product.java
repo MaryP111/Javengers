@@ -33,6 +33,9 @@ public class Product {
     @Column(name="number_of_ratings", nullable = false)
     private Integer numberOfRatings;
 
+    @Column(name="image_url", nullable = false)
+    private String imageURL;
+
     public Product() {}
 
     public Long getId() {
@@ -67,6 +70,10 @@ public class Product {
         return numberOfRatings;
     }
 
+    public String getImageURL() {
+        return imageURL;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -97,5 +104,9 @@ public class Product {
 
     public void setNumberOfRatings(Integer numberOfRatings) {
         this.numberOfRatings = numberOfRatings;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

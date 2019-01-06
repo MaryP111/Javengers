@@ -44,9 +44,14 @@ public class HasProductServiceImpl implements HasProductService {
             exc.printStackTrace();
         }
 
-
-
         hasProductRepository.save(entry);
     }
+
+    @Override
+    public List<HasProduct> getEntriesById(Long productId) {
+
+        return hasProductRepository.getEntriesById(productId);
+    }
+
 
 }

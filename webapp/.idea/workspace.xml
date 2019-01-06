@@ -28,7 +28,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Authority.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Role.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductDataRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" afterDir="false" />
@@ -36,6 +35,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserSecurityService.java" afterDir="false" />
@@ -46,6 +47,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/map-styles.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/addProduct.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/products.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,68 +61,68 @@
     <session id="1046020717">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="5" />
+          <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="484" />
-          <entry key="dummy" value="82" />
+          <entry key="css" value="833" />
+          <entry key="dummy" value="106" />
           <entry key="ftl" value="68" />
-          <entry key="html" value="5839" />
-          <entry key="java" value="18954" />
-          <entry key="js" value="127" />
+          <entry key="html" value="6909" />
+          <entry key="java" value="20415" />
+          <entry key="js" value="263" />
           <entry key="properties" value="358" />
           <entry key="xml" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="484" />
+          <entry key="CSS" value="833" />
           <entry key="FTL" value="68" />
-          <entry key="HTML" value="5839" />
-          <entry key="JAVA" value="18954" />
-          <entry key="JavaScript" value="127" />
-          <entry key="PLAIN_TEXT" value="82" />
+          <entry key="HTML" value="6909" />
+          <entry key="JAVA" value="20415" />
+          <entry key="JavaScript" value="263" />
+          <entry key="PLAIN_TEXT" value="106" />
           <entry key="Properties" value="358" />
           <entry key="XML" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="50" />
-          <entry key="css" value="12" />
+          <entry key="class" value="51" />
+          <entry key="css" value="16" />
           <entry key="f" value="1" />
           <entry key="ftl" value="4" />
-          <entry key="html" value="58" />
+          <entry key="html" value="66" />
           <entry key="iml" value="1" />
-          <entry key="java" value="236" />
-          <entry key="js" value="3" />
-          <entry key="properties" value="9" />
+          <entry key="java" value="267" />
+          <entry key="js" value="5" />
+          <entry key="properties" value="10" />
           <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="50" />
-          <entry key="CSS" value="12" />
+          <entry key="CLASS" value="51" />
+          <entry key="CSS" value="16" />
           <entry key="FTL" value="4" />
-          <entry key="HTML" value="58" />
+          <entry key="HTML" value="66" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="236" />
-          <entry key="JavaScript" value="3" />
+          <entry key="JAVA" value="267" />
+          <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="9" />
+          <entry key="Properties" value="10" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -129,28 +131,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+            <state relative-caret-position="90">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="389">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,10 +152,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="150">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,19 +164,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="267">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -191,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="162">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,10 +197,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/filter.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="90">
+              <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
             </state>
           </provider>
         </entry>
@@ -212,17 +229,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="405">
+              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
             </state>
           </provider>
         </entry>
@@ -232,9 +240,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -253,13 +261,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/signUp-styles.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/signUp.html" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Authority.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserSecurityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/profile-styles.css" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java" />
@@ -267,13 +268,8 @@
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductDataRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagsRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/addProduct.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/addProduct.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/addProduct-styles.css" />
@@ -282,28 +278,40 @@
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/hasProduct.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Store.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/map-styles.css" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/entries.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/products.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/homepage.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/homepage-styles.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/products.js" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/products.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/entries.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductDataRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTag.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTag.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -337,6 +345,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -377,7 +386,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="javengers" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="javengers" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="javengers" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
@@ -410,6 +437,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -421,7 +456,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -433,7 +467,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546190062949" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546797061069" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../childrenactivities/BozoTickets" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -705,32 +739,43 @@
       <workItem from="1545928780391" duration="16645000" />
       <workItem from="1546031494791" duration="6983000" />
       <workItem from="1546111053897" duration="171000" />
-      <workItem from="1546174521663" duration="13538000" />
+      <workItem from="1546174521663" duration="18258000" />
+      <workItem from="1546263533968" duration="210000" />
+      <workItem from="1546773194298" duration="23118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202889000" />
+    <option name="totallyTimeSpent" value="230937000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8290735" visible="true" weight="0.2139808" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8252788" visible="true" weight="0.21611527" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.17092651" side_tool="true" visible="true" weight="0.2139808" />
+      <window_info id="Web" order="7" sideWeight="0.1747212" side_tool="true" visible="true" weight="0.21611527" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32869378" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.25187567" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28586724" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32869378" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32976446" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -738,7 +783,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32976446" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.42398286" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -773,78 +818,45 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java</url>
           <line>51</line>
           <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/security/SecurityConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Authority.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.9.RELEASE/spring-aop-5.0.9.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/profile-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductDataRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/addProduct.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -859,13 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="58" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -873,27 +878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="571" selection-start-line="571" selection-end-line="571" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,13 +893,6 @@
             <element signature="e#633#634#0" expanded="true" />
             <element signature="e#661#662#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
@@ -932,44 +913,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="63" lean-forward="true" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -990,34 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserSecurityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entries.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1032,54 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -1111,13 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
@@ -1127,8 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="1080">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1147,32 +1015,286 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="55" column="32" lean-forward="true" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+        <state relative-caret-position="675">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/filter.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="15">
+          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserSecurityService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="255">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+            <element signature="e#1401#1402#0" expanded="true" />
+            <element signature="e#1444#1445#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1517#1518#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1970#1971#0" expanded="true" />
+            <element signature="e#2018#2019#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2100#2101#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+            <element signature="e#2197#2198#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
+            <element signature="e#2299#2300#0" expanded="true" />
+            <element signature="e#2339#2340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="58" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/profile-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/homepage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="true" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/filter.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="466">
+          <caret line="86" lean-forward="true" selection-end-line="86" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2699#2706#1" expanded="true" />
+            <element signature="e#2902#2909#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="87" column="1" lean-forward="true" selection-start-line="25" selection-end-line="87" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductDataRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="52" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="20" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="63" lean-forward="true" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
         </state>
       </provider>
     </entry>

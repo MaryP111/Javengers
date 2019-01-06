@@ -1,5 +1,9 @@
 
-
+/*body {
+    background-image: url("http://mychiropractichealth.com/wp-content/uploads/2013/07/sky-blue-background-hd-desktop-wallpaper.jpg");
+    background-color: #cccccc;
+    background-size: cover;
+}*/
 
 .pagination a {
     color: black;
@@ -32,7 +36,7 @@
 .item.list-group-item
 {
     float: none;
-    width: 100%;
+    weight: 100%;
     background-color: #fff;
     margin-bottom: 10px;
 }
@@ -66,6 +70,7 @@
 
 .item.list-group-item img
 {
+    weight: 10px;
     float: left;
 }
 .item.list-group-item:after
@@ -75,4 +80,9 @@
 .list-group-item-text
 {
     margin: 0 0 11px;
+}
+
+img.resize {
+    width: 50px;
+    height: 50px;
 }

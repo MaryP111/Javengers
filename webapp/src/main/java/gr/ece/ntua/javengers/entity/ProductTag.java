@@ -4,7 +4,7 @@ package gr.ece.ntua.javengers.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "product_data")
+@Table(name = "product_tags")
 public class ProductTag {
 
     @Id

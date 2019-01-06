@@ -3,6 +3,14 @@
 <html>
 
   <head>
+    <script type="text/javascript">
+
+        function getEntries(productId) {
+            // localStorage.setItem("productId", productId);
+            window.location.href = "/entry/list/"+ productId;
+        }
+
+    </script>
     <title>List of Products</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,7 +39,8 @@
           <th:block th:each="product : ${products}">
           <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-              <img class="group list-group-image" src="https://gallery.yopriceville.com/var/albums/Backgrounds/Autumn_Landscape_Background.jpg?m=1442666745" alt="" />
+              <img class="group list-group-image" th:src=${product.imageURL} alt="" style="object-fit: contain; height: 250px; width: 250px" />
+                <!--<img class="group list-group-image" src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphonexs-spacegrey-back?$png8alpha256$&hei=410==" alt="" />-->
                 <div class="caption">
                   <h4 class="group inner list-group-item-heading" th:text="${product.name}"></h4>
                   <p class="group inner list-group-item-text" th:text="${product.manufacturer}"></p>
@@ -39,7 +48,7 @@
                   <p class="group inner list-group-item-text" th:text="${product.description}"></p>
                   <div class="row">
                     <div class="col-xs-12 col-md-6">
-                      <a class="btn btn-success">Select product</a>
+                      <button th:onclick="'javascript:getEntries(' + ${product.id} + ');'" class="btn btn-success">Select Product</button>
                     </div>
                   </div>
                 </div>
@@ -62,6 +71,11 @@
       </div>
     </div>
 
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script type="text/javascript" src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
