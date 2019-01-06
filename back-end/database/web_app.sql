@@ -50,7 +50,8 @@ CREATE TABLE IF NOT EXISTS product (
   manufacturer VARCHAR(20) NOT NULL,
   category VARCHAR(20) NOT NULL,
   stars DECIMAL(2,1) NOT NULL,
-  number_of_ratings INT NOT NULL
+  number_of_ratings INT NOT NULL,
+  image_url VARCHAR(2048) NOT NULL
 );
 
 /* Tags will be used as key words */
