@@ -16,6 +16,6 @@ public interface ProductService {
 
     Optional<Product> getProductByBarcode(String barcode);
 
-
+    List<Product> getProductByCategory(String category);
 
 }
