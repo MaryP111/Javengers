@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>310</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Person&gt;&gt;
+--
+-id: Long {composite}
+-ClassAttribute: Long
+--
+
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>600</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Volunteer
+--
+-id: Long {composite}
+-ClassAttribute: Long
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>600</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Admin
+--
+-id: Long {composite}
+-ClassAttribute: Long
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>460</y>
+      <w>110</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;90.0;10.0;90.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>460</y>
+      <w>140</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;120.0;90.0;120.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>280</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Product
+--
+-id: Long
+-name: String
+-category: String
+-manufacturer:String
+--
+
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>610</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Product Tags
+--
+-id: Long 
+-tag: String
+--
+
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>430</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>290</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Store
+--
+-id: Long
+-name: String
+-latitude: Double
+-longitude: Double
+--
+
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>360</y>
+      <w>330</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n
+has product</panel_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>370</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>480</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>SimpleClass
+--
+price</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
