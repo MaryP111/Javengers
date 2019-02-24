@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <help_text>// Uncomment the following line to change the fontsize and font:
-fontsize=18
+fontsize=10
 // fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
 
 
@@ -142,12 +142,12 @@ Browser
     <id>Relation</id>
     <coordinates>
       <x>1165</x>
-      <y>375</y>
+      <y>380</y>
       <w>90</w>
-      <h>25</h>
+      <h>20</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;30.0;160.0;30.0</additional_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
@@ -291,7 +291,7 @@ bg=cyan</panel_attributes>
     <coordinates>
       <x>330</x>
       <y>520</y>
-      <w>55</w>
+      <w>35</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -317,7 +317,7 @@ bg=cyan</panel_attributes>
     <coordinates>
       <x>620</x>
       <y>110</y>
-      <w>55</w>
+      <w>35</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
@@ -432,11 +432,11 @@ bg=cyan</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1010</x>
-      <y>400</y>
+      <y>405</y>
       <w>95</w>
-      <h>25</h>
+      <h>20</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;30.0;170.0;30.0</additional_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
   </element>
 </diagram>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
   <help_text>// Uncomment the following line to change the fontsize and font:
-fontsize=10
+fontsize=15
 // fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
 
 
@@ -39,10 +39,10 @@ halign=center</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>217</x>
+      <x>203</x>
       <y>308</y>
-      <w>84</w>
-      <h>77</h>
+      <w>112</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Unregistered User
 </panel_attributes>
@@ -51,10 +51,10 @@ halign=center</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>238</x>
+      <x>224</x>
       <y>616</y>
-      <w>42</w>
-      <h>77</h>
+      <w>70</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Volunteer
 </panel_attributes>
@@ -290,7 +290,7 @@ bg=blue</panel_attributes>
     <coordinates>
       <x>560</x>
       <y>245</y>
-      <w>56</w>
+      <w>77</w>
       <h>105</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
