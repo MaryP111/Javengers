@@ -12,7 +12,7 @@ public class Product {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "barcode", nullable = false)
+    @Column(name = "barcode", nullable = true)
     private String barcode;
 
     @Column(name = "name", nullable = false)
@@ -21,20 +21,23 @@ public class Product {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "manufacturer", nullable = false)
+    @Column(name = "manufacturer", nullable = true)
     private String manufacturer;
 
     @Column(name = "category", nullable = false)
     private String category;
 
-    @Column(name="stars", nullable = false)
+    @Column(name="stars", nullable = true)
     private Double stars;
 
-    @Column(name="number_of_ratings", nullable = false)
+    @Column(name="number_of_ratings", nullable = true)
     private Integer numberOfRatings;
 
-    @Column(name="image_url", nullable = false)
+    @Column(name="image_url", nullable = true)
     private String imageURL;
+
+    @Column(name="withdrawn", nullable = false)
+    private Boolean withdrawn;
 
     public Product() {}
 
@@ -74,6 +77,8 @@ public class Product {
         return imageURL;
     }
 
+    public Boolean getWithdrawn() { return withdrawn; }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -108,5 +113,11 @@ public class Product {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public void setWithdrawn(Boolean withdrawn) { this.withdrawn = withdrawn; }
+
+    public int compareTo(Product p) {
+        return Double.compare(this.stars, p.getStars());
     }
 }

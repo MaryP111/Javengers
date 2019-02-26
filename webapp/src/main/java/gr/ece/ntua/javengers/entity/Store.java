@@ -14,11 +14,17 @@ public class Store {
     @Column(name = "name", nullable = false)
     private String place;
 
+    @Column(name = "address", nullable = true)
+    private String address;
+
     @Column(name = "lat", nullable = false)
     private Double lat;
 
     @Column(name = "lng", nullable = false)
     private Double lng;
+
+    @Column(name = "withdrawn", nullable = false)
+    private Boolean withdrawn;
 
     public Store() {}
 
@@ -30,6 +36,8 @@ public class Store {
         return place;
     }
 
+    public String getAddress() { return address; }
+
     public Double getLat() {
         return lat;
     }
@@ -37,6 +45,8 @@ public class Store {
     public Double getLng() {
         return lng;
     }
+
+    public Boolean getWithdrawn() { return withdrawn; }
 
     public void setId(Long id) {
         this.id = id;
@@ -46,6 +56,8 @@ public class Store {
         this.place = place;
     }
 
+    public void setAddress(String address) { this.address = address; }
+
     public void setLat(Double lat) {
         this.lat = lat;
     }
@@ -53,4 +65,6 @@ public class Store {
     public void setLng(Double lng) {
         this.lng = lng;
     }
+
+    public void setWithdrawn(Boolean withdrawn) { this.withdrawn = withdrawn;}
 }

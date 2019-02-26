@@ -22,13 +22,13 @@ public class UserSecurityService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        Optional<User> user = userRepository.getUserByUserName(userName);
+        Optional<User> user = userRepository.getUserByUserName(username);
 
         if (!user.isPresent()) {
-            LOG.warn("Username {} not found", userName);
-            throw new UsernameNotFoundException("Username" + userName + "not found");
+            LOG.warn("Username {} not found", username);
+            throw new UsernameNotFoundException("Username" + username + "not found");
 
         }
 

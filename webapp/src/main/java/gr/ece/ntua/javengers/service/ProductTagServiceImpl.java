@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -66,5 +67,10 @@ public class ProductTagServiceImpl implements ProductTagService {
 
         }
 
+    }
+
+    @Override
+    public List<String> getTagsByProductId(Long productId) {
+        return productTagRepository.getTagsByProductId(productId);
     }
 }

@@ -12,10 +12,20 @@ public interface ProductService {
 
     Optional<Product> getProductById(Long id);
 
-    void saveProduct(Product product);
+    gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id);
+
+    Long saveProduct(Product product);
+
+    void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct);
+
+    gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct);
 
     Optional<Product> getProductByBarcode(String barcode);
 
-    List<Product> getProductByCategory(String category);
+    void updateStars(Product product, Double stars);
+
+    void deleteProductById(Long id);
+
+
 
 }

@@ -2,7 +2,9 @@ package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.repository.HasProductRepository;
+import gr.ntua.ece.javengers.client.model.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -45,6 +47,28 @@ public class HasProductServiceImpl implements HasProductService {
         }
 
         hasProductRepository.save(entry);
+    }
+
+    @Override
+    public Entry saveEntry(Entry entry) {
+
+        HasProduct hasProduct = new HasProduct();
+
+
+        // hasProduct.setUserId(1L);
+        hasProduct.setProductId(Long.parseLong(entry.getProductId()));
+        hasProduct.setStoreId(Long.parseLong(entry.getShopId()));
+        hasProduct.setPrice(entry.getPrice());
+        hasProduct.setDateFrom(entry.getDateFrom());
+        hasProduct.setDateTo(entry.getDateTo());
+        hasProduct.setWithdrawn(false);
+
+        Long entryId = hasProductRepository.save(hasProduct).getId();
+
+        entry.setId(entryId.toString());
+
+        return entry;
+
     }
 
     @Override

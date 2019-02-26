@@ -14,6 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,14 +70,6 @@ public class EntryController {
 
     }
 
-    //Returns multiple products of a specific category
-    @RequestMapping(value = "/product/{category}", method = RequestMethod.GET)
-    public /*@ResponseBody*/ String getProductByCategory(@PathVariable("category") String category, Model model){
-        List<Product> products = productService.getProductByCategory(category);
-        model.addAttribute("products", products);
-        return "products";
-    }
-
     /*@RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     public @ResponseBody Optional<Product> getProductById(@PathVariable("id") Long id){
 
@@ -111,7 +105,7 @@ public class EntryController {
     }
 
     @RequestMapping(value = "profile/add/entry", method = RequestMethod.POST)
-    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid String productTags, Model model, BindingResult bindingResult) {
+    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid Double stars, @Valid String productTags, Model model, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors())
             return "error";
@@ -120,6 +114,8 @@ public class EntryController {
         Boolean addEntry = store.getPlace() != null;
 
         if (addEntry) {
+
+            productService.updateStars(product, stars);
 
             productTagService.insertTags(product.getBarcode(), productTags);
 

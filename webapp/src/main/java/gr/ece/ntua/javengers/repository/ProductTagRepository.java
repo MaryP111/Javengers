@@ -13,4 +13,10 @@ public interface ProductTagRepository extends CrudRepository<ProductTag, Long> {
     @Query("select product_tag.productId from ProductTag product_tag where tag like ?1")
     List<Long> getProductsByTag(String keyword);
 
+    @Query("select product_tag.tag from ProductTag product_tag where product_id = ?1")
+    List<String> getTagsByProductId(Long productId);
+
+    @Query("select product_tag.id from ProductTag product_tag where product_id = ?1")
+    List<Long> getIdsByProductId(Long productId);
+
 }

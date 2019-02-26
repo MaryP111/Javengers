@@ -1,11 +1,14 @@
 package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.Product;
+import gr.ece.ntua.javengers.entity.ProductTag;
 import gr.ece.ntua.javengers.repository.ProductRepository;
+import gr.ece.ntua.javengers.repository.ProductTagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,10 +17,13 @@ public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
 
+    private ProductTagRepository productTagRepository;
+
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository, ProductTagRepository productTagRepository) {
 
         this.productRepository = productRepository;
+        this.productTagRepository = productTagRepository;
     }
 
     @Override
@@ -34,11 +40,93 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public void saveProduct(Product product) {
+    public gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id) {
 
-        product.setStars(4.0);
-        product.setNumberOfRatings(1);
-        productRepository.save(product);
+        Product tempProduct = getProductById(id).get();
+
+        List<String> productTags = productTagRepository.getTagsByProductId(id);
+
+        gr.ntua.ece.javengers.client.model.Product product = new gr.ntua.ece.javengers.client.model.Product();
+
+        product.setId(id.toString());
+        product.setName(tempProduct.getName());
+        product.setDescription(tempProduct.getDescription());
+        product.setCategory(tempProduct.getCategory());
+        product.setTags(productTags);
+        product.setWithdrawn(tempProduct.getWithdrawn());
+
+        return product;
+    }
+
+    @Override
+    public Long saveProduct(Product product) {
+
+        return productRepository.save(product).getId();
+    }
+
+    @Override
+    public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
+
+        Product product = new Product();
+
+        product.setName(tempProduct.getName());
+        product.setDescription(tempProduct.getDescription());
+        product.setCategory(tempProduct.getCategory());
+        product.setWithdrawn(tempProduct.getWithdrawn());
+
+        Long productId = saveProduct(product);
+
+        tempProduct.setId(productId.toString());
+
+        Iterator<String> stringIterator = tempProduct.getTags().listIterator();
+
+        while (stringIterator.hasNext()) {
+
+            ProductTag productTag = new ProductTag();
+
+            productTag.setProductId(productId);
+            productTag.setTag(stringIterator.next());
+
+            productTagRepository.save(productTag);
+        }
+
+        return tempProduct;
+    }
+
+    @Override
+    public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
+
+        Product product = new Product();
+
+        product.setName(newProduct.getName());
+        product.setDescription(newProduct.getDescription());
+        product.setCategory(newProduct.getCategory());
+        product.setWithdrawn(newProduct.getWithdrawn());
+        product.setId(Long.parseLong(newProduct.getId()));
+
+        Long productId = saveProduct(product);
+
+        List<Long> ids = productTagRepository.getIdsByProductId(productId);
+
+        Iterator<Long> longIterator = ids.iterator();
+
+        while (longIterator.hasNext()) {
+            productTagRepository.deleteById(longIterator.next());
+        }
+
+        Iterator<String> stringIterator = newProduct.getTags().listIterator();
+
+        while (stringIterator.hasNext()) {
+
+            ProductTag productTag = new ProductTag();
+
+            productTag.setProductId(productId);
+            productTag.setTag(stringIterator.next());
+
+            productTagRepository.save(productTag);
+        }
+
+
     }
 
     @Override
@@ -48,10 +136,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProductByCategory(String category) {
-        List<Product> products = productRepository.getProductByCategory(category);
+    public void updateStars(Product product, Double stars) {
 
-        return products;
+        Integer numberOfRatings = product.getNumberOfRatings();
+        Double newStars = (product.getStars()*numberOfRatings+stars)/(numberOfRatings+1);
+        newStars = 2*newStars;
+        newStars = 2*newStars.intValue()/2.0;
+        product.setStars(newStars);
+        product.setNumberOfRatings(numberOfRatings+1);
+        productRepository.save(product);
+
+    }
+
+    @Override
+    public void deleteProductById(Long id) {
+        productRepository.deleteById(id);
 
     }
 }
