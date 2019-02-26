@@ -1,4 +1,3 @@
-
 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT;
 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS;
 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION;
@@ -6,7 +5,7 @@ SET NAMES utf8;
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
-SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0; 
+SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP DATABASE web_app;
@@ -44,14 +43,15 @@ CREATE TABLE IF NOT EXISTS product (
 
   /* There are several ways of representing the barcode */
 
-  barcode VARCHAR(20) NOT NULL UNIQUE,
+  barcode VARCHAR(20) UNIQUE,
   name VARCHAR(20) NOT NULL, /* A name to identify the product */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
-  manufacturer VARCHAR(20) NOT NULL,
+  manufacturer VARCHAR(20),
   category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1) NOT NULL,
-  number_of_ratings INT NOT NULL,
-  image_url VARCHAR(2048) NOT NULL
+  stars DECIMAL(2,1),
+  number_of_ratings INT,
+  image_url VARCHAR(2048),
+  withdrawn BOOLEAN DEFAULT 0 NOT NULL
 );
 
 /* Tags will be used as key words */
@@ -62,13 +62,16 @@ that our relation is in Normal Form */
 CREATE TABLE IF NOT EXISTS product_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   product_id INT NOT NULL,
-  FOREIGN KEY product_id(id)
+  FOREIGN KEY (product_id)
   REFERENCES product(id)
   ON DELETE CASCADE,
   tag VARCHAR(20)
 );
 
+
 /* Some extra data for every product */
+
+/*
 
 CREATE TABLE IF NOT EXISTS product_data (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -79,27 +82,33 @@ CREATE TABLE IF NOT EXISTS product_data (
   data VARCHAR(20)
 );
 
+*/
 
 CREATE TABLE IF NOT EXISTS store (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(20) NOT NULL,
+  address VARCHAR(50),
   lat DECIMAL(10,8) NOT NULL,
-  lng DECIMAL(11,8) NOT NULL
+  lng DECIMAL(11,8) NOT NULL,
+  withdrawn BOOLEAN DEFAULT 0 NOT NULL
 );
+
+
 
 CREATE TABLE IF NOT EXISTS store_tags (
   id INT AUTO_INCREMENT PRIMARY KEY,
   store_id INT NOT NULL,
-  FOREIGN KEY store_id(id)
+  FOREIGN KEY (store_id)
   REFERENCES store(id)
   ON DELETE CASCADE,
   tag VARCHAR(20)
 );
 
 
+
 CREATE TABLE IF NOT EXISTS has_product (
-  no INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT NOT NULL,
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
   product_id INT NOT NULL,
   store_id INT NOT NULL,
   price  DOUBLE(8,2) NOT NULL,
@@ -113,8 +122,11 @@ CREATE TABLE IF NOT EXISTS has_product (
   ON DELETE CASCADE,
   FOREIGN KEY (store_id)
   REFERENCES store(id)
-  ON DELETE CASCADE 
+  ON DELETE CASCADE
 ) ENGINE=INNODB;
+
+CREATE INDEX index_tag ON product_tags (tag);
+
 
 
 /* First name constraint, only alphabetic characters are allowed */
@@ -340,11 +352,24 @@ BEGIN
 END$$
 DELIMITER ;
 
+insert into product(barcode, name, category, manufacturer, description, stars, number_of_ratings, withdrawn) 
+VALUES ("24263474", "DELL laptop", "Technology", "DELL", "A very nice laptop", 4, 1, false),
+       ("2347","Huawei Mobile", "Technology", "Huawei", "A very bad mobile", 1.5, 100, false);
+
+insert into product_tags(product_id, tag) 
+VALUES (1, "laptop"),
+       (1, "DELL"),
+       (1,"Technology"),
+       (2, "Mobile"),
+       (2, "Huawei"),
+       (2, "Cheap"),
+       (2, "Technology");
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT;
 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS;
 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION;
-SET SQL_NOTES=@OLD_SQL_NOTES; 
+SET SQL_NOTES=@OLD_SQL_NOTES;
 SET FOREIGN_KEY_CHECKS = 1;
