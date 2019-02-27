@@ -1,5 +1,6 @@
 package gr.ece.ntua.javengers.service;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.ProductTag;
 import gr.ece.ntua.javengers.repository.ProductRepository;
@@ -67,6 +68,15 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
 
+        Boolean withdrawn = tempProduct.getWithdrawn();
+
+        if (withdrawn == null) withdrawn = false;
+
+        tempProduct.setWithdrawn(withdrawn);
+
+        tempProduct.setWithdrawn(tempProduct.getWithdrawn());
+
+
         Product product = new Product();
 
         product.setName(tempProduct.getName());
@@ -95,6 +105,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
+
+
+        Boolean withdrawn = newProduct.getWithdrawn();
+
+        if (withdrawn == null) withdrawn = false;
+
+        newProduct.setWithdrawn(withdrawn);
 
         Product product = new Product();
 

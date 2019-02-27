@@ -8,9 +8,9 @@ import gr.ntua.ece.javengers.client.model.ShopList
 class Helper {
 
     static final String HOST  = "localhost"
-    static final int PORT     = 8080
+    static final int PORT     = 8765
     static final String TOKEN = "ABC123"
-    static final String USER  = "user"
+    static final String USER  = "username"
     static final String PASS  = "passwordss"
 
     static final Product newProduct(String id, Map productData) {
