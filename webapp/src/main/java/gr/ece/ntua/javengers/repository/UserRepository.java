@@ -19,6 +19,11 @@ public interface UserRepository extends CrudRepository<User,Long> {
     @Query("select user from User user where phoneNumber = ?1")
     Optional<User> getUserByPhoneNumber(Long phoneNumber);
 
+    @Query("delete from User user where id = ?1")
+    Optional<User> deleteUserById(Long id);
+
+
+
 
     /*
     @Modifying
