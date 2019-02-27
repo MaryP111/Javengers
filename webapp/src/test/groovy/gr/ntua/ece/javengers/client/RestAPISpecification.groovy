@@ -34,7 +34,7 @@ import groovy.json.JsonOutput
         wms.stop()
     }
 
-    /*def "User logs in" () {
+    def "User logs in" () {
         given:
         wms.givenThat(
                 post(urlEqualTo("$LowLevelAPI.BASE_PATH/login")).
@@ -49,18 +49,18 @@ import groovy.json.JsonOutput
 
         then:
         api.isLoggedIn()
-    }*/
+    }
 
     def "User adds two products" () {
         given:
-       // wms.givenThat(
+        wms.givenThat(
                 post("$LowLevelAPI.BASE_PATH/products").
-         //               withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
+                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
                         withRequestBody(equalTo(LowLevelAPI.encode(data))).
                         willReturn(
                                 okJson(JsonOutput.toJson(product))
                         )
-        //)
+        )
 
         expect:
         product == api.postProduct(new Product(data), RestCallFormat.JSON)

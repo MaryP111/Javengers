@@ -13,4 +13,6 @@ public interface HasProductService {
 
     Entry saveEntry(Entry entry);
 
+    List<HasProduct> getAllEntries();
+
 }

@@ -1,6 +1,7 @@
 package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.HasProduct;
+import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.repository.HasProductRepository;
 import gr.ntua.ece.javengers.client.model.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +76,14 @@ public class HasProductServiceImpl implements HasProductService {
     public List<HasProduct> getEntriesById(Long productId) {
 
         return hasProductRepository.getEntriesById(productId);
+    }
+
+    @Override
+    public List<HasProduct> getAllEntries() {
+
+        List<HasProduct> entries = new ArrayList<>();
+        hasProductRepository.findAll().forEach(entries::add);
+        return entries;
     }
 
 
