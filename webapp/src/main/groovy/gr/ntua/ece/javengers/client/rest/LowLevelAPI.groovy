@@ -278,7 +278,7 @@ class LowLevelAPI {
     }
 
     private static ClientFactory determineClientFactory() {
-        String prop = System.getProperty(IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "false")
+        String prop = System.getProperty(IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "true")
         return Boolean.parseBoolean(prop) ? new SSLErrorTolerantClientFactory() : new DefaultClientFactory()
     }
 }

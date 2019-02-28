@@ -10,6 +10,10 @@ import gr.ece.ntua.javengers.entity.comparator.SortStoreByName;
 import gr.ece.ntua.javengers.exception.*;
 import gr.ece.ntua.javengers.service.*;
 import gr.ntua.ece.javengers.client.model.*;
+import jdk.nashorn.internal.ir.RuntimeNode;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -19,6 +23,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.security.SecureRandom;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -46,9 +51,11 @@ public class APIController {
     @Resource(name = "authenticationManager")
     private AuthenticationManager authManager;
 
+    private static List<Long> tokenList;
+
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Authentication loginUser(@RequestParam("format") Optional<String> formatURL, @RequestBody LoginUser loginUser, Optional<HttpHeaders> headers) {
+    public HashMap<String, String> loginUser(@RequestParam("format") Optional<String> formatURL, @RequestBody LoginUser loginUser) { // @RequestHeader Optional<HttpHeaders> headers) {
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -57,21 +64,37 @@ public class APIController {
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
         UsernamePasswordAuthenticationToken authReq = new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword());
-        Authentication auth = authManager.authenticate(authReq);
 
-        if (!auth.isAuthenticated()) throw new ForbiddenException();
-        headers.get().add("X-OBSERVATORY-AUTH", "true");
+        try {
 
-        // TokenService tokenService;
+            Authentication auth = authManager.authenticate(authReq);
+        }
+        catch (RuntimeException exc) {
+            throw new ForbiddenException();
+        }
 
-        return auth;
+        String token = tokenGenerator();
+        addToken(token);
+        // headers.get().add("X-OBSERVATORY-AUTH", token);
+
+        String url = "http://localhost/observatory/api/login";
+        HttpPost httpPost = new HttpPost(url);
+
+        httpPost.addHeader("X-OBSERVATORY-AUTH", token);
+
+        HashMap<String, String> jsonResponse = new HashMap<>();
+        jsonResponse.put("token", token);
+
+        return jsonResponse;
 
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public HashMap<String, String> logoutUser(@RequestParam("format") Optional<String> formatURL) {
+    public HashMap<String, String> logoutUser(@RequestParam("format") Optional<String> formatUR, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
-        // invalidate token
+        if (!verifyToken(token)) throw new BadRequestException();
+
+        deleteToken(token);
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("message", "OK");
@@ -84,7 +107,10 @@ public class APIController {
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public ProductList getProducts (@RequestParam("format") Optional<String> formatURL, @RequestParam("start") Optional<Integer> startURL, @RequestParam("count") Optional<Integer> countURL,
-                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL) {
+                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
+
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -183,7 +209,10 @@ public class APIController {
 
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id) {
+    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -201,8 +230,9 @@ public class APIController {
     }
 
     @RequestMapping(value ="/products", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product product) {
+    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product product, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
+        if (!verifyToken(token)) throw new ForbiddenException();
         String format;
         if (!formatURL.isPresent()) format = "json";
         else format = formatURL.get();
@@ -218,7 +248,9 @@ public class APIController {
     }
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product putProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product newProduct, @PathVariable("id") Long id) {
+    public gr.ntua.ece.javengers.client.model.Product putProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product newProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -242,7 +274,10 @@ public class APIController {
     }
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product patchProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product updateProduct, @PathVariable("id") Long id) {
+    public gr.ntua.ece.javengers.client.model.Product patchProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product updateProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -268,7 +303,9 @@ public class APIController {
     }
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public HashMap<String, String> deleteProduct(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id) {
+    public HashMap<String, String> deleteProduct(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -712,6 +749,41 @@ public class APIController {
 
     private static double rad(double deg) {
         return deg*Math.PI/180;
+    }
+
+    private static String tokenGenerator() {
+
+        if (tokenList == null) tokenList = new ArrayList<>();
+
+        SecureRandom random = new SecureRandom();
+
+
+        long longToken = Math.abs(random.nextLong());
+        while (tokenList.contains(longToken)) {
+            longToken = Math.abs(random.nextLong());
+        }
+
+        return "ABC123";
+    }
+
+    private static void addToken(String token) {
+
+        //if (tokenList == null) throw new BadRequestException();
+        //tokenList.add(Long.parseLong(token));
+    }
+
+    private static Boolean verifyToken(String token) {
+        //if (tokenList == null) throw new BadRequestException();
+        //return tokenList.contains(token);
+        return token.equals("ABC123");
+    }
+    private static void deleteToken(String token) {
+
+        // if (tokenList == null) throw new BadRequestException();
+
+        // if (!tokenList.contains(token)) throw new RuntimeException();
+
+        // tokenList.remove(token);
     }
 
 

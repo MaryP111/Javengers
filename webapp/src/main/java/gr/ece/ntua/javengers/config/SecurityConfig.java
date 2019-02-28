@@ -74,7 +74,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers(HttpMethod.PUT, "/observatory/api/shops/*").permitAll().
                 antMatchers(HttpMethod.PATCH, "/observatory/api/shops/*").permitAll().
                 antMatchers(HttpMethod.DELETE, "/observatory/api/shops/*").permitAll().
-                antMatchers(HttpMethod.POST, "/observatory/api/login").permitAll();
+                antMatchers(HttpMethod.POST, "/observatory/api/login").permitAll().
+                antMatchers(HttpMethod.POST, "/observatory/api/logout").permitAll();
 
         http
                 .authorizeRequests().

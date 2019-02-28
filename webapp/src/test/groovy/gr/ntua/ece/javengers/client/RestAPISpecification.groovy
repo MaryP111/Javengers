@@ -20,7 +20,7 @@ import groovy.json.JsonOutput
 
 @Stepwise class RestAPISpecification extends Specification {
 
-    static final String IGNORED = System.setProperty(LowLevelAPI.IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "false")
+    static final String IGNORED = System.setProperty(LowLevelAPI.IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "true")
 
     @Shared WireMockServer wms
     @Shared RestAPI api = new RestAPI(Helper.HOST, Helper.PORT, false)
