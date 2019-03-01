@@ -3,10 +3,7 @@ package gr.ece.ntua.javengers.controller;
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
-import gr.ece.ntua.javengers.entity.comparator.SortProductById;
-import gr.ece.ntua.javengers.entity.comparator.SortProductByName;
-import gr.ece.ntua.javengers.entity.comparator.SortStoreById;
-import gr.ece.ntua.javengers.entity.comparator.SortStoreByName;
+import gr.ece.ntua.javengers.entity.comparator.*;
 import gr.ece.ntua.javengers.exception.*;
 import gr.ece.ntua.javengers.service.*;
 import gr.ntua.ece.javengers.client.model.*;
@@ -19,8 +16,6 @@ import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.print.attribute.standard.Media;
-import javax.servlet.http.HttpServletRequest;
 import java.security.SecureRandom;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -53,7 +48,7 @@ public class APIController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public HashMap<String, String> loginUser(@RequestParam("format") Optional<String> optionalFormat, LoginUser loginUser) { // @RequestHeader Optional<HttpHeaders> headers) {
+    public HashMap<String, String> loginUser(@RequestParam("format") Optional<String> optionalFormat, LoginUser loginUser) {
 
         String format;
         if (!optionalFormat.isPresent()) format = "json";
@@ -73,12 +68,6 @@ public class APIController {
 
         String token = tokenGenerator();
         addToken(token);
-        // headers.get().add("X-OBSERVATORY-AUTH", token);
-
-        //String url = "http://localhost/observatory/api/login";
-        //HttpPost httpPost = new HttpPost(url);
-
-        //httpPost.addHeader("X-OBSERVATORY-AUTH", token);
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("token", token);
@@ -88,9 +77,15 @@ public class APIController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
-    public HashMap<String, String> logoutUser(@RequestParam("format") Optional<String> formatUR, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public HashMap<String, String> logoutUser(@RequestParam("format") Optional<String> optionalFormat, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
         if (!verifyToken(token)) throw new BadRequestException();
+
+        String format;
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
+
+        if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
         deleteToken(token);
 
@@ -104,36 +99,36 @@ public class APIController {
 
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public ProductList getProducts (@RequestParam("format") Optional<String> formatURL, @RequestParam("start") Optional<Integer> startURL, @RequestParam("count") Optional<Integer> countURL,
-                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public ProductList getProducts (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
+                                       @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
         Integer start;
-        if (startURL.isPresent()) start = startURL.get();
+        if (optionalStart.isPresent()) start = optionalStart.get();
         else start = 0;
 
         Integer count;
-        if (countURL.isPresent()) count = countURL.get();
+        if (optionalCount.isPresent()) count = optionalCount.get();
         else count = 20;
 
         if (start < 0 || count < 0) throw new BadRequestException();
 
         String status;
-        if (statusURL.isPresent()) status = statusURL.get();
+        if (optionalStatus.isPresent()) status = optionalStatus.get();
         else status = "ACTIVE";
 
         if (!status.equalsIgnoreCase("all") && !status.equalsIgnoreCase("active") && !status.equalsIgnoreCase("withdrawn")) throw new BadRequestException();
 
         String sort;
-        if (sortURL.isPresent()) sort = sortURL.get();
+        if (optionalSort.isPresent()) sort = optionalSort.get();
         else sort = "id|DESC";
 
         ProductList productList = new ProductList();
@@ -151,13 +146,13 @@ public class APIController {
 
         Boolean flag = true;
 
-        if (status.equalsIgnoreCase("ACTIVE")) {
+        if (status.equalsIgnoreCase("active")) {
             flag = false;
         }
 
         List<Product> statusProducts = new ArrayList<>();
 
-        if (!status.equalsIgnoreCase("ALL")) {
+        if (!status.equalsIgnoreCase("all")) {
 
             Iterator<Product> productIterator = products.iterator();
 
@@ -170,6 +165,7 @@ public class APIController {
         }
 
         else {
+
             statusProducts = products;
         }
 
@@ -182,7 +178,7 @@ public class APIController {
             Collections.sort(statusProducts, new SortProductByName());
         }
 
-        if (parts[1].equalsIgnoreCase("DESC")) {
+        if (parts[1].equalsIgnoreCase("desc")) {
             Collections.reverse(statusProducts);
         }
 
@@ -207,14 +203,14 @@ public class APIController {
 
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -228,15 +224,14 @@ public class APIController {
     }
 
     @RequestMapping(value ="/products", method = RequestMethod.POST)
-    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> formatURL, gr.ntua.ece.javengers.client.model.Product product) {
+    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> optionalFormat, gr.ntua.ece.javengers.client.model.Product product, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
-
-        String token = "ABC123";
 
         if (!verifyToken(token)) throw new ForbiddenException();
+
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -248,14 +243,14 @@ public class APIController {
         return productService.saveProduct(product);
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product putProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product newProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
+    public gr.ntua.ece.javengers.client.model.Product putProduct(@RequestParam("format") Optional<String> optionalFormat, gr.ntua.ece.javengers.client.model.Product newProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -274,15 +269,15 @@ public class APIController {
 
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product patchProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product updateProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.PATCH)
+    public gr.ntua.ece.javengers.client.model.Product patchProduct(@RequestParam("format") Optional<String> optionalFormat, gr.ntua.ece.javengers.client.model.Product updateProduct, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -303,14 +298,14 @@ public class APIController {
 
     }
 
-    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public HashMap<String, String> deleteProduct(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
+    public HashMap<String, String> deleteProduct(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -326,35 +321,35 @@ public class APIController {
     }
 
     @RequestMapping(value = "/shops", method = RequestMethod.GET)
-    public ShopList getShops (@RequestParam("format") Optional<String> formatURL, @RequestParam("start") Optional<Integer> startURL, @RequestParam("count") Optional<Integer> countURL,
-                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public ShopList getShops (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
+                              @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
 
 
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
         Integer start;
-        if (startURL.isPresent()) start = startURL.get();
+        if (optionalStart.isPresent()) start = optionalStart.get();
         else start = 0;
 
         Integer count;
-        if (countURL.isPresent()) count = countURL.get();
+        if (optionalCount.isPresent()) count = optionalCount.get();
         else count = 20;
 
         String status;
-        if (statusURL.isPresent()) status = statusURL.get();
+        if (optionalStatus.isPresent()) status = optionalStatus.get();
         else status = "ACTIVE";
 
         if (!status.equalsIgnoreCase("all") && !status.equalsIgnoreCase("active") && !status.equalsIgnoreCase("withdrawn")) throw new BadRequestException();
 
         String sort;
-        if (sortURL.isPresent()) sort = sortURL.get();
+        if (optionalSort.isPresent()) sort = optionalSort.get();
         else sort = "id|DESC";
 
         ShopList shopList = new ShopList();
@@ -368,13 +363,13 @@ public class APIController {
 
         Boolean flag = true;
 
-        if (status.equalsIgnoreCase("ACTIVE")) {
+        if (status.equalsIgnoreCase("active")) {
             flag = false;
         }
 
         List<Store> statusStores = new ArrayList<>();
 
-        if (!status.equalsIgnoreCase("ALL")) {
+        if (!status.equalsIgnoreCase("all")) {
 
             Iterator<Store> storeIterator = stores.iterator();
 
@@ -402,7 +397,7 @@ public class APIController {
             Collections.sort(statusStores, new SortStoreByName());
         }
 
-        if (parts[1].equalsIgnoreCase("DESC")) {
+        if (parts[1].equalsIgnoreCase("desc")) {
             Collections.reverse(statusStores);
         }
 
@@ -430,11 +425,13 @@ public class APIController {
     }
 
     @RequestMapping(value = "/shops/{id}", method = RequestMethod.GET)
-    public gr.ntua.ece.javengers.client.model.Shop getShopById(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id) {
+    public gr.ntua.ece.javengers.client.model.Shop getShopById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -448,11 +445,13 @@ public class APIController {
     }
 
     @RequestMapping(value ="/shops", method = RequestMethod.POST)
-    public gr.ntua.ece.javengers.client.model.Shop postShop(@RequestParam("format") Optional<String> formatURL, gr.ntua.ece.javengers.client.model.Shop shop) {
+    public gr.ntua.ece.javengers.client.model.Shop postShop(@RequestParam("format") Optional<String> optionalFormat, gr.ntua.ece.javengers.client.model.Shop shop, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -464,16 +463,16 @@ public class APIController {
         return storeService.saveShop(shop);
     }
 
-    @RequestMapping(value = "/shops/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Shop putShop(@RequestParam("format") Optional<String> formatURL, @RequestBody Shop newShop, @PathVariable("id") Long id) {
+    @RequestMapping(value = "/shops/{id}", method = RequestMethod.PUT)
+    public Shop putShop(@RequestParam("format") Optional<String> optionalFormat, Shop newShop, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
-
-        newShop.setId(id.toString());
 
         if (newShop.getName().equals("") || newShop.getName() == null) throw new BadRequestException();
         if (newShop.getAddress().equals("") || newShop.getAddress() == null) throw new BadRequestException();
@@ -482,18 +481,22 @@ public class APIController {
 
         if (!storeService.getStoreById(id).isPresent()) throw new ShopNotFoundException();
 
+        newShop.setId(id.toString());
+
         storeService.updateStore(newShop);
 
         return newShop;
 
     }
 
-    @RequestMapping(value = "/shops/{id}", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Shop patchShop (@RequestParam("format") Optional<String> formatURL, @RequestBody Shop updateShop, @PathVariable("id") Long id) {
+    @RequestMapping(value = "/shops/{id}", method = RequestMethod.PATCH)
+    public Shop patchShop (@RequestParam("format") Optional<String> optionalFormat, Shop updateShop, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -516,12 +519,15 @@ public class APIController {
     }
 
 
-    @RequestMapping(value = "/shops/{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public HashMap<String, String> deleteShop(@RequestParam("format") Optional<String> formatURL, @PathVariable("id") Long id) {
+    @RequestMapping(value = "/shops/{id}", method = RequestMethod.DELETE)
+    public HashMap<String, String> deleteShop(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -536,151 +542,161 @@ public class APIController {
 
     }
 
-    @RequestMapping(value = "prices", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public QueryList queryEntries (@RequestParam("format") Optional<String> formatURL, @RequestParam("start") Optional<Integer> startURL, @RequestParam("count") Optional<Integer> countURL,
-                                   @RequestParam("geoDist") Optional<Integer> geoDistURL, @RequestParam("geoLng") Optional<Double> geoLngURL, @RequestParam("geoLat") Optional<Double> geoLatURL,
-                                   @RequestParam("dateFrom") Optional<Date> dateFromURL, @RequestParam("dateTo") Optional<Date> dateToURL, @RequestParam("shops") Optional<List<String> > shopsURL,
-                                   @RequestParam("products") Optional<List<String> > productsURL, @RequestParam("tags") Optional<List<String> > tagsURL, @RequestParam("sort") Optional<String> sortURL) {
+    @RequestMapping(value = "prices", method = RequestMethod.GET)
+    public PriceInfoList queryEntries (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
+                                       @RequestParam("geoDist") Optional<Integer> optionalGeoDist, @RequestParam("geoLng") Optional<Double> optionalGeoLng, @RequestParam("geoLat") Optional<Double> optionalGeoLat,
+                                       @RequestParam("dateFrom") Optional<Date> optionalDateFrom, @RequestParam("dateTo") Optional<Date> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops,
+                                       @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort,
+                                       @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) throws Exception{
+
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new BadRequestException();
 
         Integer start;
-        if (startURL.isPresent()) start = startURL.get();
+        if (optionalStart.isPresent()) start = optionalStart.get();
         else start = 0;
 
         Integer count;
-        if (countURL.isPresent()) count = countURL.get();
+        if (optionalCount.isPresent()) count = optionalCount.get();
         else count = 20;
 
         if (start < 0 || count < 0) throw new BadRequestException();
 
-        List<HasProduct> entryList = hasProductService.getAllEntries();
+        List<HasProduct> entries = hasProductService.getAllEntries();
 
-        List<HasProduct> filteredByDistance = new ArrayList<>();
+        Date dateFrom, dateTo;
 
-        if (geoDistURL.isPresent() && geoLatURL.isPresent() && geoLngURL.isPresent()) {
+        if (optionalDateFrom.isPresent() && optionalDateTo.isPresent()) {
 
-            Integer geoDist = geoDistURL.get();
-            Double geoLat = geoLatURL.get();
-            Double geoLng = geoLngURL.get();
-
-            Iterator<HasProduct> entryIterator = entryList.iterator();
-
-            while (entryIterator.hasNext()) {
-                HasProduct entry = entryIterator.next();
-
-                Double distance = distance(geoLat, geoLng, storeService.getStoreById(entry.getStoreId()).get().getLat(), storeService.getStoreById(entry.getStoreId()).get().getLng());
-
-                if (distance < geoDist) filteredByDistance.add(entry);
-            }
-        }
-        else if (geoDistURL.isPresent() || geoLatURL.isPresent() || geoLngURL.isPresent()) throw new BadRequestException();
-        else filteredByDistance = entryList;
-
-
-
-
-
-        Date dateFrom;
-        Date dateTo;
-
-        if (dateFromURL.isPresent() && dateToURL.isPresent()) {
-            dateFrom = dateFromURL.get();
-            dateTo = dateToURL.get();
-            if (dateFrom.compareTo(dateTo) > 0) throw new BadRequestException();
-        }
-
-        List<HasProduct> filteredByDate = new ArrayList<>();
-
-
-        if (!dateFromURL.isPresent() && !dateToURL.isPresent()) {
-
-
-            java.sql.Date sqlDate;
-
-            try {
-
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                String dateString = dateFormat.format(new java.util.Date());
-                Calendar calendar = Calendar.getInstance();
-                java.util.Date date = calendar.getTime();
-                java.util.Date tempDate = dateFormat.parse(dateString);
-                sqlDate = new java.sql.Date(tempDate.getTime());
-                dateFrom = sqlDate;
-                dateTo = sqlDate;
-
-                Iterator<HasProduct> entryIt = filteredByDistance.iterator();
-
-                while (entryIt.hasNext()) {
-
-                    HasProduct entry = entryIt.next();
-                    if (entry.getDateFrom().compareTo(dateTo) < 0  && dateFrom.compareTo(entry.getDateTo()) < 0)
-                        filteredByDate.add(entry);
-
-                }
-            }
-            catch (Exception exc) {
-                exc.printStackTrace();
-            }
+            dateFrom = optionalDateFrom.get();
+            dateTo = optionalDateTo.get();
 
         }
-        else if (!dateFromURL.isPresent() || !dateToURL.isPresent()) {
+        else if (!optionalDateFrom.isPresent() && !optionalDateTo.isPresent()) {
+
+            dateFrom = getToday();
+            dateTo = getToday();
+
+        }
+
+        else {
+
             throw new BadRequestException();
         }
 
+        Iterator<HasProduct> entryIterator = entries.iterator();
+        List<PriceInfo> filteredByDate = new ArrayList<>();
 
-        List<HasProduct> filteredByShops = new ArrayList<>();
 
-        if (shopsURL.isPresent()) {
+        while (entryIterator.hasNext()) {
 
-            Iterator<HasProduct> entryIterator = filteredByDate.iterator();
-            while (entryIterator.hasNext()) {
-                HasProduct entry = entryIterator.next();
+            HasProduct entry = entryIterator.next();
 
-                if (shopsURL.get().contains(entry.getStoreId().toString())) filteredByShops.add(entry);
+            Date date = dateFrom;
+
+            while (date.compareTo(dateTo) <= 0) {
+
+                if (date.compareTo(entry.getDateFrom()) >= 0 && date.compareTo(entry.getDateTo()) <= 0) {
+                    PriceInfo priceInfo = new PriceInfo();
+                    priceInfo.setPrice(entry.getPrice());
+                    priceInfo.setDate(date);
+                    priceInfo.setShopId(entry.getStoreId().toString());
+                    priceInfo.setProductId(entry.getProductId().toString());
+                    filteredByDate.add(priceInfo);
+                }
+                else if (date.compareTo(entry.getDateTo()) > 0) break;
+
+                date = getNextDate(date);
+
+            }
+        }
+
+        Iterator<PriceInfo> priceInfoIterator;
+
+
+        List<PriceInfo> filteredByDistance = new ArrayList<>();
+
+        if (optionalGeoDist.isPresent() && optionalGeoLat.isPresent() && optionalGeoLng.isPresent()) {
+
+            Integer geoDist = optionalGeoDist.get();
+            Double geoLat = optionalGeoLat.get();
+            Double geoLng = optionalGeoLng.get();
+
+            priceInfoIterator = filteredByDate.iterator();
+
+            while (priceInfoIterator.hasNext()) {
+
+                PriceInfo priceInfo = priceInfoIterator.next();
+
+                Double distance = distance(geoLat, geoLng, storeService.getStoreById(Long.parseLong(priceInfo.getShopId())).get().getLat(), storeService.getStoreById(Long.parseLong(priceInfo.getShopId())).get().getLng());
+
+                if (distance < geoDist) {
+                    priceInfo.setShopDist(distance.intValue());
+                    filteredByDistance.add(priceInfo);
+                }
+            }
+        }
+        else if (optionalGeoDist.isPresent() || optionalGeoLat.isPresent() || optionalGeoLng.isPresent()) throw new BadRequestException();
+        else filteredByDistance = filteredByDate;
+
+
+        List<PriceInfo> filteredByShops = new ArrayList<>();
+
+        if (optionalShops.isPresent()) {
+
+            priceInfoIterator = filteredByDistance.iterator();
+
+            while (priceInfoIterator.hasNext()) {
+
+                PriceInfo priceInfo = priceInfoIterator.next();
+
+                if (optionalShops.get().contains(priceInfo.getShopId())) filteredByShops.add(priceInfo);
             }
         }
         else filteredByShops = filteredByDate;
 
-        List<HasProduct> filteredByProducts = new ArrayList<>();
 
-        if (productsURL.isPresent()) {
+        List<PriceInfo> filteredByProducts = new ArrayList<>();
 
-            Iterator<HasProduct> entryIterator = filteredByShops.iterator();
+        if (optionalProducts.isPresent()) {
 
-            while (entryIterator.hasNext()) {
-                HasProduct entry = entryIterator.next();
+            priceInfoIterator = filteredByShops.iterator();
 
-                if (productsURL.get().contains(entry.getProductId().toString())) filteredByProducts.add(entry);
+            while (priceInfoIterator.hasNext()) {
+                PriceInfo priceInfo = priceInfoIterator.next();
+
+                if (optionalProducts.get().contains(priceInfo.getProductId())) filteredByProducts.add(priceInfo);
             }
 
         }
         else filteredByProducts = filteredByShops;
 
-        List<HasProduct> filteredByTags = new ArrayList<>();
+        List<PriceInfo> filteredByTags = new ArrayList<>();
 
-        if (tagsURL.isPresent()) {
+        if (optionalTags.isPresent()) {
 
-            Iterator<HasProduct> entryIterator = filteredByProducts.iterator();
+            priceInfoIterator = filteredByProducts.iterator();
 
-            while (entryIterator.hasNext()) {
-                HasProduct entry = entryIterator.next();
+            while (priceInfoIterator.hasNext()) {
+                PriceInfo priceInfo = priceInfoIterator.next();
 
                 Boolean flag = false;
 
-                List<String> productTags = productTagService.getTagsByProductId(entry.getProductId());
-                List<String> storeTags = storeTagService.getTagsByStoreId(entry.getStoreId());
+                List<String> productTags = productTagService.getTagsByProductId(Long.parseLong(priceInfo.getProductId()));
+                List<String> storeTags = storeTagService.getTagsByStoreId(Long.parseLong(priceInfo.getShopId()));
 
                 Iterator<String> stringIterator = productTags.iterator();
 
                 while (stringIterator.hasNext()) {
-                    if (tagsURL.get().contains(stringIterator.next())) {
+                    if (optionalTags.get().contains(stringIterator.next())) {
                         if (!flag) {
-                            filteredByTags.add(entry);
+                            filteredByTags.add(priceInfo);
                             flag = true;
                         }
                     }
@@ -689,9 +705,9 @@ public class APIController {
                 stringIterator = storeTags.iterator();
 
                 while (stringIterator.hasNext()) {
-                    if (tagsURL.get().contains(stringIterator.next())) {
+                    if (optionalTags.get().contains(stringIterator.next())) {
                         if (!flag) {
-                            filteredByTags.add(entry);
+                            filteredByTags.add(priceInfo);
                             flag = true;
                         }
                     }
@@ -702,24 +718,70 @@ public class APIController {
             filteredByTags = filteredByProducts;
         }
 
+        String sort;
+        if (optionalSort.isPresent()) sort = optionalSort.get();
+        else sort = "price|asc";
 
-        QueryList queryList = new QueryList();
+        String parts[] = sort.split(Pattern.quote("|"));
+
+        if (parts[0].equalsIgnoreCase("price")) {
+            Collections.sort(filteredByTags, new SortPriceInfoByPrice());
+        }
+        else if (parts[0].equalsIgnoreCase("date")){
+            Collections.sort(filteredByTags, new SortPriceInfoByDate());
+        }
+        else if (parts[0].equalsIgnoreCase("geoDist")) {
+            Collections.sort(filteredByTags,new SortPriceInfoByDistance());
+        }
+        else {
+            throw new BadRequestException();
+        }
+
+        if (parts[1].equalsIgnoreCase("desc")) {
+            Collections.reverse(filteredByTags);
+        }
+
+        PriceInfoList queryList = new PriceInfoList();
         queryList.setStart(start);
         queryList.setCount(count);
-
         queryList.setTotal(filteredByTags.size());
 
+
+        priceInfoIterator = filteredByTags.iterator();
+
+        while (priceInfoIterator.hasNext()) {
+
+            PriceInfo priceInfo = priceInfoIterator.next();
+
+            Long productId = Long.parseLong(priceInfo.getProductId());
+
+            Product product = productService.getProductById(productId).get();
+            priceInfo.setProductName(product.getName());
+            priceInfo.setProductTags(productTagService.getTagsByProductId(productId));
+
+            Long shopId = Long.parseLong(priceInfo.getShopId());
+
+            Store store = storeService.getStoreById(shopId).get();
+            priceInfo.setShopName(store.getPlace());
+            priceInfo.setShopAddress(store.getAddress());
+            priceInfo.setShopTags(storeTagService.getTagsByStoreId(shopId));
+
+        }
+
+        queryList.setPrices(filteredByTags);
         return queryList;
 
     }
 
 
     @RequestMapping(value ="/prices", method = RequestMethod.POST)
-    public Entry postEntry(@RequestParam("format") Optional<String> formatURL, Entry entry) {
+    public PriceInfoList postEntry(@RequestParam("format") Optional<String> optionalFormat, Entry entry, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new BadRequestException();
 
@@ -739,7 +801,40 @@ public class APIController {
 
         if (!storeService.getStoreById(entry.getShopId()).isPresent()) throw new ShopNotFoundException();
 
-        return hasProductService.saveEntry(entry);
+        hasProductService.saveEntry(entry);
+
+        List<PriceInfo> prices = new ArrayList<>();
+
+        Date date = dateFrom;
+
+        int cnt = 0;
+
+        while (date.compareTo(dateTo) <= 0) {
+
+            cnt ++;
+
+            PriceInfo priceInfo = new PriceInfo();
+            priceInfo.setPrice(entry.getPrice());
+            priceInfo.setDate(date);
+            priceInfo.setProductId(entry.getProductId().toString());
+            priceInfo.setShopId(entry.getShopId().toString());
+            prices.add(priceInfo);
+            try {
+                date = getNextDate(date);
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+
+        }
+
+        PriceInfoList priceInfoList = new PriceInfoList();
+        priceInfoList.setStart(0);
+        priceInfoList.setTotal(cnt);
+        priceInfoList.setPrices(prices);
+
+
+        return priceInfoList;
     }
 
     public static Double distance(Double lat1, Double lng1, Double lat2, Double lng2) {
@@ -750,6 +845,46 @@ public class APIController {
         double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
         double c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
         return R*c;
+    }
+
+
+    private static Date getToday() throws Exception {
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+        String dateString = format.format(new java.util.Date());
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date date = calendar.getTime();
+        java.util.Date dateFrom = format.parse(dateString);
+        return new java.sql.Date(dateFrom.getTime());
+    }
+
+
+    private static Date getNextDate(Date curDate) throws Exception {
+
+        String nextDate = getNextDate(curDate.toString());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date date = sdf1.parse(nextDate);
+        return new java.sql.Date(date.getTime());
+    }
+
+
+    private static String getNextDate(String curDate) {
+
+
+        try {
+            final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            final java.util.Date date = format.parse(curDate);
+            final Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+            return format.format(calendar.getTime());
+        }
+        catch (Exception exc) {
+            exc.printStackTrace();
+        }
+        return "";
+
     }
 
     private static double rad(double deg) {

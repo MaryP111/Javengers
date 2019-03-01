@@ -1,12 +1,12 @@
 package gr.ntua.ece.javengers.client
 
+import gr.ntua.ece.javengers.client.model.PriceInfoList
 import gr.ntua.ece.javengers.client.model.Product
 import gr.ntua.ece.javengers.client.model.ProductList
 import gr.ntua.ece.javengers.client.model.Shop
 import gr.ntua.ece.javengers.client.model.ShopList
 import gr.ntua.ece.javengers.client.rest.LowLevelAPI
 import gr.ntua.ece.javengers.client.rest.RestCallFormat
-import gr.ntua.ece.javengers.client.rest.RestResponseHandler
 
 class RestAPI {
 
@@ -99,6 +99,37 @@ class RestAPI {
         if (! 'OK'.equals(message)) {
             throw new RuntimeException("Deletion failed")
         }
+    }
+
+    PriceInfoList postPrice(
+            double price,
+            String dateFrom,
+            String dateTo,
+            String productId,
+            String shopId,
+            RestCallFormat format) {
+
+        return api.postPrice(token, price, dateFrom, dateTo, productId, shopId, format).getPriceInfoList()
+    }
+
+    PriceInfoList getPrices(
+            int start,
+            int count,
+            Integer geoDist,
+            Double geoLng,
+            Double geoLat,
+            String dateFrom,
+            String dateTo,
+            List<String> shopIds,
+            List<String> productIds,
+            List<String> tags,
+            List<String> sort,
+            RestCallFormat format) {
+
+        return api.getPrices(
+                token, start, count, geoDist, geoLng, geoLat, dateFrom, dateTo, shopIds, productIds, tags, sort, format
+        ).getPriceInfoList()
+
     }
 
 }

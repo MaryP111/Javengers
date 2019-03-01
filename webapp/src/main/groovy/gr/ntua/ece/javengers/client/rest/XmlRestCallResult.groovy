@@ -1,5 +1,6 @@
 package gr.ntua.ece.javengers.client.rest
 
+import gr.ntua.ece.javengers.client.model.PriceInfoList
 import gr.ntua.ece.javengers.client.model.Product
 import gr.ntua.ece.javengers.client.model.ProductList
 import gr.ntua.ece.javengers.client.model.Shop
@@ -13,34 +14,46 @@ class XmlRestCallResult implements RestCallResult {
         this.xml = xml
     }
 
+    @Override
     void writeTo(Writer w) {
 
     }
 
+    @Override
     String getToken() {
         null
     }
 
+    @Override
     String getMessage() {
         null
     }
 
+    @Override
     ProductList getProductList() {
         null
     }
 
+    @Override
     Product getProduct() {
         null
     }
 
+    @Override
     ShopList getShopList() {
         null
     }
 
+    @Override
     Shop getShop() {
         null
     }
 
+    @Override
+    PriceInfoList getPriceInfoList() {
+        return null
+    }
 }
+
 
 

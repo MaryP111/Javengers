@@ -4,6 +4,7 @@ import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
 import gr.ece.ntua.javengers.entity.User;
+import gr.ece.ntua.javengers.entity.comparator.SortProductByStars;
 import gr.ece.ntua.javengers.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -62,10 +63,12 @@ public class EntryController {
     }
 
     @RequestMapping(value = "/product/list", method = RequestMethod.GET)
-    public String listProducts(@Valid String keyWord, Model model) {
+    public String searchProducts(@Valid String keyWord, Model model) {
 
 
         List<Product> products = productTagService.getProductsByTag(keyWord);
+
+        Collections.sort(products, new SortProductByStars());
 
         model.addAttribute("products", products);
 

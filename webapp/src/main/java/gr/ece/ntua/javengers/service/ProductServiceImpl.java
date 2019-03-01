@@ -63,9 +63,10 @@ public class ProductServiceImpl implements ProductService {
     public Long saveProduct(Product product) {
 
 
-        // product.setWithdrawn(false);
         product.setNumberOfRatings(0);
+
         return productRepository.save(product).getId();
+
     }
 
     @Override
@@ -160,6 +161,8 @@ public class ProductServiceImpl implements ProductService {
 
         if (stars == null) return;
 
+        stars = 20*stars;
+
         product = productRepository.getProductByBarcode(product.getBarcode()).get();
 
         if (product.getNumberOfRatings() == null || product.getNumberOfRatings() == 0) {
@@ -169,8 +172,8 @@ public class ProductServiceImpl implements ProductService {
         else {
             Integer numberOfRatings = product.getNumberOfRatings();
             Double newStars = (product.getStars()*numberOfRatings+stars)/(numberOfRatings+1);
-            newStars = 2*newStars;
-            newStars = newStars.intValue()/2.0;
+            newStars = 10*newStars;
+            newStars = newStars.intValue()/10.0;
             product.setStars(newStars);
             product.setNumberOfRatings(numberOfRatings+1);
         }

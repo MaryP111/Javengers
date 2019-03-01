@@ -86,3 +86,25 @@ img.resize {
     width: 50px;
     height: 50px;
 }
+
+.rating-box {
+  background: url("../img/bkg_rating.png") repeat-x;
+  font-size: 0;
+  height: 15px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 70px;
+}
+
+.rating-box .rating {
+    background: url("../img/bkg_rating.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    font-size: 0;
+    height: 15px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 70px;
+}

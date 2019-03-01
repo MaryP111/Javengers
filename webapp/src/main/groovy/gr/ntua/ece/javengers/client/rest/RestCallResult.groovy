@@ -1,5 +1,6 @@
 package gr.ntua.ece.javengers.client.rest
 
+import gr.ntua.ece.javengers.client.model.PriceInfoList
 import gr.ntua.ece.javengers.client.model.Product
 import gr.ntua.ece.javengers.client.model.ProductList
 import gr.ntua.ece.javengers.client.model.Shop
@@ -21,5 +22,6 @@ interface RestCallResult {
 
     Shop getShop()
 
-}
+    PriceInfoList getPriceInfoList()
 
+}

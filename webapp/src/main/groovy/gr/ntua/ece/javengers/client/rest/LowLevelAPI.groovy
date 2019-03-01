@@ -5,6 +5,9 @@ import gr.ntua.ece.javengers.client.model.Shop
 import org.apache.http.client.fluent.Executor
 import org.apache.http.client.fluent.Form
 import org.apache.http.client.fluent.Request
+import java.nio.charset.Charset
+
+import java.text.SimpleDateFormat
 
 class LowLevelAPI {
 
@@ -28,6 +31,8 @@ class LowLevelAPI {
     static final String HEADER    = "X-OBSERVATORY-AUTH"
 
     static final String IGNORE_SSL_ERRORS_SYSTEM_PROPERTY = "IGNORE_SSL_ERRORS"
+
+    static final SimpleDateFormat FORMAT = new SimpleDateFormat("YYYY-MM-DD")
 
     private final String host
     private final int port
@@ -58,11 +63,12 @@ class LowLevelAPI {
             queryString = ""
         }
         String url = "${secure ? 'https' : 'http'}://$host:$port$BASE_PATH/$endPoint$queryString"
-        //println url
+        //println "Fetching $url"
         return url
     }
 
     protected RestCallResult execute(Request req, RestCallFormat format) {
+        req = req.addHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
         Executor.newInstance(clientFactory.newClient()).execute(req).handleResponse(new RestResponseHandler(format))
     }
 
@@ -115,13 +121,13 @@ class LowLevelAPI {
 
     RestCallResult postProduct(String token, Product product, RestCallFormat format) {
 
-      //  if (!token) throw new RuntimeException("Empty token")
+        if (!token) throw new RuntimeException("Empty token")
 
         Form form = Form.form()
         addToForm(form, product)
 
         return execute(
-                Request.Post(createUrl("products", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Post(createUrl("products", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
                 format
         )
     }
@@ -193,7 +199,7 @@ class LowLevelAPI {
         addToForm(form, shop)
 
         return execute(
-                Request.Post(createUrl("shops", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Post(createUrl("shops", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
                 format
         )
     }
@@ -230,6 +236,66 @@ class LowLevelAPI {
 
         return execute(
                 Request.Delete(createUrl("shops/$id", format)).addHeader(HEADER, token),
+                format
+        )
+    }
+
+    RestCallResult postPrice(
+            String token,
+            double price,
+            String dateFrom,
+            String dateTo,
+            String productId,
+            String shopId,
+            RestCallFormat format) {
+
+        if (!token) throw new RuntimeException("Empty token")
+
+        Form form = Form.form()
+        addFieldToForm(form, "price", price)
+        addFieldToForm(form, "dateFrom", dateFrom)
+        addFieldToForm(form, "dateTo", dateTo)
+        addFieldToForm(form, "productId", productId)
+        addFieldToForm(form, "shopId", shopId)
+
+        return execute(
+                Request.Post(createUrl("prices", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
+                format
+        )
+
+    }
+
+    RestCallResult getPrices(
+            String token,
+            int start,
+            int count,
+            Integer geoDist,
+            Double geoLng,
+            Double geoLat,
+            String dateFrom,
+            String dateTo,
+            List<String> shopIds,
+            List<String> productIds,
+            List<String> tags,
+            List<String> sort,
+            RestCallFormat format) {
+
+        if (!token) throw new RuntimeException("Empty token")
+
+        return execute(
+                Request.Get(createUrl("prices", format, [
+                        start: start,
+                        count: count,
+                        geoDist: geoDist,
+                        geoLng: geoLng,
+                        geoLat: geoLat,
+                        dateFrom: dateFrom,
+                        dateTo: dateTo,
+                        shops: shopIds,
+                        products: productIds,
+                        tags: tags,
+                        sort: sort
+                ])).addHeader(HEADER, token),
                 format
         )
     }
@@ -278,8 +344,7 @@ class LowLevelAPI {
     }
 
     private static ClientFactory determineClientFactory() {
-        String prop = System.getProperty(IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "true")
+        String prop = System.getProperty(IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "false")
         return Boolean.parseBoolean(prop) ? new SSLErrorTolerantClientFactory() : new DefaultClientFactory()
     }
 }
-

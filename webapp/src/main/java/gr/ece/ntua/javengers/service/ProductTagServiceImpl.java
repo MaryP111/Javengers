@@ -29,18 +29,60 @@ public class ProductTagServiceImpl implements ProductTagService {
 
     public List<Product> getProductsByTag(String keyword) {
 
-        List<Long> productIds = productTagRepository.getProductsByTag("%" + keyword + "%");
+        if (keyword == null) return null;
+
+        List<Long> productByTagIds = productTagRepository.getProductsByTag("%" + keyword + "%");
+
+        List<Long> productsByNameIds = productRepository.getProductsByName("%" + keyword + "%");
+
+        List<Long> productsByDescriptionIds = productRepository.getProductsByDescription("%" + keyword + "%");
+
+        List<Long> productsByCategoryIds = productRepository.getProductsByCategory("%" + keyword + "%");
+
+        List<Long> productsByManufacturerIds = productRepository.getProductsByManufacturer("%" + keyword + "%");
 
         List<Product> products = new ArrayList<>();
 
-
-        for (ListIterator<Long> iterator = productIds.listIterator(); iterator.hasNext(); ) {
+        for (ListIterator<Long> iterator = productByTagIds.listIterator(); iterator.hasNext(); ) {
 
             Long id = iterator.next();
 
             products.add(productRepository.findById(id).get());
 
         }
+
+        for (ListIterator<Long> iterator = productsByNameIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByDescriptionIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByCategoryIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByManufacturerIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
 
         return products;
 
