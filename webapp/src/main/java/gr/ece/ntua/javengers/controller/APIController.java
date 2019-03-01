@@ -327,7 +327,11 @@ public class APIController {
 
     @RequestMapping(value = "/shops", method = RequestMethod.GET)
     public ShopList getShops (@RequestParam("format") Optional<String> formatURL, @RequestParam("start") Optional<Integer> startURL, @RequestParam("count") Optional<Integer> countURL,
-                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL) {
+                                       @RequestParam("status") Optional<String> statusURL, @RequestParam("sort") Optional<String> sortURL, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+
+
+
+        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -392,14 +396,14 @@ public class APIController {
         shopList.setTotal(statusStores.size());
 
         if (parts[0].equalsIgnoreCase("id")) {
-            Collections.sort(stores, new SortStoreById());
+            Collections.sort(statusStores, new SortStoreById());
         }
         else if (parts[0].equalsIgnoreCase("name")){
-            Collections.sort(stores, new SortStoreByName());
+            Collections.sort(statusStores, new SortStoreByName());
         }
 
         if (parts[1].equalsIgnoreCase("DESC")) {
-            Collections.reverse(stores);
+            Collections.reverse(statusStores);
         }
 
         if (!parts[0].equalsIgnoreCase("id") && !parts[0].equalsIgnoreCase("name")) throw new BadRequestException();
@@ -443,8 +447,8 @@ public class APIController {
 
     }
 
-    @RequestMapping(value ="/shops", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Shop postShop(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Shop shop) {
+    @RequestMapping(value ="/shops", method = RequestMethod.POST)
+    public gr.ntua.ece.javengers.client.model.Shop postShop(@RequestParam("format") Optional<String> formatURL, gr.ntua.ece.javengers.client.model.Shop shop) {
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -710,8 +714,8 @@ public class APIController {
     }
 
 
-    @RequestMapping(value ="/prices", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Entry postEntry(@RequestParam("format") Optional<String> formatURL, @RequestBody Entry entry) {
+    @RequestMapping(value ="/prices", method = RequestMethod.POST)
+    public Entry postEntry(@RequestParam("format") Optional<String> formatURL, Entry entry) {
 
         String format;
         if (!formatURL.isPresent()) format = "json";
@@ -731,9 +735,9 @@ public class APIController {
 
         if (dateFrom.compareTo(dateTo) > 0) throw new BadRequestException();
 
-        if (!productService.getProductById(Long.parseLong(entry.getProductId())).isPresent()) throw new ProductNotFoundException();
+        if (!productService.getProductById(entry.getProductId()).isPresent()) throw new ProductNotFoundException();
 
-        if (!storeService.getStoreById(Long.parseLong(entry.getShopId())).isPresent()) throw new ShopNotFoundException();
+        if (!storeService.getStoreById(entry.getShopId()).isPresent()) throw new ShopNotFoundException();
 
         return hasProductService.saveEntry(entry);
     }

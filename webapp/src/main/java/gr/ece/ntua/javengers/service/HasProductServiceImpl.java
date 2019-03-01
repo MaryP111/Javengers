@@ -61,12 +61,11 @@ public class HasProductServiceImpl implements HasProductService {
 
 
         // hasProduct.setUserId(1L);
-        hasProduct.setProductId(Long.parseLong(entry.getProductId()));
-        hasProduct.setStoreId(Long.parseLong(entry.getShopId()));
+        hasProduct.setProductId(entry.getProductId());
+        hasProduct.setStoreId(entry.getShopId());
         hasProduct.setPrice(entry.getPrice());
         hasProduct.setDateFrom(entry.getDateFrom());
         hasProduct.setDateTo(entry.getDateTo());
-        hasProduct.setWithdrawn(false);
 
         Long entryId = hasProductRepository.save(hasProduct).getId();
 

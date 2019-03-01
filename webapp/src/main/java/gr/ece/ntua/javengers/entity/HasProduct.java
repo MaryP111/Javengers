@@ -34,7 +34,7 @@ public class HasProduct {
     private Date dateTo;
 
     @Column(name = "withdrawn", nullable = false)
-    private Boolean withdrawn;
+    private Boolean withdrawn = false;
 
     public HasProduct() {}
 

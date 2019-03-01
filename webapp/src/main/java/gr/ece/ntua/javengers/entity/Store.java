@@ -24,7 +24,7 @@ public class Store {
     private Double lng;
 
     @Column(name = "withdrawn", nullable = false)
-    private Boolean withdrawn;
+    private Boolean withdrawn = false;
 
     public Store() {}
 

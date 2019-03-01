@@ -1,5 +1,6 @@
 package gr.ntua.ece.javengers.client.rest
 
+import gr.ntua.ece.javengers.client.model.Entry
 import gr.ntua.ece.javengers.client.model.Product
 import gr.ntua.ece.javengers.client.model.Shop
 import gr.ntua.ece.javengers.client.model.ProductList
