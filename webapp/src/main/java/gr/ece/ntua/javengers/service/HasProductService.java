@@ -15,4 +15,6 @@ public interface HasProductService {
 
     List<HasProduct> getAllEntries();
 
+    void deleteEntryById(Long id);
+
 }

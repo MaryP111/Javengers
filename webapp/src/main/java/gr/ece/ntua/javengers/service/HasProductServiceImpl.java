@@ -86,5 +86,9 @@ public class HasProductServiceImpl implements HasProductService {
         return entries;
     }
 
+    @Override
+    public void deleteEntryById(Long id) {
+        hasProductRepository.deleteEntryById(id);
 
+    }
 }

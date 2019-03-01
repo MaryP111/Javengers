@@ -1,0 +1,5 @@
+<root>
+    <item name='org.hibernate.cfg.DefaultNamingStrategy'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

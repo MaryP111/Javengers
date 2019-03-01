@@ -55,6 +55,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/signup",
             "/product/list",
             "/entry/list/*",
+            "/admin/users",
+            "/admin/users/*",
+            "/admin/products",
+            "/admin/products/*",
+            "/admin/products/entries/*",
+            "/admin/stores",
+            "/admin/stores/*",
+            "/admin/entries",
+            "/admin/entries/*",
+            "/admin/login",
             "observatory/api/login"
     };
 
