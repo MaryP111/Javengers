@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import java.util.Optional;
 
 @Controller
 public class UserController {
@@ -38,7 +39,11 @@ public class UserController {
     }*/
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
+    public String login(@RequestParam("login") Optional<String> loginFlag, Model model) {
+
+        Boolean loginFailed = loginFlag.isPresent();
+
+        model.addAttribute("loginFailed", loginFailed);
 
         return "login";
     }

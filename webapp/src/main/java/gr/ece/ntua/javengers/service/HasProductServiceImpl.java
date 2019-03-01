@@ -30,21 +30,25 @@ public class HasProductServiceImpl implements HasProductService {
     public void saveEntry(HasProduct entry) {
 
 
-        try {
+        if (entry.getDateFrom() == null) {
 
-            entry.setWithdrawn(false);
+            try {
 
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                entry.setWithdrawn(false);
 
-            String dateString = format.format(new Date());
-            Calendar calendar = Calendar.getInstance();
-            Date date = calendar.getTime();
-            Date dateFrom = format.parse(dateString);
-            java.sql.Date sqlDate = new java.sql.Date(dateFrom.getTime());
-            entry.setDateFrom(sqlDate);
-        }
-        catch (Exception exc) {
-            exc.printStackTrace();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+                String dateString = format.format(new Date());
+                Calendar calendar = Calendar.getInstance();
+                Date date = calendar.getTime();
+                Date dateFrom = format.parse(dateString);
+                java.sql.Date sqlDate = new java.sql.Date(dateFrom.getTime());
+                entry.setDateFrom(sqlDate);
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+
         }
 
         hasProductRepository.save(entry);

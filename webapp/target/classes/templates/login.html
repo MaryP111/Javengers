@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Login Page</title>
 	<link rel="icon" type="image/png" href="https://github.com/ioannisAnagno/Javocado/blob/front-end/images/favicon.png?raw=true">
@@ -46,12 +46,17 @@
 					<div align="center" class="form-group">
 						<input type="submit" value="Login" class="btn login_btn">
 					</div>
+					<div align="center">
+						<span th:if="${loginFailed}" style="font-size:140%"><font color="white">Αποτυχία Σύνδεσης</font></span>
+					</div>
+
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
 					Δεν έχεις λογαριασμό;<a href="signup">Sign Up</a>
 				</div>
+
 				<div class="d-flex justify-content-center">
 					<a href="#">Ξέχασες τον κωδικό σου;</a>
 				</div>

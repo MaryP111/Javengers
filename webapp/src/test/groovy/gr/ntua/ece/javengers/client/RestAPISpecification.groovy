@@ -23,7 +23,7 @@ import groovy.json.JsonOutput
     static final String IGNORED = System.setProperty(LowLevelAPI.IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "true")
 
     @Shared WireMockServer wms
-    @Shared RestAPI api = new RestAPI(Helper.HOST, Helper.PORT, false)
+    @Shared RestAPI api = new RestAPI(Helper.HOST, Helper.PORT, true)
 
     def setupSpec() {
         wms = new WireMockServer(WireMockConfiguration.options().httpsPort(Helper.PORT))

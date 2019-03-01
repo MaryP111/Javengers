@@ -50,13 +50,15 @@ public class ProductTagServiceImpl implements ProductTagService {
     @Override
     public void insertTags(String barcode, String productTags) {
 
+        if (productTags == null) return;
+
         Long productId = productRepository.getProductByBarcode(barcode).get().getId();
 
         String[] tags = productTags.split("#");
 
         for (int i =1; i<tags.length; i++) {
 
-            String tag = tags[i].replaceAll(" ", "");
+            String tag = tags[i].replaceAll(" ", "").replaceAll(",", "");
 
             ProductTag productTag = new ProductTag();
 

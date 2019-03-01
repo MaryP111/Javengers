@@ -48,8 +48,10 @@ public class StoreServiceImpl implements StoreService {
         public Long saveStore(Store store) {
 
             Optional<Store> tempStore = getStoreByLocation(store.getLat(), store.getLng());
-            if (!tempStore.isPresent())
+            if (!tempStore.isPresent()) {
+                store.setWithdrawn(false);
                 return storeRepository.save(store).getId();
+            }
             return 0L;
         }
 

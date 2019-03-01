@@ -37,7 +37,7 @@ public class Product {
     private String imageURL;
 
     @Column(name="withdrawn", nullable = false)
-    private Boolean withdrawn;
+    private Boolean withdrawn = false;
 
     public Product() {}
 

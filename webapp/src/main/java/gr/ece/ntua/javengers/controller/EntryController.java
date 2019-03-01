@@ -8,12 +8,15 @@ import gr.ece.ntua.javengers.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -105,7 +108,7 @@ public class EntryController {
     }
 
     @RequestMapping(value = "profile/add/entry", method = RequestMethod.POST)
-    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid Double stars, @Valid String productTags, Model model, BindingResult bindingResult) {
+    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid Double productStars, @Valid String productTags, Model model, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors())
             return "error";
@@ -115,10 +118,10 @@ public class EntryController {
 
         if (addEntry) {
 
-            productService.updateStars(product, stars);
+
+            productService.updateStars(product, productStars);
 
             productTagService.insertTags(product.getBarcode(), productTags);
-
 
             storeService.saveStore(store);
 
@@ -145,6 +148,7 @@ public class EntryController {
             return "/profile";
 
         }
+
         else {
 
             Boolean searchBarcode = product.getName() == null;
@@ -176,6 +180,17 @@ public class EntryController {
             return "addProduct";
         }
     }
+
+    /*
+    private static Date stringToDate(String strDate) throws Exception {
+
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+        java.util.Date date = sdf1.parse(strDate);
+
+        return new java.sql.Date(date.getTime());
+
+
+    }*/
 
 }
 

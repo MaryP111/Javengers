@@ -10,19 +10,17 @@ import gr.ece.ntua.javengers.entity.comparator.SortStoreByName;
 import gr.ece.ntua.javengers.exception.*;
 import gr.ece.ntua.javengers.service.*;
 import gr.ntua.ece.javengers.client.model.*;
-import jdk.nashorn.internal.ir.RuntimeNode;
-import org.apache.http.client.methods.HttpHead;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.print.attribute.standard.Media;
+import javax.servlet.http.HttpServletRequest;
 import java.security.SecureRandom;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -55,11 +53,11 @@ public class APIController {
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public HashMap<String, String> loginUser(@RequestParam("format") Optional<String> formatURL, @RequestBody LoginUser loginUser) { // @RequestHeader Optional<HttpHeaders> headers) {
+    public HashMap<String, String> loginUser(@RequestParam("format") Optional<String> optionalFormat, LoginUser loginUser) { // @RequestHeader Optional<HttpHeaders> headers) {
 
         String format;
-        if (!formatURL.isPresent()) format = "json";
-        else format = formatURL.get();
+        if (!optionalFormat.isPresent()) format = "json";
+        else format = optionalFormat.get();
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
@@ -77,10 +75,10 @@ public class APIController {
         addToken(token);
         // headers.get().add("X-OBSERVATORY-AUTH", token);
 
-        String url = "http://localhost/observatory/api/login";
-        HttpPost httpPost = new HttpPost(url);
+        //String url = "http://localhost/observatory/api/login";
+        //HttpPost httpPost = new HttpPost(url);
 
-        httpPost.addHeader("X-OBSERVATORY-AUTH", token);
+        //httpPost.addHeader("X-OBSERVATORY-AUTH", token);
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("token", token);
@@ -229,8 +227,11 @@ public class APIController {
 
     }
 
-    @RequestMapping(value ="/products", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> formatURL, @RequestBody gr.ntua.ece.javengers.client.model.Product product, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    @RequestMapping(value ="/products", method = RequestMethod.POST)
+    public gr.ntua.ece.javengers.client.model.Product postProduct(@RequestParam("format") Optional<String> formatURL, gr.ntua.ece.javengers.client.model.Product product) {
+
+
+        String token = "ABC123";
 
         if (!verifyToken(token)) throw new ForbiddenException();
         String format;
