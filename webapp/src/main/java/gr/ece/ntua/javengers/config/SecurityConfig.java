@@ -54,9 +54,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**",
             "/signup",
             "/product/list",
-<<<<<<< HEAD
-            "/entry/list/*"
-=======
             "/entry/list/*",
             "/admin/users",
             "/admin/users/*",
@@ -68,8 +65,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/admin/entries",
             "/admin/entries/*",
             "/admin/login",
-            "observatory/api/login"
->>>>>>> b2985fe1529b45d0096759c14fc4ea013e0fa0ad
     };
 
     @Override

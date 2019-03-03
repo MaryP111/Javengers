@@ -99,15 +99,11 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/entries", method = RequestMethod.GET)
     public String adminEntry(Model model) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if(auth.getPrincipal()==adminUsername && auth.getCredentials()==adminPassword) {
-            List<HasProduct> entries = entryService.getAllEntries();
-            model.addAttribute("entries", entries);
-            return "adminEntries";
-        }
-        else{
-            return "adminLogin";
-        }
+
+        List<HasProduct> entries = entryService.getAllEntries();
+        model.addAttribute("entries", entries);
+        return "adminEntries";
+
     }
 
     @RequestMapping(value = "/admin/products/entries/{id}", method = RequestMethod.GET)

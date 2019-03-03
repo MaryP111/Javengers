@@ -2,273 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d892216e-32c3-44a8-b6db-44875adf7891" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Javocado" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/org/hibernate/cfg/annotations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/adminLogin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/css/material-design-iconic-font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-ExtraLight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/poppins/Poppins-ThinItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/UFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/fonts/ubuntu/Ubuntu-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/animate/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/animsition/css/animsition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/animsition/css/animsition.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/animsition/js/animsition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/animsition/js/animsition.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/bootstrap/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/countdowntime/countdowntime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/daterangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/daterangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/daterangepicker/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/daterangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/select2/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vendor/select2/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminEntries.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminLogin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminProducts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminStores.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/adminUsers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/webapp.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/adminLogin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/css/material-design-iconic-font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-ExtraLight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/poppins/Poppins-ThinItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/UFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/ubuntu/Ubuntu-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/img/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/animate/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/animsition/css/animsition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/animsition/css/animsition.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/animsition/js/animsition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/animsition/js/animsition.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/bootstrap/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/countdowntime/countdowntime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/daterangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/daterangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/daterangepicker/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/daterangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/select2/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/vendor/select2/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/adminEntries.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/adminLogin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/adminProducts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/adminStores.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/adminUsers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/webapp_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ShopList.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ShopList.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/webapp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/RestAuthenticationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/APIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/EntryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/HasProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/StoreTag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Authority.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/exception/BadRequestException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/exception/ForbiddenException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/exception/FormatBadRequestException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/exception/ProductNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/exception/ShopNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/HasProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductTagRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreTagRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserSecurityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/RestAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/LoginUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Paging.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/PriceInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/PriceInfoList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ProductList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ShopList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/fieldsOfProduct/CategoryObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/fieldsOfProduct/DescriptionObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/fieldsOfProduct/NameObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/fieldsOfProduct/TagsObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/fieldsOfProduct/WithdrawnObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/ClientFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/DefaultClientFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult$_getProductList_closure1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult$_getShopList_closure2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult$_parsePrices_closure3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/LowLevelAPI$_addFieldToForm_closure2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/LowLevelAPI$_addToForm_closure1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/LowLevelAPI$_encodeForm_closure3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/LowLevelAPI$_encode_closure4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/LowLevelAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestCallFormat$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestCallFormat$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestCallFormat$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestCallFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestCallResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestResponseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory$InsecureTrustManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/XmlRestCallResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/FirstSpecification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/Helper$_durationInDays_closure1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/Helper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/Notifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/PaymentGateway.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification$__spock_feature_0_35_closure1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -289,43 +117,34 @@
         <counts>
           <entry key="groovy" value="9" />
           <entry key="html" value="14" />
-          <entry key="java" value="54" />
+          <entry key="java" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="9" />
           <entry key="HTML" value="14" />
-          <entry key="JAVA" value="54" />
+          <entry key="JAVA" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="groovy" value="27" />
           <entry key="html" value="2" />
-          <entry key="java" value="2" />
+          <entry key="java" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="27" />
           <entry key="HTML" value="2" />
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entries.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -380,11 +199,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+            <state relative-caret-position="192">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="105" column="34" lean-forward="true" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
+              <folding>
+                <element signature="e#4373#4374#0" expanded="true" />
+                <element signature="e#4408#4409#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -394,15 +235,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -430,6 +262,8 @@
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/adminEntries.html" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" />
       </list>
     </option>
   </component>
@@ -507,15 +341,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -525,9 +350,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551633436520" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551633966246" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -562,12 +391,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551632745100</updated>
-      <workItem from="1551632746322" duration="862000" />
+      <workItem from="1551632746322" duration="1121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="862000" />
+    <option name="totallyTimeSpent" value="1121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
@@ -579,11 +408,12 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3843683" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
@@ -613,20 +443,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -974,8 +790,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="192">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="105" column="34" lean-forward="true" selection-start-line="105" selection-start-column="34" selection-end-line="105" selection-end-column="34" />
+          <folding>
+            <element signature="e#4373#4374#0" expanded="true" />
+            <element signature="e#4408#4409#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

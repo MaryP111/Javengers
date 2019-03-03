@@ -80,7 +80,7 @@ public class ProductTagServiceImpl implements ProductTagService {
         }
 
         for (ListIterator<Long> iterator = productsByCategoryIds.listIterator(); iterator.hasNext(); ) {
-    
+
             Long id = iterator.next();
 
             Product product = productRepository.findById(id).get();
