@@ -2,6 +2,7 @@ package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Store;
+import gr.ntua.ece.javengers.client.model.Entry;
 //import gr.ece.ntua.javengers.client.model.Entry;
 
 import java.util.List;
@@ -13,11 +14,13 @@ public interface HasProductService {
 
     List<HasProduct> getActiveEntriesById(Long productId);
 
-    //Entry saveEntry(Entry entry);
+    Entry saveEntry(Entry entry) throws Exception;
+
+    List<HasProduct> getAllEntries();
+
+    void deleteEntryById(Long id);
 
     List<HasProduct> filterEntries(Long productId,double priceFrom,double priceTo,double clientLat,double clientLong,Integer distance);
-
-    Store getStoreByEntryId (Long entryId);
 
     Optional<HasProduct> getEntryById(Long id);
 

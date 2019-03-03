@@ -10,6 +10,14 @@
             window.location.href = "/entry/list"+ "?id="+productId;
         }
 
+        function changePage(pageIndex) {
+
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var keyWord = url.searchParams.get("keyWord");
+            window.location.href = "/product/list?keyWord=" + keyWord + "&pageIndex=" + pageIndex;
+        }
+
     </script>
 
 
@@ -36,6 +44,8 @@
       </div>
     </nav>
 
+    <!--<img src="https://www.iiss.it/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png" alt="W3Schools.com">-->
+
       <div class="container">
         <div id="products" class="row list-group">
           <th:block th:each="product : ${products}">
@@ -44,10 +54,17 @@
               <img class="group list-group-image" th:src="${product.imageURL}" alt="" style="object-fit: contain; height: 250px; width: 250px" />
                 <!--<img class="group list-group-image" src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphonexs-spacegrey-back?$png8alpha256$&hei=410==" alt="" />-->
                 <div class="caption">
+
                   <h4 class="group inner list-group-item-heading" th:text="${product.name}"></h4>
                   <p class="group inner list-group-item-text" th:text="${product.manufacturer}"></p>
-                  <p class="group inner list-group-item-text" th:text="${product.category}"></p>
+                  <p class="group inner list-group-item-text"th:text="${product.category}"></p>
                   <p class="group inner list-group-item-text" th:text="${product.description}"></p>
+
+                  <div th:if="${product.stars != null}" class="rating-box">
+                    <div th:style="'width:' +${product.stars}+'%;'" class="rating"></div>
+                  </div>
+
+                  <br>
                   <div class="row">
                     <div class="col-xs-12 col-md-6">
                       <button th:onclick="'javascript:getEntries(' + ${product.id} + ');'" class="btn btn-success">Select Product</button>
@@ -62,14 +79,16 @@
 
     <div align="center">
       <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a class="active" href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">&raquo;</a>
+        <a th:if="${leftPage}"th:onclick="'javascript:changePage(' + ${pageIndex-1} + ');'">&laquo;</a>
+        <a th:if="${pageIndex == 1}" class="active" href="#">1</a>
+        <a th:if="${pageIndex > 1}" th:onclick="'javascript:changePage(1);'">1</a>
+        <a th:if="${pageIndex == 2}" class="active" href="#">2</a>
+        <a th:if="${pageIndex > 2}" th:onclick="'javascript:changePage(2);'">2</a>
+        <a th:if="${pageIndex == 3}" class="active" href="#">3</a>
+        <a th:if="${pageIndex > 3}" th:onclick="'javascript:changePage(3);'">3</a>
+        <a th:if="${pageIndex == 4}" class="active" href="#">4</a>
+        <a th:if="${pageIndex > 4}" th:onclick="'javascript:changePage(4);'">4</a>
+        <a th:if="${rightPage}" th:onclick="'javascript:changePage(' + ${pageIndex+1} + ');'">&raquo;</a>
       </div>
     </div>
 
@@ -81,6 +100,8 @@
 
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 
 

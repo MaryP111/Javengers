@@ -1,9 +1,9 @@
 
-/*body {
-    background-image: url("http://mychiropractichealth.com/wp-content/uploads/2013/07/sky-blue-background-hd-desktop-wallpaper.jpg");
+body {
+    background-image: url("https://www.accengage.com/wp-content/uploads/2014/05/background-test.jpg");
     background-color: #cccccc;
-    background-size: cover;
-}*/
+    background-size: auto;
+}
 
 .pagination a {
     color: black;
@@ -85,4 +85,26 @@
 img.resize {
     width: 50px;
     height: 50px;
+}
+
+.rating-box {
+  background: url("../img/bkg_rating.png") repeat-x;
+  font-size: 0;
+  height: 15px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 70px;
+}
+
+.rating-box .rating {
+    background: url("../img/bkg_rating.png") repeat-x;
+    background-position: 0 100%;
+    float: left;
+    font-size: 0;
+    height: 15px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 70px;
 }

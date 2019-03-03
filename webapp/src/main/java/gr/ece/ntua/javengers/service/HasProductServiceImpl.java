@@ -1,10 +1,10 @@
 package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.HasProduct;
-import gr.ece.ntua.javengers.entity.Store;
 import gr.ece.ntua.javengers.repository.HasProductRepository;
 //import gr.ntua.ece.javengers.client.model.Entry;
 import gr.ece.ntua.javengers.repository.StoreRepository;
+import gr.ntua.ece.javengers.client.model.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,54 +41,64 @@ public class HasProductServiceImpl implements HasProductService {
     public void saveEntry(HasProduct entry) {
 
 
-        try {
+        if (entry.getDateFrom() == null) {
 
-            entry.setWithdrawn(false);
+            try {
 
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                entry.setWithdrawn(false);
 
-            String dateString = format.format(new Date());
-            Calendar calendar = Calendar.getInstance();
-            Date date = calendar.getTime();
-            Date dateFrom = format.parse(dateString);
-            java.sql.Date sqlDate = new java.sql.Date(dateFrom.getTime());
-            entry.setDateFrom(sqlDate);
-        }
-        catch (Exception exc) {
-            exc.printStackTrace();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+                String dateString = format.format(new Date());
+                Calendar calendar = Calendar.getInstance();
+                Date date = calendar.getTime();
+                Date dateFrom = format.parse(dateString);
+                java.sql.Date sqlDate = new java.sql.Date(dateFrom.getTime());
+                entry.setDateFrom(sqlDate);
+            }
+            catch (Exception exc) {
+                exc.printStackTrace();
+            }
+
         }
 
         hasProductRepository.save(entry);
     }
 
-//    @Override
-//    public Entry saveEntry(Entry entry) {
-//
-//        HasProduct hasProduct = new HasProduct();
-//
-//
-//        // hasProduct.setUserId(1L);
-//        hasProduct.setProductId(Long.parseLong(entry.getProductId()));
-//        hasProduct.setStoreId(Long.parseLong(entry.getShopId()));
-//        hasProduct.setPrice(entry.getPrice());
-//        hasProduct.setDateFrom(entry.getDateFrom());
-//        hasProduct.setDateTo(entry.getDateTo());
-//        hasProduct.setWithdrawn(false);
-//
-//        Long entryId = hasProductRepository.save(hasProduct).getId();
-//
-//        entry.setId(entryId.toString());
-//
-//        return entry;
-//
-//    }
+    @Override
+    public Entry saveEntry(Entry entry) throws Exception{
+        HasProduct hasProduct = new HasProduct();
+        java.util.Date tempDate;
+
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        tempDate = simpleDateFormat.parse(entry.getDateFrom());
+        java.sql.Date dateFrom = new java.sql.Date(tempDate.getTime());
+
+        tempDate = simpleDateFormat.parse(entry.getDateTo());
+        java.sql.Date dateTo = new java.sql.Date(tempDate.getTime());
+
+
+        // hasProduct.setUserId(1L);
+        hasProduct.setProductId(entry.getProductId());
+        hasProduct.setStoreId(entry.getShopId());
+        hasProduct.setPrice(entry.getPrice());
+        hasProduct.setDateFrom(dateFrom);
+        hasProduct.setDateTo(dateTo);
+
+        Long entryId = hasProductRepository.save(hasProduct).getId();
+
+        entry.setId(entryId.toString());
+
+        return entry;
+
+    }
 
     @Override
     public List<HasProduct> getActiveEntriesById(Long productId) {
 
         return hasProductRepository.getActiveEntriesById(productId);
     }
-
 
 
     @Override
@@ -118,17 +128,6 @@ public class HasProductServiceImpl implements HasProductService {
 
     }
 
-    @Override
-    public Store getStoreByEntryId(Long entryId) {
-        HasProduct entry = hasProductRepository.findById(entryId).get();
-        Store store =storeRepository.findById(entry.getStoreId()).get();
-
-        return store;
-
-    }
-
-
-
     public static Double distance(Double lat1, Double lng1, Double lat2, Double lng2) {
 
         int R = 6378137;   /* Earth's mean radius in meter */
@@ -139,9 +138,24 @@ public class HasProductServiceImpl implements HasProductService {
         return R*c;
     }
 
+    @Override
+    public List<HasProduct> getAllEntries() {
+
+        List<HasProduct> entries = new ArrayList<>();
+        hasProductRepository.findAll().forEach(entries::add);
+        return entries;
+    }
+
 
     public static Double rad(Double deg) {
         return deg*Math.PI/180;
+    }
+
+
+    @Override
+    public void deleteEntryById(Long id) {
+        hasProductRepository.deleteEntryById(id);
+
     }
 
 }

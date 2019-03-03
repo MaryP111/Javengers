@@ -1,15 +1,13 @@
 package gr.ece.ntua.javengers.controller;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type;
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
 import gr.ece.ntua.javengers.entity.User;
+import gr.ece.ntua.javengers.entity.comparator.SortProductByStars;
 import gr.ece.ntua.javengers.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -129,12 +127,52 @@ public class EntryController {
 //    }
 
     @RequestMapping(value = "/product/list", method = RequestMethod.GET)
-    public String listProducts(@Valid String keyWord, Model model) {
+    public String searchProducts(@RequestParam("keyWord") String keyWord, @RequestParam("pageIndex") Optional<Integer> optionalPageIndex, Model model) {
 
+
+        Integer sizeOfPage = 6;
+
+        Integer pageIndex = 1;
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
+
+        Boolean leftPage = false;
+        if (pageIndex != 1) leftPage = true;
+
+        model.addAttribute("pageIndex", pageIndex);
+        model.addAttribute("leftPage", leftPage);
+
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
 
         List<Product> products = productTagService.getProductsByTag(keyWord);
 
-        model.addAttribute("products", products);
+        Collections.sort(products, new SortProductByStars());
+
+        if (products == null || products.size() == 0) {
+
+            return "/index";
+        }
+
+        Boolean rightPage = true;
+        if (products.size() < sizeOfPage*pageIndex) rightPage = false;
+        model.addAttribute("rightPage", rightPage);
+
+        List<Product> productsOfPage = new ArrayList<>();
+
+        Integer previousProducts = sizeOfPage*(pageIndex-1);
+
+        Iterator<Product> productIterator = products.iterator();
+
+        Integer cnt = 0;
+
+        while (productIterator.hasNext()) {
+
+            Product product = productIterator.next();
+            if (cnt++ < previousProducts) continue;
+            productsOfPage.add(product);
+            if (cnt >= sizeOfPage*pageIndex) break;
+        }
+
+        model.addAttribute("products", productsOfPage);
 
         return "products";
 
@@ -204,7 +242,7 @@ public class EntryController {
     }
 
     @RequestMapping(value = "profile/add/entry", method = RequestMethod.POST)
-    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid Double stars, @Valid String productTags, Model model, BindingResult bindingResult) {
+    public String addProductPost(@Valid Product product, @Valid Store store, @Valid HasProduct hasProduct, @Valid Double productStars, @Valid String productTags, Model model, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors())
             return "error";
@@ -214,10 +252,10 @@ public class EntryController {
 
         if (addEntry) {
 
-            productService.updateStars(product, stars);
+
+            productService.updateStars(product, productStars);
 
             productTagService.insertTags(product.getBarcode(), productTags);
-
 
             storeService.saveStore(store);
 
@@ -244,6 +282,7 @@ public class EntryController {
             return "/profile";
 
         }
+
         else {
 
             Boolean searchBarcode = product.getName() == null;
@@ -275,6 +314,17 @@ public class EntryController {
             return "addProduct";
         }
     }
+
+    /*
+    private static Date stringToDate(String strDate) throws Exception {
+
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+        java.util.Date date = sdf1.parse(strDate);
+
+        return new java.sql.Date(date.getTime());
+
+
+    }*/
 
 }
 

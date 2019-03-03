@@ -6,6 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
@@ -29,10 +30,8 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/index")
-    public String index() {
-        return "index";
-    }
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() { return "index"; }
 
 
     /*

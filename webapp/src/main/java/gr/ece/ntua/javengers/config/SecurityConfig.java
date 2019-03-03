@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -28,6 +29,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String SALT = "salt";
 
+    @Bean("authenticationManager")
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
@@ -48,11 +55,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/signup",
             "/product/list",
             "/product/*",
-            "/entry/list/*",
             "/entry/*",
+            "/entry/list/*",
             "/profile/*",
             "/home//sendMail",
-            "/entry/list/update/*"
+            "/entry/list/update/*",
+            "/admin/users",
+            "/admin/users/*",
+            "/admin/products",
+            "/admin/products/*",
+            "/admin/products/entries/*",
+            "/admin/stores",
+            "/admin/stores/*",
+            "/admin/entries",
+            "/admin/entries/*",
+            "/admin/login",
     };
 
     @Override
@@ -60,10 +77,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests().
                 antMatchers(HttpMethod.GET, "/observatory/api/products").permitAll().
+                antMatchers(HttpMethod.GET, "/observatory/api/prices").permitAll().
                 antMatchers(HttpMethod.POST, "/observatory/api/products").permitAll().
                 antMatchers(HttpMethod.POST, "/observatory/api/prices").permitAll().
                 antMatchers(HttpMethod.POST, "/observatory/api/shops*").permitAll().
-                antMatchers(HttpMethod.GET, "/observatory/api/products/*").permitAll();
+                antMatchers(HttpMethod.GET, "/observatory/api/products/*").permitAll().
+                antMatchers(HttpMethod.PUT, "/observatory/api/products/*").permitAll().
+                antMatchers(HttpMethod.PATCH, "/observatory/api/products/*").permitAll().
+                antMatchers(HttpMethod.DELETE, "/observatory/api/products/*").permitAll().
+                antMatchers(HttpMethod.PUT, "/observatory/api/shops/*").permitAll().
+                antMatchers(HttpMethod.PATCH, "/observatory/api/shops/*").permitAll().
+                antMatchers(HttpMethod.DELETE, "/observatory/api/shops/*").permitAll().
+                antMatchers(HttpMethod.POST, "/observatory/api/login").permitAll().
+                antMatchers(HttpMethod.POST, "/observatory/api/logout").permitAll();
 
         http
                 .authorizeRequests().
@@ -72,17 +98,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests().
-                //antMatchers(HttpMethod.POST, "login").permitAll().
+    //            antMatchers(HttpMethod.POST, "login").permitAll().
                 antMatchers(PUBLIC_MATCHERS).
                 permitAll().anyRequest().authenticated().
-                antMatchers("/profile/**").hasAuthority("user").
+                antMatchers("/profile/**").hasAuthority("user");
                 // antMatchers(HttpMethod.POST, "/observatory/api/products").hasAuthority("user").
                 // antMatchers(HttpMethod.POST, "/observatory/api/prices").hasAuthority("user").
-                antMatchers(HttpMethod.PUT, "/observatory/api/products/*").hasAuthority("user").
-                antMatchers(HttpMethod.DELETE, "/observatory/api/products/*").hasAuthority("user").
+                // antMatchers(HttpMethod.PUT, "/observatory/api/products/*").hasAuthority("user").
+                // antMatchers(HttpMethod.DELETE, "/observatory/api/products/*").hasAuthority("user").
            //     antMatchers(HttpMethod.POST, "/observatory/api/shops*").hasAuthority("user").
-                antMatchers(HttpMethod.PUT, "/observatory/api/shops/*").hasAuthority("user").
-                antMatchers(HttpMethod.DELETE, "/observatory/api/shops/*").hasAuthority("user");
+            //    antMatchers(HttpMethod.PUT, "/observatory/api/shops/*").hasAuthority("user").
+                // antMatchers(HttpMethod.DELETE, "/observatory/api/shops/*").hasAuthority("user");
 
 
         http

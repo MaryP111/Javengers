@@ -1,5 +1,6 @@
 package gr.ece.ntua.javengers.service;
 
+//import com.sun.org.apache.xpath.internal.operations.Bool;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.ProductTag;
 import gr.ece.ntua.javengers.repository.ProductRepository;
@@ -39,100 +40,110 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-//    @Override
-//    public gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id) {
-//
-//        Product tempProduct = getProductById(id).get();
-//
-//        List<String> productTags = productTagRepository.getTagsByProductId(id);
-//
-//        gr.ntua.ece.javengers.client.model.Product product = new gr.ntua.ece.javengers.client.model.Product();
-//
-//        product.setId(id.toString());
-//        product.setName(tempProduct.getName());
-//        product.setDescription(tempProduct.getDescription());
-//        product.setCategory(tempProduct.getCategory());
-//        product.setTags(productTags);
-//        product.setWithdrawn(tempProduct.getWithdrawn());
-//
-//        return product;
-//    }
+    @Override
+    public gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id) {
+
+        Product tempProduct = getProductById(id).get();
+
+        List<String> productTags = productTagRepository.getTagsByProductId(id);
+
+        gr.ntua.ece.javengers.client.model.Product product = new gr.ntua.ece.javengers.client.model.Product();
+
+        product.setId(id.toString());
+        product.setName(tempProduct.getName());
+        product.setDescription(tempProduct.getDescription());
+        product.setCategory(tempProduct.getCategory());
+        product.setTags(productTags);
+        product.setWithdrawn(tempProduct.getWithdrawn());
+
+        return product;
+    }
 
     @Override
     public Long saveProduct(Product product) {
 
 
-        product.setWithdrawn(false);
+        product.setNumberOfRatings(0);
+        if (product.getImageURL() == null) product.setImageURL("https://www.iiss.it/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png");
+
         return productRepository.save(product).getId();
+
     }
 
-//    @Override
-//    public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
-//
-//        Product product = new Product();
-//
-//        product.setName(tempProduct.getName());
-//        product.setDescription(tempProduct.getDescription());
-//        product.setCategory(tempProduct.getCategory());
-//        product.setWithdrawn(tempProduct.getWithdrawn());
-//
-//        Long productId = saveProduct(product);
-//
-//        tempProduct.setId(productId.toString());
-//
-//        Iterator<String> stringIterator = tempProduct.getTags().listIterator();
-//
-//        while (stringIterator.hasNext()) {
-//
-//            ProductTag productTag = new ProductTag();
-//
-//            productTag.setProductId(productId);
-//            productTag.setTag(stringIterator.next());
-//
-//            productTagRepository.save(productTag);
-//        }
-//
-//        return tempProduct;
-//    }
+    @Override
+    public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
 
-//    @Override
-//    public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
-//
-//        Product product = new Product();
-//
-//        product.setName(newProduct.getName());
-//        product.setDescription(newProduct.getDescription());
-//        product.setCategory(newProduct.getCategory());
-//        product.setWithdrawn(newProduct.getWithdrawn());
-//        product.setId(Long.parseLong(newProduct.getId()));
-//
-//        Long productId = saveProduct(product);
-//
-//        List<Long> ids = productTagRepository.getIdsByProductId(productId);
-//
-//        Iterator<Long> longIterator = ids.iterator();
-//
-//        while (longIterator.hasNext()) {
-//            productTagRepository.deleteById(longIterator.next());
-//        }
-//
-//        Iterator<String> stringIterator = newProduct.getTags().listIterator();
-//
-//        while (stringIterator.hasNext()) {
-//
-//            ProductTag productTag = new ProductTag();
-//
-//            productTag.setProductId(productId);
-//            productTag.setTag(stringIterator.next());
-//
-//            productTagRepository.save(productTag);
-//        }
-//
-//
-//    }
+        Product product = new Product();
+
+        product.setName(tempProduct.getName());
+        product.setDescription(tempProduct.getDescription());
+        product.setCategory(tempProduct.getCategory());
+        product.setWithdrawn(tempProduct.getWithdrawn());
+
+        Long productId = saveProduct(product);
+
+        tempProduct.setId(productId.toString());
+
+        Iterator<String> stringIterator = tempProduct.getTags().listIterator();
+
+        while (stringIterator.hasNext()) {
+
+            ProductTag productTag = new ProductTag();
+
+            productTag.setProductId(productId);
+            productTag.setTag(stringIterator.next());
+
+            productTagRepository.save(productTag);
+        }
+
+        return tempProduct;
+    }
+
 
     @Override
-    public Optional<Product> getProductByBarcode(String barcode) {
+    public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
+
+
+        Boolean withdrawn = newProduct.getWithdrawn();
+
+        if (withdrawn == null) withdrawn = false;
+
+        newProduct.setWithdrawn(withdrawn);
+
+        Product product = new Product();
+
+        product.setName(newProduct.getName());
+        product.setDescription(newProduct.getDescription());
+        product.setCategory(newProduct.getCategory());
+        product.setWithdrawn(newProduct.getWithdrawn());
+        product.setId(Long.parseLong(newProduct.getId()));
+
+        Long productId = saveProduct(product);
+
+        List<Long> ids = productTagRepository.getIdsByProductId(productId);
+
+        Iterator<Long> longIterator = ids.iterator();
+
+        while (longIterator.hasNext()) {
+            productTagRepository.deleteById(longIterator.next());
+        }
+
+        Iterator<String> stringIterator = newProduct.getTags().listIterator();
+
+        while (stringIterator.hasNext()) {
+
+            ProductTag productTag = new ProductTag();
+
+            productTag.setProductId(productId);
+            productTag.setTag(stringIterator.next());
+
+            productTagRepository.save(productTag);
+        }
+
+
+    }
+    @Override
+    public Optional<Product> getProductByBarcode (String barcode) {
 
         return productRepository.getProductByBarcode(barcode);
     }
@@ -145,20 +156,39 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void updateStars(Product product, Double stars) {
 
-        Integer numberOfRatings = product.getNumberOfRatings();
-        Double newStars = (product.getStars()*numberOfRatings+stars)/(numberOfRatings+1);
-        newStars = 2*newStars;
-        newStars = 2*newStars.intValue()/2.0;
-        product.setStars(newStars);
-        product.setNumberOfRatings(numberOfRatings+1);
+        if (stars == null) return;
+
+        stars = 20*stars;
+
+        product = productRepository.getProductByBarcode(product.getBarcode()).get();
+
+        if (product.getNumberOfRatings() == null || product.getNumberOfRatings() == 0) {
+            product.setNumberOfRatings(1);
+            product.setStars(stars);
+        }
+        else {
+            Integer numberOfRatings = product.getNumberOfRatings();
+            Double newStars = (product.getStars()*numberOfRatings+stars)/(numberOfRatings+1);
+            newStars = 10*newStars;
+            newStars = newStars.intValue()/10.0;
+            product.setStars(newStars);
+            product.setNumberOfRatings(numberOfRatings+1);
+        }
+
         productRepository.save(product);
 
     }
 
     @Override
     public void deleteProductById(Long id) {
-        productRepository.deleteById(id);
+        productRepository.deleteProductById(id);
 
+    }
+
+    @Override
+    public void withdrawProduct(Product product) {
+        product.setWithdrawn(true);
+        productRepository.save(product);
     }
 }
 

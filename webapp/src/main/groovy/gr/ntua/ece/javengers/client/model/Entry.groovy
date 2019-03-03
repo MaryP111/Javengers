@@ -4,14 +4,14 @@ import groovy.transform.Canonical;
 
 import java.sql.Date;
 
-@Canonical public class Entry {
+@Canonical class Entry {
 
-    String id;
-    Double price;
-    Date dateFrom;
-    Date dateTo;
-    String productId;
-    String shopId;
+    String id
+    Double price
+    String dateFrom
+    String dateTo
+    Long productId
+    Long shopId
 }
 
 

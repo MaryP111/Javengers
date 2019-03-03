@@ -29,18 +29,80 @@ public class ProductTagServiceImpl implements ProductTagService {
 
     public List<Product> getProductsByTag(String keyword) {
 
-        List<Long> productIds = productTagRepository.getProductsByTag("%" + keyword + "%");
+        if (keyword == null || keyword.equals("")) return null;
+
+        List<Long> productByTagIds = productTagRepository.getProductsByTag("%" + keyword + "%");
+
+        List<Long> productsByNameIds = productRepository.getProductIdsByName("%" + keyword + "%");
+
+        List<Long> productsByDescriptionIds = productRepository.getProductIdsByDescription("%" + keyword + "%");
+
+        List<Long> productsByCategoryIds = productRepository.getProductIdsByCategory("%" + keyword + "%");
+
+        List<Long> productsByManufacturerIds = productRepository.getProductIdsByManufacturer("%" + keyword + "%");
 
         List<Product> products = new ArrayList<>();
 
-
-        for (ListIterator<Long> iterator = productIds.listIterator(); iterator.hasNext(); ) {
+        for (ListIterator<Long> iterator = productByTagIds.listIterator(); iterator.hasNext(); ) {
 
             Long id = iterator.next();
+
+            Product product = productRepository.findById(id).get();
+
+            if (products.contains(product)) continue;
 
             products.add(productRepository.findById(id).get());
 
         }
+
+        for (ListIterator<Long> iterator = productsByNameIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            Product product = productRepository.findById(id).get();
+
+            if (products.contains(product)) continue;
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByDescriptionIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            Product product = productRepository.findById(id).get();
+
+            if (products.contains(product)) continue;
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByCategoryIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            Product product = productRepository.findById(id).get();
+
+            if (products.contains(product)) continue;
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
+        for (ListIterator<Long> iterator = productsByManufacturerIds.listIterator(); iterator.hasNext(); ) {
+
+            Long id = iterator.next();
+
+            Product product = productRepository.findById(id).get();
+
+            if (products.contains(product)) continue;
+
+            products.add(productRepository.findById(id).get());
+
+        }
+
 
         return products;
 
@@ -50,13 +112,15 @@ public class ProductTagServiceImpl implements ProductTagService {
     @Override
     public void insertTags(String barcode, String productTags) {
 
+        if (productTags == null) return;
+
         Long productId = productRepository.getProductByBarcode(barcode).get().getId();
 
         String[] tags = productTags.split("#");
 
         for (int i =1; i<tags.length; i++) {
 
-            String tag = tags[i].replaceAll(" ", "");
+            String tag = tags[i].replaceAll(" ", "").replaceAll(",", "");
 
             ProductTag productTag = new ProductTag();
 

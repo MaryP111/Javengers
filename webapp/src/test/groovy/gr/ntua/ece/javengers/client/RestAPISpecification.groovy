@@ -1,242 +1,458 @@
 package gr.ntua.ece.javengers.client
 
+import gr.ntua.ece.javengers.client.model.PriceInfo
+import gr.ntua.ece.javengers.client.model.PriceInfoList
 import gr.ntua.ece.javengers.client.rest.LowLevelAPI
 import gr.ntua.ece.javengers.client.rest.RestCallFormat
 import gr.ntua.ece.javengers.client.model.Product
 import gr.ntua.ece.javengers.client.model.ProductList
 import gr.ntua.ece.javengers.client.model.Shop
 import gr.ntua.ece.javengers.client.model.ShopList
-
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration
-import com.github.tomakehurst.wiremock.WireMockServer
-
-import static com.github.tomakehurst.wiremock.client.WireMock.*
+import org.apache.logging.log4j.core.tools.picocli.CommandLine
+import gr.ntua.ece.javengers.client.Helper
 
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Stepwise
 
-import groovy.json.JsonOutput
-
 @Stepwise class RestAPISpecification extends Specification {
 
-    static final String IGNORED = System.setProperty(LowLevelAPI.IGNORE_SSL_ERRORS_SYSTEM_PROPERTY, "false")
+    private static final String IGNORED = System.setProperty("IGNORE_SSL_ERRORS", "true")
 
-    @Shared WireMockServer wms
-    @Shared RestAPI api = new RestAPI(Helper.HOST, Helper.PORT, false)
+    private static final String HOST = Helper.HOST //System.getProperty("gretty.host")
+    private static final String PORT = Helper.PORT //System.getProperty("gretty.httpsPort")
 
-    def setupSpec() {
-        wms = new WireMockServer(WireMockConfiguration.options().httpsPort(Helper.PORT))
-        wms.start()
-    }
+    @Shared RestAPI api = new RestAPI(HOST, PORT as Integer, false)
 
-    def cleanupSpec() {
-        wms.stop()
-    }
-
-    /*def "User logs in" () {
-        given:
-        wms.givenThat(
-                post(urlEqualTo("$LowLevelAPI.BASE_PATH/login")).
-                        withRequestBody(equalTo(LowLevelAPI.encode([username:Helper.USER,password:Helper.PASS]))).
-                        willReturn(
-                                okJson("""{"token":"${Helper.TOKEN}"}""")
-                        )
-        )
-
+    def "User performs login"() {
         when:
         api.login(Helper.USER, Helper.PASS, RestCallFormat.JSON)
 
         then:
         api.isLoggedIn()
-    }*/
-
-    def "User adds two products" () {
-        given:
-       // wms.givenThat(
-                post("$LowLevelAPI.BASE_PATH/products").
-         //               withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        withRequestBody(equalTo(LowLevelAPI.encode(data))).
-                        willReturn(
-                                okJson(JsonOutput.toJson(product))
-                        )
-        //)
-
-        expect:
-        product == api.postProduct(new Product(data), RestCallFormat.JSON)
-
-        where:
-        data              | product
-        Helper.PROD1_DATA | Helper.PROD1
-        Helper.PROD2_DATA | Helper.PROD2
-
     }
 
-    def "User lists the products"() {
-        given:
-        wms.givenThat(
-                get("$LowLevelAPI.BASE_PATH/products?start=0&count=10&status=ACTIVE&sort=id%7CASC").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson(JsonOutput.toJson(Helper.PRODUCTS))
-                        )
-        )
-
+    def "User adds the first product" () {
         when:
-        ProductList results = api.getProducts(0, 10, "ACTIVE", "id|ASC", RestCallFormat.JSON)
+        Product sent = new Product(Helper.PROD1_DATA)
+
+        Product returned = api.postProduct(sent, RestCallFormat.JSON)
 
         then:
-        results == Helper.PRODUCTS
+                returned.name == sent.name &&
+                returned.description == sent.description &&
+                returned.category == sent.category &&
+                returned.tags == sent.tags &&
+                returned.withdrawn == sent.withdrawn
     }
 
-    def "User updates a product" () {
-        given:
-        Product p     = Helper.PROD1
-        p.name        = Helper.PROD3_DATA.name
-        p.description = Helper.PROD3_DATA.description
-        wms.givenThat(
-                put("$LowLevelAPI.BASE_PATH/products/1").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        withRequestBody(equalTo(LowLevelAPI.encode(p))).
-                        willReturn(
-                                okJson(JsonOutput.toJson(p))
-                        )
-        )
 
-        expect:
-        Helper.PROD1UPD == api.putProduct("1", p, RestCallFormat.JSON)
-    }
 
-    def "User gets a product"() {
-        wms.givenThat(
-                get("$LowLevelAPI.BASE_PATH/products/1").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson(JsonOutput.toJson(Helper.PROD1UPD))
-                        )
-        )
-
-        expect:
-        Helper.PROD1UPD == api.getProduct("1", RestCallFormat.JSON)
-    }
-
-    def "User deletes a product"() {
-        given:
-        wms.givenThat(
-                delete("$LowLevelAPI.BASE_PATH/products/2").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson('{"message":"OK"}')
-                        )
-        )
-
+    def "User adds the second product" () {
         when:
-        api.deleteProduct("2", RestCallFormat.JSON)
+        Product sent = new Product(Helper.PROD2_DATA)
+
+        Product returned = api.postProduct(sent, RestCallFormat.JSON)
 
         then:
+                returned.name == sent.name &&
+                returned.description == sent.description &&
+                returned.category == sent.category &&
+                returned.tags == sent.tags &&
+                returned.withdrawn == sent.withdrawn
+    }
+
+
+    def "User gets the first product" () {
+        when:
+
+        Product returned = api.getProduct("1", RestCallFormat.JSON)
+
+        then:
+
+                returned == Helper.PROD1
+    }
+
+    def "User adds the third product" () {
+        when:
+        Product sent = new Product(Helper.PROD3_DATA)
+
+        Product returned = api.postProduct(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.description == sent.description &&
+                returned.category == sent.category &&
+                returned.tags == sent.tags &&
+                returned.withdrawn == sent.withdrawn
+    }
+
+    def "User adds the fourth product" () {
+        when:
+        Product sent = new Product(Helper.PROD4_DATA)
+
+        Product returned = api.postProduct(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.description == sent.description &&
+                returned.category == sent.category &&
+                returned.tags == sent.tags &&
+                returned.withdrawn == sent.withdrawn
+    }
+
+    def "User gets the fourth product" () {
+        when:
+
+        Product returned = api.getProduct("4", RestCallFormat.JSON)
+
+        then:
+
+        returned == Helper.PROD4
+    }
+
+    def "User gets all the products with ascending id order" () {
+       when:
+
+       ProductList results = api.getProducts(0, 10, "ALL", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS1
+    }
+
+    def "User gets all the products with descending id order" () {
+        when:
+
+        ProductList results = api.getProducts(0, 10, "ALL", "id|desc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS2
+    }
+
+    def "User gets all the products with ascending name order" () {
+        when:
+
+        ProductList results = api.getProducts(0, 10, "ALL", "name|asc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS3
+    }
+
+    def "User gets the withdrawn products with ascending id order" () {
+        when:
+
+        ProductList results = api.getProducts(0, 10, "WITHDRAWN", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS4
+    }
+
+    def "User withdraws the first product" () {
+
+        when:
+
+        api.deleteProduct("1", RestCallFormat.JSON)
+
+        then:
+
         noExceptionThrown()
-    }
-
-    def "User adds two shops" () {
-        given:
-        wms.givenThat(
-                post("$LowLevelAPI.BASE_PATH/shops").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        withRequestBody(equalTo(LowLevelAPI.encode(data))).
-                        willReturn(
-                                okJson(JsonOutput.toJson(shop))
-                        )
-        )
-
-        expect:
-        shop == api.postShop(new Shop(data), RestCallFormat.JSON)
-
-        where:
-        data              | shop
-        Helper.SHOP1_DATA | Helper.SHOP1
-        Helper.SHOP2_DATA | Helper.SHOP2
 
     }
 
-    def "User lists the shops"() {
-        given:
-        wms.givenThat(
-                get("$LowLevelAPI.BASE_PATH/shops?start=0&count=10&status=ACTIVE&sort=id%7CASC").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson(JsonOutput.toJson(Helper.SHOPS))
-                        )
-        )
+    def "User withdraws the fourth product" () {
 
         when:
-        ShopList results = api.getShops(0, 10, "ACTIVE", "id|ASC", RestCallFormat.JSON)
+
+        api.deleteProduct("4", RestCallFormat.JSON)
 
         then:
-        results == Helper.SHOPS
+
+        noExceptionThrown()
+
     }
 
-    def "User updates a shop" () {
-        given:
-        Shop s    = Helper.SHOP1
-        s.name    = Helper.SHOP3_DATA.name
-        s.address = Helper.SHOP3_DATA.address
-        wms.givenThat(
-                put("$LowLevelAPI.BASE_PATH/shops/1").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        withRequestBody(equalTo(LowLevelAPI.encode(s))).
-                        willReturn(
-                                okJson(JsonOutput.toJson(s))
-                        )
-        )
+    def "User adds the fifth product" () {
+        when:
+        Product sent = new Product(Helper.PROD5_DATA)
 
-        expect:
-        Helper.SHOP1UPD == api.putShop("1", s, RestCallFormat.JSON)
+        Product returned = api.postProduct(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.description == sent.description &&
+                returned.category == sent.category &&
+                returned.tags == sent.tags &&
+                returned.withdrawn == sent.withdrawn
     }
 
-    def "User gets a shop"() {
-        wms.givenThat(
-                get("$LowLevelAPI.BASE_PATH/shops/1").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson(JsonOutput.toJson(Helper.SHOP1UPD))
-                        )
-        )
+    def "User gets the active products with ascending id order" () {
+        when:
 
-        expect:
-        Helper.SHOP1UPD == api.getShop("1", RestCallFormat.JSON)
+        ProductList results = api.getProducts(0, 10, "ACTIVE", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS5
     }
 
-    def "User deletes a shop"() {
-        given:
-        wms.givenThat(
-                delete("$LowLevelAPI.BASE_PATH/shops/2").
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson('{"message":"OK"}')
-                        )
-        )
+    def "User gets the withdrawn products with descending id order" () {
+        when:
+
+        ProductList results = api.getProducts(0, 10, "WITHDRAWN", "id|desc", RestCallFormat.JSON)
+
+        then:
+
+        results.total == 2
+    }
+
+    def "User updates the first product" () {
+        when:
+        Product sent = new Product(Helper.PROD1UPD_DATA)
+
+        Product returned = api.putProduct("1", sent, RestCallFormat.JSON)
+
+        then:
+                returned == Helper.PROD1UPD
+
+    }
+
+    def "User updates the fourth product" () {
+        when:
+        Product sent = new Product(Helper.PROD4UPD_DATA)
+
+        Product returned = api.putProduct("4", sent, RestCallFormat.JSON)
+
+        then:
+        returned == Helper.PROD4UPD
+
+    }
+
+    def "User gets all the products after the updates with ascending id order" () {
+        when:
+
+        ProductList results = api.getProducts(0, 10, "ALL", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+        results == Helper.PRODUCTS6
+    }
+
+    def "User updates the name of the second product" () {
+        when:
+
+        Product result = api.patchProduct("2", "name", "SecondNameUpdated", RestCallFormat.JSON)
+
+        then:
+
+        result.name == "SecondNameUpdated"
+    }
+
+    def "User gets the second product" () {
+        when:
+
+        Product result = api.getProduct("2", RestCallFormat.JSON)
+
+        then:
+
+        result.name == "SecondNameUpdated"
+    }
+
+
+    def "User adds the first shop"() {
+        when:
+        Shop sent = new Shop(Helper.SHOP1_DATA)
+
+        Shop returned = api.postShop(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.address == sent.address &&
+                returned.lat == sent.lat &&
+                returned.lng == sent.lng &&
+                returned.tags == sent.tags &&
+                !returned.withdrawn
+    }
+
+    def "User adds the second shop"() {
+        when:
+        Shop sent = new Shop(Helper.SHOP2_DATA)
+
+        Shop returned = api.postShop(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.address == sent.address &&
+                returned.lat == sent.lat &&
+                returned.lng == sent.lng &&
+                returned.tags == sent.tags &&
+                !returned.withdrawn
+    }
+
+    def "User gets the first shop" () {
+        when:
+
+        Shop returned = api.getShop("1", RestCallFormat.JSON)
+
+        then:
+                returned == Helper.SHOP1
+    }
+
+    def "User adds the third shop"() {
+        when:
+        Shop sent = new Shop(Helper.SHOP3_DATA)
+
+        Shop returned = api.postShop(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.address == sent.address &&
+                returned.lat == sent.lat &&
+                returned.lng == sent.lng &&
+                returned.tags == sent.tags &&
+                !returned.withdrawn
+    }
+
+    def "User adds the fourth shop"() {
+        when:
+        Shop sent = new Shop(Helper.SHOP4_DATA)
+
+        Shop returned = api.postShop(sent, RestCallFormat.JSON)
+
+        then:
+                returned.name == sent.name &&
+                returned.address == sent.address &&
+                returned.lat == sent.lat &&
+                returned.lng == sent.lng &&
+                returned.tags == sent.tags &&
+                !returned.withdrawn
+    }
+
+    def "User gets all the shops with ascending id order" () {
+        when:
+
+        ShopList results = api.getShops(0, 10, "ALL", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+                results == Helper.SHOPS1
+    }
+
+    def "User gets all the shops with ascending name order" () {
+        when:
+
+        ShopList results = api.getShops(0, 10, "ALL", "name|asc", RestCallFormat.JSON)
+
+        then:
+
+                results == Helper.SHOPS2
+    }
+
+    def "User withdraws the second shop" () {
 
         when:
+
         api.deleteShop("2", RestCallFormat.JSON)
 
         then:
-        noExceptionThrown()
+
+                noExceptionThrown()
+
     }
 
-    def "User logs out"() {
-        given:
-        wms.givenThat(
-                post(urlEqualTo("$LowLevelAPI.BASE_PATH/logout")).
-                        withHeader(LowLevelAPI.HEADER, equalTo(Helper.TOKEN)).
-                        willReturn(
-                                okJson('{"message":"OK"}')
-                        )
-        )
+    def "User gets the active shops with ascending name order" () {
+        when:
 
+        ShopList results = api.getShops(0, 10, "ACTIVE", "name|asc", RestCallFormat.JSON)
+
+        then:
+
+                results == Helper.SHOPS3
+    }
+
+    def "User gets the withdrawn shops with descending id order" () {
+        when:
+
+        ShopList results = api.getShops(0, 10, "WITHDRAWN", "id|desc", RestCallFormat.JSON)
+
+        then:
+
+                results.total == 1
+    }
+
+    def "User updates the second shop" () {
+        when:
+        Shop sent = new Shop(Helper.SHOP2UPD_DATA)
+
+        Shop returned = api.putShop("2", sent, RestCallFormat.JSON)
+
+        then:
+                returned == Helper.SHOP2UPD
+
+    }
+
+    def "User gets all the shops after the update with ascending id order" () {
+        when:
+        ShopList results = api.getShops(0, 10, "ALL", "id|asc", RestCallFormat.JSON)
+
+        then:
+
+                results == Helper.SHOPS4
+    }
+
+    def "User updates the Address of the fourth shop" () {
+
+        when:
+        Shop returned = api.patchShop("4", "address", "Ανάβυσσος", RestCallFormat.JSON)
+
+        then:
+
+                returned.address == "Ανάβυσσος"
+
+    }
+
+    def "User gets the fourth shop" () {
+
+        when:
+        Shop returned = api.getShop("4", RestCallFormat.JSON)
+
+        then:
+
+                returned.address == "Ανάβυσσος"
+    }
+
+
+
+    def "User adds the first price"() {
+        when:
+        double price = Helper.PINFO_SUBMIT_DATA.price
+        String dateFrom = Helper.PINFO_SUBMIT_DATA.dateFrom
+        String dateTo = Helper.PINFO_SUBMIT_DATA.dateTo
+        String productId = Helper.PINFO_SUBMIT_DATA.productId
+        String shopId = Helper.PINFO_SUBMIT_DATA.shopId
+        PriceInfoList list = api.postPrice(price, dateFrom, dateTo, productId, shopId, RestCallFormat.JSON)
+
+        then:
+                list.total == Helper.durationInDays(dateFrom, dateTo) + 1 &&
+                list.prices.every { PriceInfo p ->
+                    p.price == price &&
+                    p.productId == productId &&
+                    p.shopId == shopId
+                } &&
+                list.prices[0].date == dateFrom &&
+                list.prices[1].date == dateTo
+    }
+
+    def "User performs logout" () {
         when:
         api.logout(RestCallFormat.JSON)
 
         then:
-        !api.isLoggedIn()
+
+                !api.isLoggedIn()
     }
+
 }
