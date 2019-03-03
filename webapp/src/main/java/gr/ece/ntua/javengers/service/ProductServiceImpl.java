@@ -1,6 +1,6 @@
 package gr.ece.ntua.javengers.service;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+//import com.sun.org.apache.xpath.internal.operations.Bool;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.ProductTag;
 import gr.ece.ntua.javengers.repository.ProductRepository;
@@ -186,7 +186,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProductById(Long id) {
-        productRepository.deleteById(id);
+        productRepository.deleteProductById(id);
 
     }
 

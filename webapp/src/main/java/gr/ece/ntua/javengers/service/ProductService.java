@@ -28,6 +28,4 @@ public interface ProductService {
 
     void withdrawProduct(Product product);
 
-
-
 }
