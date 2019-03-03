@@ -2,6 +2,7 @@ package gr.ece.ntua.javengers.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import gr.ece.ntua.javengers.entity.security.Authority;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -105,8 +105,6 @@ public class UserController {
 
         model.addAttribute("user", loggedUser);
 
-       // List<User> users = userService.findAll();
-
         return "profile";
 
     }
