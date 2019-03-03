@@ -39,100 +39,107 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-    @Override
-    public gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id) {
-
-        Product tempProduct = getProductById(id).get();
-
-        List<String> productTags = productTagRepository.getTagsByProductId(id);
-
-        gr.ntua.ece.javengers.client.model.Product product = new gr.ntua.ece.javengers.client.model.Product();
-
-        product.setId(id.toString());
-        product.setName(tempProduct.getName());
-        product.setDescription(tempProduct.getDescription());
-        product.setCategory(tempProduct.getCategory());
-        product.setTags(productTags);
-        product.setWithdrawn(tempProduct.getWithdrawn());
-
-        return product;
-    }
+//    @Override
+//    public gr.ntua.ece.javengers.client.model.Product getProductAndTagsById(Long id) {
+//
+//        Product tempProduct = getProductById(id).get();
+//
+//        List<String> productTags = productTagRepository.getTagsByProductId(id);
+//
+//        gr.ntua.ece.javengers.client.model.Product product = new gr.ntua.ece.javengers.client.model.Product();
+//
+//        product.setId(id.toString());
+//        product.setName(tempProduct.getName());
+//        product.setDescription(tempProduct.getDescription());
+//        product.setCategory(tempProduct.getCategory());
+//        product.setTags(productTags);
+//        product.setWithdrawn(tempProduct.getWithdrawn());
+//
+//        return product;
+//    }
 
     @Override
     public Long saveProduct(Product product) {
 
+
+        product.setWithdrawn(false);
         return productRepository.save(product).getId();
     }
 
-    @Override
-    public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
+//    @Override
+//    public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
+//
+//        Product product = new Product();
+//
+//        product.setName(tempProduct.getName());
+//        product.setDescription(tempProduct.getDescription());
+//        product.setCategory(tempProduct.getCategory());
+//        product.setWithdrawn(tempProduct.getWithdrawn());
+//
+//        Long productId = saveProduct(product);
+//
+//        tempProduct.setId(productId.toString());
+//
+//        Iterator<String> stringIterator = tempProduct.getTags().listIterator();
+//
+//        while (stringIterator.hasNext()) {
+//
+//            ProductTag productTag = new ProductTag();
+//
+//            productTag.setProductId(productId);
+//            productTag.setTag(stringIterator.next());
+//
+//            productTagRepository.save(productTag);
+//        }
+//
+//        return tempProduct;
+//    }
 
-        Product product = new Product();
-
-        product.setName(tempProduct.getName());
-        product.setDescription(tempProduct.getDescription());
-        product.setCategory(tempProduct.getCategory());
-        product.setWithdrawn(tempProduct.getWithdrawn());
-
-        Long productId = saveProduct(product);
-
-        tempProduct.setId(productId.toString());
-
-        Iterator<String> stringIterator = tempProduct.getTags().listIterator();
-
-        while (stringIterator.hasNext()) {
-
-            ProductTag productTag = new ProductTag();
-
-            productTag.setProductId(productId);
-            productTag.setTag(stringIterator.next());
-
-            productTagRepository.save(productTag);
-        }
-
-        return tempProduct;
-    }
-
-    @Override
-    public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
-
-        Product product = new Product();
-
-        product.setName(newProduct.getName());
-        product.setDescription(newProduct.getDescription());
-        product.setCategory(newProduct.getCategory());
-        product.setWithdrawn(newProduct.getWithdrawn());
-        product.setId(Long.parseLong(newProduct.getId()));
-
-        Long productId = saveProduct(product);
-
-        List<Long> ids = productTagRepository.getIdsByProductId(productId);
-
-        Iterator<Long> longIterator = ids.iterator();
-
-        while (longIterator.hasNext()) {
-            productTagRepository.deleteById(longIterator.next());
-        }
-
-        Iterator<String> stringIterator = newProduct.getTags().listIterator();
-
-        while (stringIterator.hasNext()) {
-
-            ProductTag productTag = new ProductTag();
-
-            productTag.setProductId(productId);
-            productTag.setTag(stringIterator.next());
-
-            productTagRepository.save(productTag);
-        }
-
-
-    }
+//    @Override
+//    public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
+//
+//        Product product = new Product();
+//
+//        product.setName(newProduct.getName());
+//        product.setDescription(newProduct.getDescription());
+//        product.setCategory(newProduct.getCategory());
+//        product.setWithdrawn(newProduct.getWithdrawn());
+//        product.setId(Long.parseLong(newProduct.getId()));
+//
+//        Long productId = saveProduct(product);
+//
+//        List<Long> ids = productTagRepository.getIdsByProductId(productId);
+//
+//        Iterator<Long> longIterator = ids.iterator();
+//
+//        while (longIterator.hasNext()) {
+//            productTagRepository.deleteById(longIterator.next());
+//        }
+//
+//        Iterator<String> stringIterator = newProduct.getTags().listIterator();
+//
+//        while (stringIterator.hasNext()) {
+//
+//            ProductTag productTag = new ProductTag();
+//
+//            productTag.setProductId(productId);
+//            productTag.setTag(stringIterator.next());
+//
+//            productTagRepository.save(productTag);
+//        }
+//
+//
+//    }
 
     @Override
     public Optional<Product> getProductByBarcode(String barcode) {
 
         return productRepository.getProductByBarcode(barcode);
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.getProductsByCategory(category);
     }
 
     @Override

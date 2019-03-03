@@ -47,8 +47,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**",
             "/signup",
             "/product/list",
+            "/product/*",
             "/entry/list/*",
-            "observatory/api/login"
+            "/entry/*",
+            "/profile/*",
+            "/home//sendMail",
+            "/entry/list/update/*"
     };
 
     @Override

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
   <head>
 
@@ -37,9 +38,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
+            <div th:unless="${isRegisteredUser}">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="profile">ΣΥΝΔΕΣΟΥ</a>
             </li>
+            </div>
+            <div th:if="${isRegisteredUser}">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="profile">TO ΠΡΟΦΙΛ ΜΟΥ</a>
+              </li>
+            </div>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="signup">ΔΗΜΙΟΥΡΓΙΑ ΛΟΓΑΡΙΑΣΜΟΥ</a>
             </li>
@@ -91,7 +99,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link"  href="/product/list">
+            <a class="categories-link"  href="/product/technology">
               <div class="categories-hover">
                 <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -105,7 +113,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" href="/product/list">
+            <a class="categories-link" href="/product/fashion">
               <div class="categories-hover">
                 <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -119,7 +127,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" href="/product/list">
+            <a class="categories-link" href="/product/cosmetics">
               <div class="categories-hover">
                 <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -147,7 +155,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" href="/product/list">
+            <a class="categories-link" href="/product/automotive">
               <div class="categories-hover">
                 <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -161,7 +169,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 categories-item">
-            <a class="categories-link" href="/product/list">
+            <a class="categories-link" href="/product/appliances">
               <div class="categories-hover">
                 <!--<div class="categories-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -272,25 +280,25 @@
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-              <h4>Kay Garland</h4>
-              <p class="text-muted">Lead Designer</p>
+              <img class="mx-auto rounded-circle" src="https://i.pinimg.com/originals/68/8e/e2/688ee20ffaa8a3b794dd854b866dd272.png" alt="">
+              <h4>Μαρία Παρέλλη</h4>
+              <p class="text-muted">Secret Sauce</p>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Marketer</p>
+              <img class="mx-auto rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9kJun05dunIkmF2zBl1QD-6WHUe7jixBltRTsO-yWj_dmajWQ8A" alt="">
+              <h4>Ιωάννης Αναγνωστίδης</h4>
+              <p class="text-muted">The Bus factor</p>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
+              <img class="mx-auto rounded-circle" src="https://i.pinimg.com/originals/cb/b5/f0/cbb5f01cf2e27b5684afe9af3490770c.jpg" alt="">
+              <h4>Ελένη Παπαδοπούλου</h4>
+              <p class="text-muted">Growth Hacker</p>
             </div>
           </div>
         </div>
@@ -299,25 +307,25 @@
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-              <h4>Kay Garland</h4>
-              <p class="text-muted">Lead Designer</p>
+              <img class="mx-auto rounded-circle" src="http://www.thelockinmovie.com/wp-content/uploads/2018/09/peacock-images-clip-art-peacock-clipart-digital-vector-peacock-feather-peafowl-etsy-space-clipart.jpg" alt="">
+              <h4>Μιχάλης Καλντής</h4>
+              <p class="text-muted">"Blockchain" Evangelist</p>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Marketer</p>
+              <img class="mx-auto rounded-circle" src="http://clipart-library.com/images/di4oLgkKT.jpg" alt="">
+              <h4>Αριστομένης Θεοδωρίδης</h4>
+              <p class="text-muted">Angel Investor</p>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
+              <img class="mx-auto rounded-circle" src="https://www.dellamas.store/wp-content/uploads/2019/01/llama-con-lentes-sin-fondo-slipart.png" alt="">
+              <h4>Ελισσαίος Σαρμάς</h4>
+              <p class="text-muted">Wanna Be CEO</p>
             </div>
           </div>
         </div>
@@ -331,20 +339,22 @@
     </section>
 
 
+
+
+    <div align="text-center">
     <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="row">
+    <section id="contact" align="center">
+      <div class="container" align="center">
+        <div class="row" align="center">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">ΕΠΙΚΟΙΝΩΝΗΣΕ ΜΑΖΙ ΜΑΣ</h2>
             <h3 class="section-subheading text-muted">Συνέβαλε ενεργητικά στη εξέλιξη της σελίδας μεταφέροντας την άποψή σου σχετικά με την προσφορά της σελίδας.</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" place="sentMessage" novalidate="novalidate">
-              <div class="row">
-                <div class="col-md-6">
+
+          <!-- novalidate="novalidate-->
+          <div class="col-lg-12 text-center">
+            <form id="contactForm" action="/home/sendMail" th:action="@{/home/sendMail} "method="post" >
+
+                <div class="col-md-6 ">
                   <div class="form-group">
                     <input class="form-control" id="place" type="text" placeholder="Το Όνομά σας *" required="required" data-validation-required-message="Παρακαλώ πρόσθεστε το όνομά σας.">
                     <p class="help-block text-danger"></p>
@@ -353,32 +363,26 @@
                     <input class="form-control" id="email" type="email" placeholder="Το Email σας *" required="required" data-validation-required-message="Παρακαλώ πρόσθεστε το email σας.">
                     <p class="help-block text-danger"></p>
                   </div>
-                  <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Το Τηλέφωνό σας *" required="required" data-validation-required-message="Παρακαλώ προσθέστε το τηλέφωνό σας.">
-                    <p class="help-block text-danger"></p>
-                  </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Το Μήνυμά σας *" required="required" data-validation-required-message="Παρακαλώ προσθέστε το μήνυμά σας."></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-12 text-center">
-                  <div id="success"></div>
+            </form>
+            <form action="/home/sendMail" method="post">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <textarea class="form-control" id="messageBody" name ="messageBody" placeholder="Το Μήνυμά σας *" required="required" data-validation-required-message="Παρακαλώ προσθέστε το μήνυμά σας."></textarea>
+                  <p class="help-block text-danger"></p>
                   <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
+        </div>
       </div>
     </section>
-
+    </div>
     <!-- Footer -->
     <footer>
-      <span class="copyright">Copyright &copy; Our Website 2018</span>
+      <span class="copyright">Copyright &copy; Our Website 2019</span>
     </footer>
 
 

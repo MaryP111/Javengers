@@ -2,7 +2,7 @@ package gr.ece.ntua.javengers.service;
 
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
-import gr.ntua.ece.javengers.client.model.Shop;
+//import gr.ntua.ece.javengers.client.model.Shop;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,13 +15,13 @@ public interface StoreService {
 
     Optional<Store> getStoreById(Long id);
 
-    Shop saveShop(Shop shop);
+    //Shop saveShop(Shop shop);
 
-    gr.ntua.ece.javengers.client.model.Shop getStoreAndTagsById(Long id);
+    //gr.ntua.ece.javengers.client.model.Shop getStoreAndTagsById(Long id);
 
     Long saveStore(Store store);
 
-    void updateStore(Shop shop);
+    //void updateStore(Shop shop);
 
     void deleteStoreById(Long id);
 

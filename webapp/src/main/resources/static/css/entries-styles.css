@@ -70,3 +70,25 @@ img.resize {
     position: absolute;
     top: 50%;
 }
+
+.item2 {
+    position: absolute;
+    left: 100px;
+    width: 900px;
+    bottom: 450px;
+}
+.entry-item2 {
+    position:absolute;
+    right: 80px;
+    width: 1400px;
+    height: 1220px;
+
+
+}
+.creaMappa2 {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    visibility: hidden;
+    
+}

@@ -45,6 +45,7 @@ $(document).ready(function() {
                     animation: google.maps.Animation.DROP
                 });
 
+
                 google.maps.event.addListener(marker, 'dragend', function() {
 
                     marker.setAnimation(google.maps.Animation.DROP);
@@ -68,6 +69,77 @@ $(document).ready(function() {
 
     })
         .trigger('click');
+
+    $('#creaMappa2').click(function () {
+        var address=$('#address').val();
+        console.log("initial address");
+        console.log(address);
+        if (address == null || address.trim() == "")
+            address = "37.9759453,23.77804489999994";
+
+        document.getElementById('address').value = '';
+
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                console.log('geocoder results:');
+                console.dir(results);
+
+                var mapOptions = {
+                    zoom: 15,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.SMALL
+                    },
+                    //streetViewControl: false,
+                    center: results[0].geometry.location
+                };
+
+                map = new google.maps.Map(document.getElementById('map1'), mapOptions);
+
+                document.getElementById('lat').value = results[0].geometry.location.lat();
+                document.getElementById('lng').value = results[0].geometry.location.lng();
+
+                //map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    draggable: false,
+                    animation: google.maps.Animation.DROP
+                });
+
+
+                google.maps.event.addListener(marker, 'dragend', function() {
+
+                    marker.setAnimation(google.maps.Animation.DROP);
+
+                    var marker_pos = marker.getPosition();
+
+                    console.log('Marker getPosition():');
+
+                    document.getElementById('lat').value = marker_pos.lat();
+                    document.getElementById('lng').value = marker_pos.lng();
+
+                    console.log(document.getElementById('lat').value);
+                    console.log(document.getElementById('lng').value);
+
+                });
+
+            } else {
+                alert('Ύπηρξε πρόβλημα με το χάρτη (' + status + ')');
+            }
+        });
+
+    })
+        .trigger('click');
+
+
+
 
     // TODO remove this
 
@@ -180,7 +252,11 @@ $(".modal-trigger").click(function(e){
     e.preventDefault();
     dataModal = $(this).attr("data-modal");
     $("#" + dataModal).css({"display":"block"});
+    var entryId = $(this).data('id');
+    $(".modal-trigger #entryId").val( entryId );
 });
+
+
 
 $(".close-modal, .modal-sandbox").click(function(){
     $(".modal").css({"display":"none"});

@@ -36,6 +36,17 @@ public class HasProduct {
     @Column(name = "withdrawn", nullable = false)
     private Boolean withdrawn;
 
+    @Transient
+    public String address;
+
+    @Transient
+    public Double lat;
+
+    @Transient
+    public Double lng;
+
+    @Transient
+    public String storeName;
     public HasProduct() {}
 
     public Long getId() {
