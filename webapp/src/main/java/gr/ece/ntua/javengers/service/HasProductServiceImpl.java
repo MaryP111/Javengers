@@ -55,17 +55,27 @@ public class HasProductServiceImpl implements HasProductService {
     }
 
     @Override
-    public Entry saveEntry(Entry entry) {
+    public Entry saveEntry(Entry entry) throws Exception{
 
         HasProduct hasProduct = new HasProduct();
+
+        java.util.Date tempDate;
+
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        tempDate = simpleDateFormat.parse(entry.getDateFrom());
+        java.sql.Date dateFrom = new java.sql.Date(tempDate.getTime());
+
+        tempDate = simpleDateFormat.parse(entry.getDateTo());
+        java.sql.Date dateTo = new java.sql.Date(tempDate.getTime());
 
 
         // hasProduct.setUserId(1L);
         hasProduct.setProductId(entry.getProductId());
         hasProduct.setStoreId(entry.getShopId());
         hasProduct.setPrice(entry.getPrice());
-        hasProduct.setDateFrom(entry.getDateFrom());
-        hasProduct.setDateTo(entry.getDateTo());
+        hasProduct.setDateFrom(dateFrom);
+        hasProduct.setDateTo(dateTo);
 
         Long entryId = hasProductRepository.save(hasProduct).getId();
 

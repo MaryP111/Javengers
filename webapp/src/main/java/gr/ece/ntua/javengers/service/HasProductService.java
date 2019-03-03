@@ -11,7 +11,7 @@ public interface HasProductService {
 
     List<HasProduct> getEntriesById(Long productId);
 
-    Entry saveEntry(Entry entry);
+    Entry saveEntry(Entry entry) throws Exception;
 
     List<HasProduct> getAllEntries();
 

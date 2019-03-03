@@ -8,15 +8,13 @@ import gr.ece.ntua.javengers.exception.*;
 import gr.ece.ntua.javengers.service.*;
 import gr.ntua.ece.javengers.client.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.security.SecureRandom;
+// import java.security.SecureRandom;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -44,7 +42,9 @@ public class APIController {
     @Resource(name = "authenticationManager")
     private AuthenticationManager authManager;
 
-    private static List<Long> tokenList;
+    // private static List<Long> tokenList;
+
+    private static final String authToken = "authTokenABC123";
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -87,7 +87,9 @@ public class APIController {
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
-        deleteToken(token);
+        // deleteToken(token);
+
+        token = null;
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("message", "OK");
@@ -100,9 +102,7 @@ public class APIController {
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public ProductList getProducts (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
-                                       @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
-
-        if (!verifyToken(token)) throw new ForbiddenException();
+                                    @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort) {
 
 
         String format;
@@ -203,10 +203,8 @@ public class APIController {
 
 
     @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
-    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public gr.ntua.ece.javengers.client.model.Product getProductById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id) {
 
-
-        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!optionalFormat.isPresent()) format = "json";
@@ -309,9 +307,13 @@ public class APIController {
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
-        if (!productService.getProductById(id).isPresent()) throw new ProductNotFoundException();
+        Optional<Product> optionalProduct = productService.getProductById(id);
 
-        productService.deleteProductById(id);   // if else with admin
+        if (!optionalProduct.isPresent()) throw new ProductNotFoundException();
+
+        if (optionalProduct.get().getWithdrawn()) throw new BadRequestException();
+
+        productService.withdrawProduct(optionalProduct.get());
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("message", "OK");
@@ -322,11 +324,8 @@ public class APIController {
 
     @RequestMapping(value = "/shops", method = RequestMethod.GET)
     public ShopList getShops (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
-                              @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+                              @RequestParam("status") Optional<String> optionalStatus, @RequestParam("sort") Optional<String> optionalSort) {
 
-
-
-        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!optionalFormat.isPresent()) format = "json";
@@ -425,9 +424,8 @@ public class APIController {
     }
 
     @RequestMapping(value = "/shops/{id}", method = RequestMethod.GET)
-    public gr.ntua.ece.javengers.client.model.Shop getShopById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public gr.ntua.ece.javengers.client.model.Shop getShopById(@RequestParam("format") Optional<String> optionalFormat, @PathVariable("id") Long id) {
 
-        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!optionalFormat.isPresent()) format = "json";
@@ -437,7 +435,9 @@ public class APIController {
 
         if (storeService.getStoreById(id).isPresent()) {
 
-            return storeService.getStoreAndTagsById(id);
+            Shop shop = storeService.getStoreAndTagsById(id);
+
+            return shop;
         }
 
         throw new ShopNotFoundException();
@@ -531,9 +531,13 @@ public class APIController {
 
         if (!format.equalsIgnoreCase("json")) throw new FormatBadRequestException();
 
-        if (!storeService.getStoreById(id).isPresent()) throw new ShopNotFoundException();
+        Optional<Store> optionalStore = storeService.getStoreById(id);
 
-        storeService.deleteStoreById(id);
+        if (!optionalStore.isPresent()) throw new ShopNotFoundException();
+
+        if (optionalStore.get().getWithdrawn()) throw new BadRequestException();
+
+        storeService.withdrawStore(optionalStore.get());
 
         HashMap<String, String> jsonResponse = new HashMap<>();
         jsonResponse.put("message", "OK");
@@ -546,11 +550,8 @@ public class APIController {
     public PriceInfoList queryEntries (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
                                        @RequestParam("geoDist") Optional<Integer> optionalGeoDist, @RequestParam("geoLng") Optional<Double> optionalGeoLng, @RequestParam("geoLat") Optional<Double> optionalGeoLat,
                                        @RequestParam("dateFrom") Optional<Date> optionalDateFrom, @RequestParam("dateTo") Optional<Date> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops,
-                                       @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort,
-                                       @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) throws Exception{
+                                       @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort) throws Exception{
 
-
-        if (!verifyToken(token)) throw new ForbiddenException();
 
         String format;
         if (!optionalFormat.isPresent()) format = "json";
@@ -605,7 +606,7 @@ public class APIController {
                 if (date.compareTo(entry.getDateFrom()) >= 0 && date.compareTo(entry.getDateTo()) <= 0) {
                     PriceInfo priceInfo = new PriceInfo();
                     priceInfo.setPrice(entry.getPrice());
-                    priceInfo.setDate(date);
+                    priceInfo.setDate(date.toString());
                     priceInfo.setShopId(entry.getStoreId().toString());
                     priceInfo.setProductId(entry.getProductId().toString());
                     filteredByDate.add(priceInfo);
@@ -775,7 +776,7 @@ public class APIController {
 
 
     @RequestMapping(value ="/prices", method = RequestMethod.POST)
-    public PriceInfoList postEntry(@RequestParam("format") Optional<String> optionalFormat, Entry entry, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) {
+    public PriceInfoList postEntry(@RequestParam("format") Optional<String> optionalFormat, Entry entry, @RequestHeader(value = "X-OBSERVATORY-AUTH") String token) throws Exception{
 
         if (!verifyToken(token)) throw new ForbiddenException();
 
@@ -787,13 +788,21 @@ public class APIController {
 
         if (entry.getPrice() == null || entry.getPrice() <= 0 || entry.getPrice() >= 1000000) throw new BadRequestException();
 
-        Integer temp =  (int)(entry.getPrice()*100);
+       /* Integer temp =  (int)(entry.getPrice()*100);
         Double price = temp.intValue()/100.0;
 
-        entry.setPrice(price);
+        entry.setPrice(price);*/
 
-        Date dateFrom = entry.getDateFrom();
-        Date dateTo = entry.getDateTo();
+
+        java.util.Date tempDate;
+
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        tempDate = simpleDateFormat.parse(entry.getDateFrom());
+        Date dateFrom = new java.sql.Date(tempDate.getTime());
+
+        tempDate = simpleDateFormat.parse(entry.getDateTo());
+        Date dateTo = new java.sql.Date(tempDate.getTime());
 
         if (dateFrom.compareTo(dateTo) > 0) throw new BadRequestException();
 
@@ -815,7 +824,7 @@ public class APIController {
 
             PriceInfo priceInfo = new PriceInfo();
             priceInfo.setPrice(entry.getPrice());
-            priceInfo.setDate(date);
+            priceInfo.setDate(date.toString());
             priceInfo.setProductId(entry.getProductId().toString());
             priceInfo.setShopId(entry.getShopId().toString());
             prices.add(priceInfo);
@@ -893,6 +902,8 @@ public class APIController {
 
     private static String tokenGenerator() {
 
+        /*
+
         if (tokenList == null) tokenList = new ArrayList<>();
 
         SecureRandom random = new SecureRandom();
@@ -901,9 +912,9 @@ public class APIController {
         long longToken = Math.abs(random.nextLong());
         while (tokenList.contains(longToken)) {
             longToken = Math.abs(random.nextLong());
-        }
+        }*/
 
-        return "ABC123";
+        return authToken;
     }
 
     private static void addToken(String token) {
@@ -915,7 +926,7 @@ public class APIController {
     private static Boolean verifyToken(String token) {
         //if (tokenList == null) throw new BadRequestException();
         //return tokenList.contains(token);
-        return token.equals("ABC123");
+        return token.equals(authToken);
     }
     private static void deleteToken(String token) {
 

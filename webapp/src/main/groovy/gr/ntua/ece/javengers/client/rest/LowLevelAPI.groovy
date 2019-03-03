@@ -32,7 +32,7 @@ class LowLevelAPI {
 
     static final String IGNORE_SSL_ERRORS_SYSTEM_PROPERTY = "IGNORE_SSL_ERRORS"
 
-    static final SimpleDateFormat FORMAT = new SimpleDateFormat("YYYY-MM-DD")
+    static final Charset UTF8 = Charset.forName("UTF-8")
 
     private final String host
     private final int port
@@ -63,7 +63,7 @@ class LowLevelAPI {
             queryString = ""
         }
         String url = "${secure ? 'https' : 'http'}://$host:$port$BASE_PATH/$endPoint$queryString"
-        //println "Fetching $url"
+        println "### Contacting REST endpoint: $url"
         return url
     }
 
@@ -80,7 +80,8 @@ class LowLevelAPI {
                                 Form.form().
                                         add("username", username).
                                         add("password", password).
-                                        build()
+                                        build(),
+                                UTF8
                         ),
                 format
         )
@@ -127,7 +128,7 @@ class LowLevelAPI {
         addToForm(form, product)
 
         return execute(
-                Request.Post(createUrl("products", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
+                Request.Post(createUrl("products", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -140,7 +141,7 @@ class LowLevelAPI {
         addToForm(form, product)
 
         return execute(
-                Request.Put(createUrl("products/$id", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Put(createUrl("products/$id", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -153,7 +154,7 @@ class LowLevelAPI {
         addFieldToForm(form, field, value)
 
         return execute(
-                Request.Patch(createUrl("products/$id", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Patch(createUrl("products/$id", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -199,7 +200,7 @@ class LowLevelAPI {
         addToForm(form, shop)
 
         return execute(
-                Request.Post(createUrl("shops", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
+                Request.Post(createUrl("shops", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -212,7 +213,7 @@ class LowLevelAPI {
         addToForm(form, shop)
 
         return execute(
-                Request.Put(createUrl("shops/$id", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Put(createUrl("shops/$id", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -225,7 +226,7 @@ class LowLevelAPI {
         addFieldToForm(form, field, value)
 
         return execute(
-                Request.Patch(createUrl("shops/$id", format)).bodyForm(form.build()).addHeader(HEADER, token),
+                Request.Patch(createUrl("shops/$id", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
     }
@@ -259,7 +260,7 @@ class LowLevelAPI {
         addFieldToForm(form, "shopId", shopId)
 
         return execute(
-                Request.Post(createUrl("prices", format)).bodyForm(form.build(), Charset.defaultCharset()).addHeader(HEADER, token),
+                Request.Post(createUrl("prices", format)).bodyForm(form.build(), UTF8).addHeader(HEADER, token),
                 format
         )
 

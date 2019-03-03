@@ -1,9 +1,11 @@
 package gr.ece.ntua.javengers.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
 import gr.ece.ntua.javengers.entity.User;
+import gr.ece.ntua.javengers.entity.comparator.SortProductById;
 import gr.ece.ntua.javengers.entity.comparator.SortProductByStars;
 import gr.ece.ntua.javengers.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +16,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class EntryController {
@@ -63,14 +63,52 @@ public class EntryController {
     }
 
     @RequestMapping(value = "/product/list", method = RequestMethod.GET)
-    public String searchProducts(@Valid String keyWord, Model model) {
+    public String searchProducts(@RequestParam("keyWord") String keyWord, @RequestParam("pageIndex") Optional<Integer> optionalPageIndex, Model model) {
 
+
+        Integer sizeOfPage = 6;
+
+        Integer pageIndex = 1;
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
+
+        Boolean leftPage = false;
+        if (pageIndex != 1) leftPage = true;
+
+        model.addAttribute("pageIndex", pageIndex);
+        model.addAttribute("leftPage", leftPage);
+
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
 
         List<Product> products = productTagService.getProductsByTag(keyWord);
 
         Collections.sort(products, new SortProductByStars());
 
-        model.addAttribute("products", products);
+        if (products == null || products.size() == 0) {
+
+            return "/index";
+        }
+
+        Boolean rightPage = true;
+        if (products.size() < sizeOfPage*pageIndex) rightPage = false;
+        model.addAttribute("rightPage", rightPage);
+
+        List<Product> productsOfPage = new ArrayList<>();
+
+        Integer previousProducts = sizeOfPage*(pageIndex-1);
+
+        Iterator<Product> productIterator = products.iterator();
+
+        Integer cnt = 0;
+
+        while (productIterator.hasNext()) {
+
+            Product product = productIterator.next();
+            if (cnt++ < previousProducts) continue;
+            productsOfPage.add(product);
+            if (cnt >= sizeOfPage*pageIndex) break;
+        }
+
+        model.addAttribute("products", productsOfPage);
 
         return "products";
 

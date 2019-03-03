@@ -64,6 +64,7 @@ public class ProductServiceImpl implements ProductService {
 
 
         product.setNumberOfRatings(0);
+        if (product.getImageURL() == null) product.setImageURL("https://www.iiss.it/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png");
 
         return productRepository.save(product).getId();
 
@@ -87,6 +88,7 @@ public class ProductServiceImpl implements ProductService {
         product.setDescription(tempProduct.getDescription());
         product.setCategory(tempProduct.getCategory());
         product.setWithdrawn(tempProduct.getWithdrawn());
+        product.setImageURL("https://www.iiss.it/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png");
 
         Long productId = saveProduct(product);
 
@@ -186,6 +188,12 @@ public class ProductServiceImpl implements ProductService {
     public void deleteProductById(Long id) {
         productRepository.deleteById(id);
 
+    }
+
+    @Override
+    public void withdrawProduct(Product product) {
+        product.setWithdrawn(true);
+        productRepository.save(product);
     }
 }
 

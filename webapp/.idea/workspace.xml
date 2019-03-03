@@ -24,11 +24,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ProductList.groovy" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Shop.groovy" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ShopList.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/fieldsOfProduct/CategoryObject.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/fieldsOfProduct/DescriptionObject.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/fieldsOfProduct/NameObject.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/fieldsOfProduct/TagsObject.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/fieldsOfProduct/WithdrawnObject.groovy" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/ClientFactory.groovy" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/DefaultClientFactory.groovy" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy" afterDir="false" />
@@ -107,178 +102,142 @@
     <session id="1046020717">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="51" />
-          <entry key="project.open.time.10" value="5" />
-          <entry key="project.open.time.11" value="21" />
-          <entry key="project.open.time.12" value="13" />
-          <entry key="project.open.time.13" value="6" />
+          <entry key="project.closed" value="59" />
+          <entry key="project.open.time.10" value="6" />
+          <entry key="project.open.time.11" value="23" />
+          <entry key="project.open.time.12" value="14" />
+          <entry key="project.open.time.13" value="7" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="57" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="892" />
+          <entry key="css" value="913" />
           <entry key="dummy" value="125" />
           <entry key="ftl" value="68" />
-          <entry key="groovy" value="1834" />
-          <entry key="html" value="7640" />
-          <entry key="java" value="44699" />
+          <entry key="groovy" value="5384" />
+          <entry key="html" value="8798" />
+          <entry key="java" value="47275" />
           <entry key="js" value="263" />
-          <entry key="properties" value="713" />
-          <entry key="xml" value="309" />
+          <entry key="properties" value="1182" />
+          <entry key="xml" value="311" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="892" />
+          <entry key="CSS" value="913" />
           <entry key="FTL" value="68" />
-          <entry key="Groovy" value="1834" />
-          <entry key="HTML" value="7640" />
-          <entry key="JAVA" value="44699" />
+          <entry key="Groovy" value="5384" />
+          <entry key="HTML" value="8798" />
+          <entry key="JAVA" value="47275" />
           <entry key="JavaScript" value="263" />
           <entry key="PLAIN_TEXT" value="125" />
-          <entry key="Properties" value="713" />
-          <entry key="XML" value="309" />
+          <entry key="Properties" value="1182" />
+          <entry key="XML" value="311" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="69" />
-          <entry key="css" value="18" />
+          <entry key="MF" value="2" />
+          <entry key="class" value="77" />
+          <entry key="css" value="19" />
           <entry key="f" value="1" />
           <entry key="ftl" value="4" />
-          <entry key="groovy" value="178" />
-          <entry key="html" value="74" />
+          <entry key="groovy" value="194" />
+          <entry key="html" value="83" />
           <entry key="iml" value="3" />
-          <entry key="java" value="431" />
+          <entry key="java" value="469" />
           <entry key="js" value="5" />
           <entry key="kt" value="1" />
           <entry key="png" value="1" />
-          <entry key="properties" value="19" />
-          <entry key="xml" value="18" />
+          <entry key="properties" value="21" />
+          <entry key="xml" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="69" />
-          <entry key="CSS" value="18" />
+          <entry key="CLASS" value="77" />
+          <entry key="CSS" value="19" />
           <entry key="FTL" value="4" />
-          <entry key="Groovy" value="178" />
-          <entry key="HTML" value="74" />
+          <entry key="Groovy" value="194" />
+          <entry key="HTML" value="83" />
           <entry key="IDEA_MODULE" value="3" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="431" />
+          <entry key="JAVA" value="469" />
           <entry key="JavaScript" value="5" />
           <entry key="Kotlin" value="1" />
+          <entry key="Manifest" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="19" />
-          <entry key="XML" value="18" />
+          <entry key="Properties" value="21" />
+          <entry key="XML" value="21" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="414" column="40" lean-forward="true" selection-start-line="414" selection-start-column="40" selection-end-line="414" selection-end-column="40" />
+              <folding>
+                <element signature="e#38#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/RestAPI.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="111" column="61" lean-forward="true" selection-start-line="111" selection-start-column="61" selection-end-line="111" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="265" column="5" lean-forward="true" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
+              <folding>
+                <element signature="e#38#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="377">
+              <caret line="625" column="68" selection-start-line="625" selection-start-column="68" selection-end-line="625" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#32538#32539#0" expanded="true" />
-                <element signature="e#32576#32577#0" expanded="true" />
+                <element signature="e#32539#32540#0" expanded="true" />
+                <element signature="e#32577#32578#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreById.java">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByName.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="314">
+              <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -286,8 +245,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfo.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="75">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfoList.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Entry.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -330,56 +325,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceList.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Query.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/QueryResult.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreTagService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreTagServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/exception/FormatBadRequestException.java" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/LoginUser.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/exception/NotAuthorizedException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/exception/ForbiddenException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy" />
-        <option value="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByName.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.java" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Entry.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Store.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestCallFormat.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/QueryList.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfoList.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfo.groovy" />
-        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestCallResult.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/XmlRestCallResult.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy" />
         <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/RestAPI.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/products.html" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductById.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByGeoDist.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/AuthenticationSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/MailComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Contact.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/MailConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/ThymeleafWebMvcConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/products.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy" />
+        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Entry.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfo.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java" />
       </list>
     </option>
@@ -414,13 +409,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
@@ -486,34 +485,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="comparator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -540,68 +511,19 @@
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="gr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="gr" type="462c0819:PsiDirectoryNode" />
-              <item name="ntua" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="gr" type="462c0819:PsiDirectoryNode" />
-              <item name="ntua" type="462c0819:PsiDirectoryNode" />
-              <item name="ece" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="gr" type="462c0819:PsiDirectoryNode" />
-              <item name="ntua" type="462c0819:PsiDirectoryNode" />
-              <item name="ece" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="groovy" type="462c0819:PsiDirectoryNode" />
-              <item name="gr" type="462c0819:PsiDirectoryNode" />
-              <item name="ntua" type="462c0819:PsiDirectoryNode" />
-              <item name="ece" type="462c0819:PsiDirectoryNode" />
-              <item name="javengers" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -613,22 +535,19 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551481792684" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551632344080" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../childrenactivities/BozoTickets" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="gr.ece.ntua.javengers.dao" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/webapp" />
@@ -636,6 +555,11 @@
       <recent name="$PROJECT_DIR$/src/main/test" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/keystore" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -656,40 +580,7 @@
     </option>
     <option name="contentProportion" value="0.12621886" />
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (1)">
-    <configuration name="RestAPISpecification.setupSpec" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="webapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
-      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
-      <option name="METHOD_NAME" value="setupSpec" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirstSpecification.two plus two should equal four" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="webapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
-      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.FirstSpecification" />
-      <option name="METHOD_NAME" value="two plus two should equal four" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RestAPISpecification.User performs logout">
     <configuration name="RestAPISpecification" type="JUnit" factoryName="JUnit">
       <module name="webapp" />
       <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
@@ -700,7 +591,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAPISpecification.User adds two products" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestAPISpecification.User adds price" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -710,13 +601,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
       <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
-      <option name="METHOD_NAME" value="User adds two products" />
+      <option name="METHOD_NAME" value="User adds price" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAPISpecification.User logs in" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestAPISpecification.User adds the fifth price" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -726,13 +617,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
       <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
-      <option name="METHOD_NAME" value="User logs in" />
+      <option name="METHOD_NAME" value="User adds the fifth price" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RestAPISpecification.User updates a product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RestAPISpecification.User adds the first price" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="webapp" />
       <extension name="coverage">
         <pattern>
@@ -742,7 +633,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
       <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
-      <option name="METHOD_NAME" value="User updates a product" />
+      <option name="METHOD_NAME" value="User adds the first price" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAPISpecification.User gets the fourth shop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
+      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
+      <option name="METHOD_NAME" value="User gets the fourth shop" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAPISpecification.User performs logout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
+      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
+      <option name="METHOD_NAME" value="User performs logout" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -786,6 +709,8 @@
       </method>
     </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="_webapp_2" />
@@ -843,6 +768,66 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="9ed64d14-ba3a-418d-8311-febd25f1905b" />
+                    <id>9ed64d14-ba3a-418d-8311-febd25f1905b</id>
+                  </TransportTarget>
+                </option>
+                <option name="watchedLocalPath" value="" />
+                <watched-path />
+                <name>CONTEXT_XML</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="9ed64d14-ba3a-418d-8311-febd25f1905b" />
+                    <id>9ed64d14-ba3a-418d-8311-febd25f1905b</id>
+                  </TransportTarget>
+                </transport-target>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <option name="stagingRemotePath" value="" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="e5e7729c-1ac8-4722-aff8-08483db378bd" />
+                    <id>e5e7729c-1ac8-4722-aff8-08483db378bd</id>
+                  </TransportTarget>
+                </option>
+                <staging-path />
+                <name>STAGING</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="e5e7729c-1ac8-4722-aff8-08483db378bd" />
+                    <id>e5e7729c-1ac8-4722-aff8-08483db378bd</id>
+                  </TransportTarget>
+                </transport-target>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" value="" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="40791" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -911,22 +896,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" value="" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="41625" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.RestAPISpecification" />
       <item itemvalue="Spring Boot.Application (1)" />
-      <item itemvalue="Android JUnit.RestAPISpecification.setupSpec" />
-      <item itemvalue="JUnit.RestAPISpecification.User logs in" />
-      <item itemvalue="JUnit.RestAPISpecification.User adds two products" />
-      <item itemvalue="JUnit.RestAPISpecification.User updates a product" />
-      <item itemvalue="JUnit.FirstSpecification.two plus two should equal four" />
+      <item itemvalue="JUnit.RestAPISpecification.User gets the fourth shop" />
+      <item itemvalue="JUnit.RestAPISpecification.User performs logout" />
+      <item itemvalue="JUnit.RestAPISpecification.User adds price" />
+      <item itemvalue="JUnit.RestAPISpecification.User adds the fifth price" />
+      <item itemvalue="JUnit.RestAPISpecification.User adds the first price" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestAPISpecification.User logs in" />
-        <item itemvalue="JUnit.FirstSpecification.two plus two should equal four" />
-        <item itemvalue="JUnit.RestAPISpecification.User adds two products" />
-        <item itemvalue="Android JUnit.RestAPISpecification.setupSpec" />
-        <item itemvalue="JUnit.RestAPISpecification.User updates a product" />
+        <item itemvalue="JUnit.RestAPISpecification.User performs logout" />
+        <item itemvalue="JUnit.RestAPISpecification.User adds the first price" />
+        <item itemvalue="JUnit.RestAPISpecification.User adds the fifth price" />
+        <item itemvalue="JUnit.RestAPISpecification.User adds price" />
+        <item itemvalue="JUnit.RestAPISpecification.User gets the fourth shop" />
       </list>
     </recent_temporary>
   </component>
@@ -996,44 +1012,54 @@
       <workItem from="1551428944114" duration="4048000" />
       <workItem from="1551433015408" duration="142000" />
       <workItem from="1551433249271" duration="29895000" />
-      <workItem from="1551470719258" duration="11666000" />
+      <workItem from="1551470719258" duration="11751000" />
+      <workItem from="1551512183901" duration="1200000" />
+      <workItem from="1551513405422" duration="275000" />
+      <workItem from="1551513876903" duration="284000" />
+      <workItem from="1551515784210" duration="4780000" />
+      <workItem from="1551523435763" duration="4099000" />
+      <workItem from="1551530440595" duration="7511000" />
+      <workItem from="1551538401104" duration="12979000" />
+      <workItem from="1551559288493" duration="10963000" />
+      <workItem from="1551601345403" duration="17067000" />
+      <workItem from="1551622431378" duration="7576000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 14m 08s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 17h 35m 19s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 14m 52s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 17h 36m 49s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 16m 01s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 17h 41m 27s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 20m 01s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 17h 43m 13s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 21m 05s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_adds_the_fifth_price - 2019.03.03 at 17h 43m 56s.xml">
+      <configuration name="RestAPISpecification.User adds the fifth price" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.27 at 19h 21m 44s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_adds_the_fifth_price - 2019.03.03 at 17h 56m 07s.xml">
+      <configuration name="RestAPISpecification.User adds the fifth price" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification - 2019.02.28 at 12h 30m 39s.xml">
-      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_adds_the_first_price - 2019.03.03 at 17h 56m 34s.xml">
+      <configuration name="RestAPISpecification.User adds the first price" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification_User_logs_in - 2019.02.28 at 12h 39m 23s.xml">
-      <configuration name="RestAPISpecification.User logs in" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 18h 03m 03s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification_User_logs_in - 2019.02.28 at 12h 39m 47s.xml">
-      <configuration name="RestAPISpecification.User logs in" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 18h 08m 38s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RestAPISpecification_User_logs_in - 2019.02.28 at 14h 36m 56s.xml">
-      <configuration name="RestAPISpecification.User logs in" configurationId="JUnit" />
+    <history-entry file="RestAPISpecification_User_performs_logout - 2019.03.03 at 18h 09m 41s.xml">
+      <configuration name="RestAPISpecification.User performs logout" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434922000" />
+    <option name="totallyTimeSpent" value="501741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1048,29 +1074,29 @@
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.91448516" visible="true" weight="0.1670224" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7960928" visible="true" weight="0.2171825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.085514836" side_tool="true" visible="true" weight="0.1670224" />
+      <window_info id="Web" order="7" sideWeight="0.2039072" side_tool="true" visible="true" weight="0.2171825" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32869378" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1391863" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23126338" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.123126335" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5182013" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32869378" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32976446" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32976446" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2805139" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.10492505" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.38115633" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32976446" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32976446" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.38650963" />
+      <window_info anchor="bottom" id="Run Dashboard" order="14" weight="0.37259102" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.50986844" />
@@ -1111,338 +1137,191 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java</url>
-          <line>121</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java</url>
-          <line>123</line>
-          <properties />
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy</url>
-          <line>85</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy</url>
-          <line>75</line>
+          <line>33</line>
           <properties />
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>291</line>
+          <line>289</line>
           <properties />
           <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>500</line>
-          <properties />
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestCallFormat.groovy</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy</url>
-          <line>326</line>
-          <properties />
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy</url>
-          <line>324</line>
-          <properties />
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/RestAPI.groovy</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestResponseHandler.groovy</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>248</line>
-          <properties />
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>619</line>
+          <line>620</line>
           <properties />
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java</url>
-          <line>749</line>
+          <line>750</line>
           <properties />
           <option name="timeStamp" value="203" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy</url>
-          <line>108</line>
-          <properties class="gr.ntua.ece.javengers.client.rest.JsonRestCallResult" method="parsePrices">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="192" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java</url>
+          <line>110</line>
+          <properties />
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="236" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="22" column="107" selection-start-line="22" selection-start-column="107" selection-end-line="22" selection-end-column="107" />
-          <folding>
-            <element signature="e#38#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="101" column="53" lean-forward="true" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="49" column="94" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="66" column="46" lean-forward="true" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-            <element signature="e#4442#4443#0" expanded="true" />
-            <element signature="e#4492#4493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Authority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/authentication/ProviderManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="98" column="56" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/authentication/AbstractAuthenticationToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.0.8.RELEASE/spring-security-core-5.0.8.RELEASE.jar!/org/springframework/security/core/authority/mapping/NullAuthoritiesMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/LoginUser.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Paging.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ShopList.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/ClientFactory.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/DefaultClientFactory.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/XmlRestCallResult.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/RestAPI.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#38#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="264" lean-forward="true" selection-start-line="264" selection-end-line="264" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="60">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/bkg_rating.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/map-styles.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="450">
+          <caret line="33" column="50" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Contact.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/MailConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/ThymeleafWebMvcConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/MailComponent.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
+        <state relative-caret-position="2250">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="176" column="39" lean-forward="true" selection-start-line="176" selection-start-column="39" selection-end-line="176" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="100" column="59" lean-forward="true" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        <state relative-caret-position="1260">
+          <caret line="84" column="62" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1453,164 +1332,211 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5955">
+          <caret line="397" column="65" selection-start-line="397" selection-start-column="65" selection-end-line="397" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="900">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5130">
-          <caret line="349" column="1" selection-start-line="349" selection-start-column="1" selection-end-line="349" selection-end-column="1" />
-          <folding>
-            <element signature="e#43#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
-          <folding>
-            <element signature="e#44#95#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="579">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Product.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Entry.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestResponseHandler.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="195">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="63" lean-forward="true" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestCallFormat.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="195">
+          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
           <folding>
             <element signature="e#43#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestCallResult.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Shop.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        <state relative-caret-position="150">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
-            <element signature="e#43#98#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfoList.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/RestResponseHandler.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreById.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="184">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="116">
           <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/LowLevelAPI.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="250" column="36" lean-forward="true" selection-start-line="250" selection-start-column="36" selection-end-line="250" selection-end-column="36" />
+          <folding>
+            <element signature="e#43#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Paging.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfoList.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="108" column="47" lean-forward="true" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/Entry.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="78" column="42" lean-forward="true" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
+        <state relative-caret-position="299">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="265" column="5" lean-forward="true" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
+          <folding>
+            <element signature="e#38#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/RestAPI.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="111" column="61" lean-forward="true" selection-start-line="111" selection-start-column="61" selection-end-line="111" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="414" column="40" lean-forward="true" selection-start-line="414" selection-start-column="40" selection-end-line="414" selection-end-column="40" />
+          <folding>
+            <element signature="e#38#89#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/PriceInfo.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="68" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="377">
+          <caret line="625" column="68" selection-start-line="625" selection-start-column="68" selection-end-line="625" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#32538#32539#0" expanded="true" />
-            <element signature="e#32576#32577#0" expanded="true" />
+            <element signature="e#32539#32540#0" expanded="true" />
+            <element signature="e#32577#32578#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1621,10 +1547,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>webapp:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

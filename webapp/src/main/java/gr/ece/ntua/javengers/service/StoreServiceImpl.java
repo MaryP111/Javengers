@@ -63,7 +63,7 @@ public class StoreServiceImpl implements StoreService {
         @Override
         public gr.ntua.ece.javengers.client.model.Shop getStoreAndTagsById(Long id) {
 
-            Store tempStore= getStoreById(id).get();
+            Store tempStore = getStoreById(id).get();
 
             List<String> storeTags = storeTagRepository.getTagsByStoreId(id);
 
@@ -73,6 +73,7 @@ public class StoreServiceImpl implements StoreService {
             shop.setName(tempStore.getPlace());
             shop.setAddress(tempStore.getAddress());
             shop.setLat(tempStore.getLat());
+            shop.setLng(tempStore.getLng());
             shop.setTags(storeTags);
             shop.setWithdrawn(tempStore.getWithdrawn());
 
@@ -150,6 +151,12 @@ public class StoreServiceImpl implements StoreService {
     @Override
     public void deleteStoreById(Long id) {
             storeRepository.deleteById(id);
+    }
+
+    @Override
+    public void withdrawStore(Store store) {
+            store.setWithdrawn(true);
+            storeRepository.save(store);
     }
 
 }

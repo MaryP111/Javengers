@@ -26,6 +26,8 @@ public interface ProductService {
 
     void deleteProductById(Long id);
 
+    void withdrawProduct(Product product);
+
 
 
 }

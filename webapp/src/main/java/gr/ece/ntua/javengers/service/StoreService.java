@@ -25,4 +25,6 @@ public interface StoreService {
 
     void deleteStoreById(Long id);
 
+    void withdrawStore(Store store);
+
 }

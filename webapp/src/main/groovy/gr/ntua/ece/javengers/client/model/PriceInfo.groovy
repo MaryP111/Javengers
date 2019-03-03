@@ -5,10 +5,10 @@ import groovy.transform.Canonical
 import java.sql.Date
 
 @Canonical
-public class PriceInfo {
+class PriceInfo {
 
     Double price
-    Date date
+    String date
     String productName
     String productId
     List<String> productTags

@@ -8,8 +8,8 @@ import java.sql.Date;
 
     String id
     Double price
-    Date dateFrom
-    Date dateTo
+    String dateFrom
+    String dateTo
     Long productId
     Long shopId
 }

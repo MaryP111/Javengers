@@ -54,8 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**",
             "/signup",
             "/product/list",
-            "/entry/list/*",
-            "observatory/api/login"
+            "/entry/list/*"
     };
 
     @Override
@@ -84,7 +83,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests().
-                //antMatchers(HttpMethod.POST, "login").permitAll().
+    //            antMatchers(HttpMethod.POST, "login").permitAll().
                 antMatchers(PUBLIC_MATCHERS).
                 permitAll().anyRequest().authenticated().
                 antMatchers("/profile/**").hasAuthority("user");
