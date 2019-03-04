@@ -1,0 +1,100 @@
+
+/*body {
+    background-image: url("https://www.accengage.com/wp-content/uploads/2014/05/background-test.jpg");
+    background-color: #cccccc;
+    background-size: auto;
+}*/
+
+.thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item
+{
+    float: none;
+    weight: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+    margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+    margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+    padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+    background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+    display: table;
+    content: " ";
+}
+
+.item.list-group-item img
+{
+    weight: 10px;
+    float: left;
+}
+.item.list-group-item:after
+{
+    clear: both;
+}
+.list-group-item-text
+{
+    margin: 0 0 11px;
+}
+
+img.resize {
+    width: 50px;
+    height: 50px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.item2 {
+    position: absolute;
+    left: 100px;
+    width: 900px;
+    bottom: 350px;
+}
+.entry-item2 {
+    position:absolute;
+    right: 80px;
+    width: 1400px;
+    height: 1220px;
+
+
+}
+.creaMappa2 {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    visibility: hidden;
+    
+}

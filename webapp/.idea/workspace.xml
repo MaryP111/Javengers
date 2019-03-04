@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d892216e-32c3-44a8-b6db-44875adf7891" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/MailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortEntryByPrice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/categories/sports2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/categories/sports3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/categories/sports4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/store-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/webapp.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/MailController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/store-image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/APIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/HasProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/profile-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/profile-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminProducts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/adminStores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/adminStores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/entries.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/entries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/RestAuthenticationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/RestAuthenticationEntryPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/SecurityConfig$SecurityConfigAdmin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/SecurityConfig$SecurityConfigUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/APIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/APIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/EntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/EntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/HasProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/HasProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/ProductTag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/StoreTag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/StoreTag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByDistance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Authority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Authority.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/entity/security/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/HasProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/HasProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductTagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/ProductTagRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreTagRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/StoreTagRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/HasProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/ProductTagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/StoreTagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserSecurityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserSecurityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ece/ntua/javengers/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/RestAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/RestAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/LoginUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/LoginUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Paging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Paging.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/PriceInfoList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/PriceInfoList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ProductList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ProductList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ShopList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/model/ShopList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/DefaultClientFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/DefaultClientFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/JsonRestCallResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestResponseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/RestResponseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory$InsecureTrustManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory$InsecureTrustManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/SSLErrorTolerantClientFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/XmlRestCallResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gr/ntua/ece/javengers/client/rest/XmlRestCallResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/entries-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/entries-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/products-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/products-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/profile-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/profile-styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addProduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addProduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminProducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminProducts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/adminStores.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/adminStores.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/entries.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/entries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/FirstSpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/FirstSpecification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification$__spock_feature_0_35_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification$__spock_feature_0_35_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/gr/ntua/ece/javengers/client/RestAPISpecification.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-872644823">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="132" />
+          <entry key="groovy" value="9" />
+          <entry key="html" value="509" />
+          <entry key="java" value="284" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="132" />
+          <entry key="Groovy" value="9" />
+          <entry key="HTML" value="509" />
+          <entry key="JAVA" value="284" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="3" />
+          <entry key="groovy" value="1" />
+          <entry key="html" value="17" />
+          <entry key="java" value="78" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="3" />
+          <entry key="Groovy" value="1" />
+          <entry key="HTML" value="17" />
+          <entry key="JAVA" value="78" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entries.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="134" column="188" selection-start-line="134" selection-start-column="188" selection-end-line="134" selection-end-column="188" />
+              <folding>
+                <element signature="e#2451#2457#0" expanded="true" />
+                <element signature="e#2457#2463#0" expanded="true" />
+                <element signature="e#2463#2469#0" expanded="true" />
+                <element signature="e#2469#2475#0" expanded="true" />
+                <element signature="e#3421#3427#0" expanded="true" />
+                <element signature="e#3630#3636#0" expanded="true" />
+                <element signature="e#4620#4626#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortEntryByPrice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="87" column="59" lean-forward="true" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/homepage-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="406" column="22" lean-forward="true" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="3" lean-forward="true" selection-start-line="1" selection-end-line="5" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/groovy/gr/ntua/ece/javengers/client/model/ShopList.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/adminEntries.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/addProduct.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/adminStores.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/adminProducts.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/entries.html" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortEntryByPrice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/products-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/homepage-styles.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="215" />
+    <option name="y" value="80" />
+    <option name="width" value="960" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="groovy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="groovy" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551657500769" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/img/categories" />
+      <recent name="$PROJECT_DIR$/.idea" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.12621886" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="RestAPISpecification" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
+      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAPISpecification.User gets the fourth product" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="gr.ntua.ece.javengers.client" />
+      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
+      <option name="METHOD_NAME" value="User gets the fourth product" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestAPISpecification.User performs logout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="webapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gr.ntua.ece.javengers.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="groovy.gr.ntua.ece.javengers.client" />
+      <option name="MAIN_CLASS_NAME" value="gr.ntua.ece.javengers.client.RestAPISpecification" />
+      <option name="METHOD_NAME" value="User performs logout" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="gr.ece.ntua.javengers.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.RestAPISpecification.User performs logout" />
+      <item itemvalue="JUnit.RestAPISpecification" />
+      <item itemvalue="JUnit.RestAPISpecification.User gets the fourth product" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RestAPISpecification.User gets the fourth product" />
+        <item itemvalue="JUnit.RestAPISpecification" />
+        <item itemvalue="JUnit.RestAPISpecification.User performs logout" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d892216e-32c3-44a8-b6db-44875adf7891" name="Default Changelist" comment="" />
+      <created>1551632745100</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551632745100</updated>
+      <workItem from="1551632746322" duration="1367000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="RestAPISpecification - 2019.03.03 at 22h 53m 31s.xml">
+      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification - 2019.03.03 at 22h 53m 39s.xml">
+      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification - 2019.03.03 at 22h 54m 15s.xml">
+      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification - 2019.03.03 at 22h 59m 01s.xml">
+      <configuration name="RestAPISpecification" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 02m 56s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 03m 23s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 05m 46s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 05m 53s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 11m 51s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RestAPISpecification_User_gets_the_fourth_product - 2019.03.03 at 23h 16m 08s.xml">
+      <configuration name="RestAPISpecification.User gets the fourth product" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="14626000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25773746" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9071505" visible="true" weight="0.2012848" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893278" weight="0.26445395" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4994664" weight="0.32976446" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.09284952" side_tool="true" visible="true" weight="0.2012848" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49839914" weight="0.38329765" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="237" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortProductByStars.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreById.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortStoreByName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/ProductTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/StoreTag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/HasProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Authority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/security/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/adminEntries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="854">
+          <caret line="64" column="8" lean-forward="true" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="e#2233#2234#0" expanded="true" />
+            <element signature="e#2262#2263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/UserSecurityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreTagServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="41" column="78" selection-start-line="41" selection-start-column="78" selection-end-line="41" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="104" selection-start-line="3" selection-start-column="104" selection-end-line="3" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="140" column="31" selection-start-line="140" selection-start-column="31" selection-end-line="140" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductTagService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/PaymentGateway.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/Helper.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/HasProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/ProductTagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/StoreServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/repository/StoreTagRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/service/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="183" column="25" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/gr/ntua/ece/javengers/client/RestAPISpecification.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="116" column="65" lean-forward="true" selection-start-line="116" selection-start-column="65" selection-end-line="116" selection-end-column="65" />
+          <folding>
+            <element signature="e#38#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/adminUsers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="37" column="58" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/adminStores.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/adminProducts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/addProduct.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/entries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="134" column="188" selection-start-line="134" selection-start-column="188" selection-end-line="134" selection-end-column="188" />
+          <folding>
+            <element signature="e#2451#2457#0" expanded="true" />
+            <element signature="e#2457#2463#0" expanded="true" />
+            <element signature="e#2463#2469#0" expanded="true" />
+            <element signature="e#2469#2475#0" expanded="true" />
+            <element signature="e#3421#3427#0" expanded="true" />
+            <element signature="e#3630#3636#0" expanded="true" />
+            <element signature="e#4620#4626#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortPriceInfoByPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/entity/comparator/SortEntryByPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gr/ece/ntua/javengers/controller/EntryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="87" column="59" lean-forward="true" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#th:block#0;n#div#0;n#div#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/products-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="1" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/entries-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/homepage-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="406" column="22" lean-forward="true" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
