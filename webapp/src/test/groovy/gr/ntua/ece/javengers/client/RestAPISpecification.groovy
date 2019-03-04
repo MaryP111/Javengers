@@ -24,6 +24,7 @@ import spock.lang.Stepwise
 
     @Shared RestAPI api = new RestAPI(HOST, PORT as Integer, false)
 
+
     def "User performs login"() {
         when:
         api.login(Helper.USER, Helper.PASS, RestCallFormat.JSON)
@@ -112,7 +113,7 @@ import spock.lang.Stepwise
         returned == Helper.PROD4
     }
 
-    /*
+
 
     def "User gets all the products with ascending id order" () {
        when:
@@ -334,6 +335,8 @@ import spock.lang.Stepwise
                 !returned.withdrawn
     }
 
+
+
     def "User gets all the shops with ascending id order" () {
         when:
 
@@ -457,7 +460,5 @@ import spock.lang.Stepwise
 
                 !api.isLoggedIn()
     }
-
-    */
 
 }
