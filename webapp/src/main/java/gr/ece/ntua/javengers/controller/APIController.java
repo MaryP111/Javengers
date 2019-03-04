@@ -1,4 +1,6 @@
+
 package gr.ece.ntua.javengers.controller;
+
 
 import gr.ece.ntua.javengers.entity.HasProduct;
 import gr.ece.ntua.javengers.entity.Product;
@@ -14,8 +16,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-// import java.security.SecureRandom;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -549,8 +549,7 @@ public class APIController {
     @RequestMapping(value = "prices", method = RequestMethod.GET)
     public PriceInfoList queryEntries (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
                                        @RequestParam("geoDist") Optional<Integer> optionalGeoDist, @RequestParam("geoLng") Optional<Double> optionalGeoLng, @RequestParam("geoLat") Optional<Double> optionalGeoLat,
-                                       @RequestParam("dateFrom") Optional<Date> optionalDateFrom, @RequestParam("dateTo") Optional<Date> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops,
-                                       @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort) throws Exception{
+                                       @RequestParam("dateFrom") Optional<Date> optionalDateFrom, @RequestParam("dateTo") Optional<Date> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops, @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort) throws Exception{
 
 
         String format;
@@ -939,3 +938,4 @@ public class APIController {
 
 
 }
+

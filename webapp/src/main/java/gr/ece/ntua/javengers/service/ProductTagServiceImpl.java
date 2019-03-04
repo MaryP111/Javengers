@@ -33,13 +33,13 @@ public class ProductTagServiceImpl implements ProductTagService {
 
         List<Long> productByTagIds = productTagRepository.getProductsByTag("%" + keyword + "%");
 
-        List<Long> productsByNameIds = productRepository.getProductsByName("%" + keyword + "%");
+        List<Long> productsByNameIds = productRepository.getProductIdsByName("%" + keyword + "%");
 
-        List<Long> productsByDescriptionIds = productRepository.getProductsByDescription("%" + keyword + "%");
+        List<Long> productsByDescriptionIds = productRepository.getProductIdsByDescription("%" + keyword + "%");
 
-        List<Long> productsByCategoryIds = productRepository.getProductsByCategory("%" + keyword + "%");
+        List<Long> productsByCategoryIds = productRepository.getProductIdsByCategory("%" + keyword + "%");
 
-        List<Long> productsByManufacturerIds = productRepository.getProductsByManufacturer("%" + keyword + "%");
+        List<Long> productsByManufacturerIds = productRepository.getProductIdsByManufacturer("%" + keyword + "%");
 
         List<Product> products = new ArrayList<>();
 

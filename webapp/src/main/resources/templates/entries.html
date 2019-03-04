@@ -4,6 +4,46 @@
 
 <head>
 
+  <script type="text/javascript">
+
+    function withdrawEntry(entryId) {
+
+      window.location.href = "/entry/list/update/" + entryId;
+
+    }
+
+  </script>
+
+  <script type="text/javascript">
+
+    function getFilteredEntries(productId) {
+      // localStorage.setItem("productId", productId);
+      if (document.getElementById("priceFrom").value!='')
+        var priceFrom=document.getElementById("priceFrom").value;
+      else
+        var priceFrom=0;
+      if(document.getElementById("priceTo").value!= '')
+        var priceTo=document.getElementById("priceTo").value;
+      else
+        var priceTo=10000000;
+      var distance=1000000;
+        if (document.getElementById('5km').checked) {
+          distance = document.getElementById('5km').value;
+        }
+      if (document.getElementById('10km').checked) {
+        distance = document.getElementById('10km').value;
+      }
+      if (document.getElementById('20km').checked) {
+        distance = document.getElementById('20km').value;
+      }
+
+      window.location.href = "/entry/list"+ "?id="+ productId + "&priceFrom=" +priceFrom +"&priceTo=" +priceTo +"&distance=" +distance;
+
+    }
+
+
+
+  </script>
   <title>List of Entries</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,10 +52,10 @@
 
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap2-css">
   <link rel="stylesheet" type="text/css" href="/css/homepage-styles.css">
   <link rel="stylesheet" type="text/css" href="/css/entries-styles.css">
-
+  <link href="/css/map-styles.css" rel="stylesheet" />
 
 </head>
 
@@ -28,24 +68,130 @@
 </nav>
 
 <div class="container">
+  <!--<br>  <p class="text-center">Hey <3 <a href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com</a></p>-->
+  <hr>
+  <div class=" item2" align="center">
+    <div class="row">
+      <aside class="col-sm-4">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <h4>Φίλτρα</h4>
+        <hr>
+        <br>
+        <div class="card" >
+          <article class="card-group-item" >
+            <header class="card-header">
+              <h5 class="title">Εύρος Τιμής</h5>
+              <hr>
+              <br>
+            </header>
+            <div class="filter-content">
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Min</label>
+                    <input type="number" class="form-control" id="priceFrom" placeholder="$0" min="0">
+                  </div>
+                  <div class="form-group col-md-6 text-left">
+                    <label>Max</label>
+                    <input type="number" class="form-control" id="priceTo" placeholder="$1,0000" min="0">
+                  </div>
+                </div>
+              </div> <!-- card-body.// -->
+            </div>
+          </article> <!-- card-group-item.// -->
+          &nbsp;
+          <article class="card-group-item">
+            <header class="card-header">
+              <h5 class="title">Απόσταση από εμένα</h5>
+            </header>
+            <hr>
+            &nbsp;
+            <div class="filter-content">
+              <div class="card-body">
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="distanceRadio" id="5km" value="5000">
+                  <span class="form-check-label">
+			        5 km
+			  </span>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="distanceRadio" id="10km" value="10000">
+                  <span class="form-check-label">
+			        10 km
+			  </span>
+                </label>
+                <label class="form-check">
+                  <input class="form-check-input" type="radio" name="distanceRadio" id= "20km" value="20000">
+                  <span class="form-check-label">
+                    20 km
+			  </span>
+                </label>
+              </div> <!-- card-body.// -->
+            </div>
+          </article> <!-- card-group-item.// -->
+          &nbsp;
+          <hr>
+          <th:block>
+            <button th:onclick="'javascript:getFilteredEntries(' + ${productId} + ');'" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Εφαρμογή</button>
+          </th:block>
+
+        </div> <!-- card.// -->
+      </aside> <!-- col.// -->
+    </div> <!-- row.// -->
+  </div>
+  <!--container end.//-->
+
+
+
+  <div class ="entry-item2">
+<div class="container">
   <div id="entry" class="row list-group">
     <th:block th:each="entry : ${entries}">
       <div class="item  col-xs-4 col-lg-4">
         <div class="thumbnail">
-          <img class="group list-group-image" src="https://www.gettyimages.com/gi-resources/images/CreativeLandingPage/HP_Sept_24_2018/CR3_GettyImages-159018836.jpg" alt="" style="object-fit: contain; height: 250px; width: 250px" />
+          <img class="group list-group-image" src="http://tiendaselgolpecito.es/imagenes/tienda.png" alt="" style="object-fit: contain; height: 160px; width: 160px" />
           <!--<img class="group list-group-image" src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphonexs-spacegrey-back?$png8alpha256$&hei=410==" alt="" />-->
+          <!-- "https://www.gettyimages.com/gi-resources/images/CreativeLandingPage/HP_Sept_24_2018/CR3_GettyImages-159018836.jpg" -->
           <div class="caption" align="center">
+            <p class="group inner list-group-item-text" style="font-size:140%;" th:text="${entry.storeName}"></p>
             <p class="group inner list-group-item-text" style="font-size:160%;" th:text="${entry.price} + €"></p>
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <button align="center" class="btn">Δες την Τοποθεσία</button>
+            <div class="container" align="center">
+              <button type="button" id = "mapButton" href="#" class="btn btn-primary btn-md modal-trigger" data-modal="modal-place"><b>Δείτε την τοποθεσία στον χάρτη</b></button>
+              <div th:if="${isRegisteredUser}">
+                <br>
+                <button th:onclick="'javascript:withdrawEntry(' + ${entry.id} + ');'" class="btn btn-primary">Διαγραφή Καταχώρησης</button>
+              </div>
+
+             <div class="modal" id="modal-place" >
+              <div class="modal-sandbox"></div>
+              <div class="modal-box">
+                <div align="center" class="modal-header">
+                  <div class="close-modal">&#10006;</div>
+                  <h3>Δείτε τοποθεσία στο χάρτη</h3>
                 </div>
+                <div class="modal-body">
+                  <input id="address" type="hidden" class="form-control"  th:value="${entry.address}"/>
+                  <br/>
+                  <button id="creaMappa2" type="button" class="creaMappa2" ></button>
+                  <br/>
+                  <br/>
+                  <label class="control-label" for="address" style="font-size: 1.5em">
+                    Διεύθυνση του Καταστήματος
+                  </label>
+                  <p style="font-size:170%;" th:text="${entry.address} "></p>
+                  <div class="map" id="map1"></div>
+
+                </div>
+              </div>
             </div>
+              <input type="hidden" class="form-control" th:value="${entry.lat}" id="lat" name="lat"/>
+              <input type="hidden" class="form-control" th:value="${entry.lng}" id="lng" name="lng"/>
           </div>
         </div>
       </div>
+    </div>
     </th:block>
-  </div>
+</div>
 </div>
 
 <!--<div align="center">
@@ -69,6 +215,11 @@
 
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLsF3d7bdPcNMcSwPfb8aUfcadkjOMH0"></script>
+
+
+
 </body>
 
 

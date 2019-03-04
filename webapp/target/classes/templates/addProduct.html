@@ -11,7 +11,8 @@
 
 <body>
 
-<form class="form-horizontal" th:aciton="@{/profile/add/entry}" method="post">
+
+<form class="form-horizontal" th:action="@{/profile/add/entry}" method="post">
 <fieldset>
 
 <!--<legend>PRODUCTS</legend>-->
@@ -147,7 +148,7 @@
 
 
   <div class="form-group" th:if="${productExists} or ${productAdded}">
-    <h3 align="center"> Παρακαλώ εισάγετε πληροορίες σχετικά με το κατάστημα που συναντήσατε το προϊόν</h3>
+    <h3 align="center"> Παρακαλώ εισάγετε πληροφορίες σχετικά με το κατάστημα που συναντήσατε το προϊόν</h3>
     <hr>
   </div>
 
@@ -160,7 +161,7 @@
     <div class="modal-box">
       <div align="center" class="modal-header">
         <div class="close-modal">&#10006;</div>
-        <h3>Διαλέξε Τοποθεσία στο χάρτη</h3>
+        <h3>Διάλεξε Τοποθεσία στο χάρτη</h3>
       </div>
       <div class="modal-body">
         <!--<label class="control-label" for="address" style="font-size: 1.5em">
@@ -228,10 +229,12 @@
       <button id="button" name="button" class="btn btn-success">Προσθήκη</button>
 
 
+    <input type="date" data-date="" data-date-format="DD MM YYYY">
 
-</fieldset>
+
+
 </form>
-
+</fieldset>
 
 <!--
 <form class="form-horizontal" th:aciton="@{/profile/add/data}" method="post" th:if="${productExists} or ${productAdded}">

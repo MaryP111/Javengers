@@ -7,6 +7,7 @@ import gr.ece.ntua.javengers.entity.StoreTag;
 import gr.ece.ntua.javengers.repository.ProductRepository;
 import gr.ece.ntua.javengers.repository.StoreRepository;
 import gr.ece.ntua.javengers.repository.StoreTagRepository;
+//import gr.ntua.ece.javengers.client.model.Shop;
 import gr.ntua.ece.javengers.client.model.Shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,7 +64,7 @@ public class StoreServiceImpl implements StoreService {
         @Override
         public gr.ntua.ece.javengers.client.model.Shop getStoreAndTagsById(Long id) {
 
-            Store tempStore = getStoreById(id).get();
+            Store tempStore= getStoreById(id).get();
 
             List<String> storeTags = storeTagRepository.getTagsByStoreId(id);
 
@@ -79,6 +80,7 @@ public class StoreServiceImpl implements StoreService {
 
             return shop;
         }
+
 
     @Override
     public Shop saveShop(Shop tempShop) {

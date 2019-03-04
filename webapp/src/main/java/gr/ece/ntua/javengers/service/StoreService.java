@@ -3,6 +3,7 @@ package gr.ece.ntua.javengers.service;
 import gr.ece.ntua.javengers.entity.Product;
 import gr.ece.ntua.javengers.entity.Store;
 import gr.ntua.ece.javengers.client.model.Shop;
+//import gr.ntua.ece.javengers.client.model.Shop;
 
 import java.util.List;
 import java.util.Optional;

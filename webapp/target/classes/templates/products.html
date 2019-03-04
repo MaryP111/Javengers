@@ -7,7 +7,7 @@
 
         function getEntries(productId) {
             // localStorage.setItem("productId", productId);
-            window.location.href = "/entry/list/"+ productId;
+            window.location.href = "/entry/list"+ "?id="+productId;
         }
 
         function changePage(pageIndex) {
@@ -19,6 +19,8 @@
         }
 
     </script>
+
+
     <title>List of Products</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,7 +51,7 @@
           <th:block th:each="product : ${products}">
           <div class="item  col-xs-4 col-lg-4">
             <div class="thumbnail">
-              <img class="group list-group-image" th:src=${product.imageURL} alt="" style="object-fit: contain; height: 250px; width: 250px" />
+              <img class="group list-group-image" th:src="${product.imageURL}" alt="" style="object-fit: contain; height: 250px; width: 250px" />
                 <!--<img class="group list-group-image" src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphonexs-spacegrey-back?$png8alpha256$&hei=410==" alt="" />-->
                 <div class="caption">
 

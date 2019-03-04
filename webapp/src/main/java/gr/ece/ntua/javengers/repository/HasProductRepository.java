@@ -9,7 +9,8 @@ import java.util.Optional;
 
 public interface HasProductRepository extends CrudRepository<HasProduct, Long> {
 
-    @Query("select hasProduct from HasProduct hasProduct where productId = ?1")
-    List<HasProduct> getEntriesById(Long productId);
+    @Query("select hasProduct from HasProduct hasProduct where productId = ?1 and withdrawn=false")
+    List<HasProduct> getActiveEntriesById(Long productId);
+
 
 }

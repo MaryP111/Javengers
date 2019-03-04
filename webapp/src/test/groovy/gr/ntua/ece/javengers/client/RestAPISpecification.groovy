@@ -9,6 +9,8 @@ import gr.ntua.ece.javengers.client.model.ProductList
 import gr.ntua.ece.javengers.client.model.Shop
 import gr.ntua.ece.javengers.client.model.ShopList
 import org.apache.logging.log4j.core.tools.picocli.CommandLine
+import gr.ntua.ece.javengers.client.Helper
+
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Stepwise
@@ -35,6 +37,7 @@ import spock.lang.Stepwise
         Product sent = new Product(Helper.PROD1_DATA)
 
         Product returned = api.postProduct(sent, RestCallFormat.JSON)
+
 
         then:
                 returned.name == sent.name &&
@@ -108,6 +111,8 @@ import spock.lang.Stepwise
 
         returned == Helper.PROD4
     }
+
+    /*
 
     def "User gets all the products with ascending id order" () {
        when:
@@ -452,5 +457,7 @@ import spock.lang.Stepwise
 
                 !api.isLoggedIn()
     }
+
+    */
 
 }

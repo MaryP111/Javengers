@@ -22,12 +22,13 @@ public interface ProductService {
 
     Optional<Product> getProductByBarcode(String barcode);
 
+    List<Product> getProductsByCategory(String category);
+
     void updateStars(Product product, Double stars);
 
     void deleteProductById(Long id);
 
     void withdrawProduct(Product product);
-
 
 
 }

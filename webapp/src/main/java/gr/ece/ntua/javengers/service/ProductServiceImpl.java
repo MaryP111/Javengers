@@ -73,22 +73,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public gr.ntua.ece.javengers.client.model.Product saveProduct(gr.ntua.ece.javengers.client.model.Product tempProduct) {
 
-        Boolean withdrawn = tempProduct.getWithdrawn();
-
-        if (withdrawn == null) withdrawn = false;
-
-        tempProduct.setWithdrawn(withdrawn);
-
-        tempProduct.setWithdrawn(tempProduct.getWithdrawn());
-
-
         Product product = new Product();
 
         product.setName(tempProduct.getName());
         product.setDescription(tempProduct.getDescription());
         product.setCategory(tempProduct.getCategory());
         product.setWithdrawn(tempProduct.getWithdrawn());
-        product.setImageURL("https://www.iiss.it/wp-content/plugins/post-grid/assets/frontend/css/images/placeholder.png");
 
         Long productId = saveProduct(product);
 
@@ -108,6 +98,7 @@ public class ProductServiceImpl implements ProductService {
 
         return tempProduct;
     }
+
 
     @Override
     public void updateProduct(gr.ntua.ece.javengers.client.model.Product newProduct) {
@@ -151,11 +142,15 @@ public class ProductServiceImpl implements ProductService {
 
 
     }
-
     @Override
-    public Optional<Product> getProductByBarcode(String barcode) {
+    public Optional<Product> getProductByBarcode (String barcode) {
 
         return productRepository.getProductByBarcode(barcode);
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.getProductsByCategory(category);
     }
 
     @Override

@@ -108,13 +108,14 @@ public class AdminController {
 
     @RequestMapping(value = "/admin/products/entries/{id}", method = RequestMethod.GET)
     public String adminProductEntries(@PathVariable("id") Long productId, Model model) {
-        List<HasProduct> entries = entryService.getEntriesById(productId);
+        List<HasProduct> entries = entryService.getActiveEntriesById(productId);
         model.addAttribute("entries", entries);
         return "adminEntries";
     }
 
     @RequestMapping(value = "/admin/login", method = RequestMethod.GET)
     public String adminLogin() {
+
         return "adminLogin";
     }
 

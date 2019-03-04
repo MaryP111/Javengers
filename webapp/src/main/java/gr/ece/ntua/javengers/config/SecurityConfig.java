@@ -54,7 +54,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/console/**",
             "/signup",
             "/product/list",
-            "/entry/list/*"
+            "/product/*",
+            "/entry/*",
+            "/entry/list/*",
+            "/profile/*",
+            "/home//sendMail",
+            "/entry/list/update/*",
+            "/admin/users",
+            "/admin/users/*",
+            "/admin/products",
+            "/admin/products/*",
+            "/admin/products/entries/*",
+            "/admin/stores",
+            "/admin/stores/*",
+            "/admin/entries",
+            "/admin/entries/*",
+            "/admin/login",
     };
 
     @Override

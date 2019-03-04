@@ -1,4 +1,10 @@
 
+/*body {
+    background-image: url("https://www.accengage.com/wp-content/uploads/2014/05/background-test.jpg");
+    background-color: #cccccc;
+    background-size: auto;
+}*/
+
 .thumbnail
 {
     margin-bottom: 20px;
@@ -69,4 +75,26 @@ img.resize {
 .button {
     position: absolute;
     top: 50%;
+}
+
+.item2 {
+    position: absolute;
+    left: 100px;
+    width: 900px;
+    bottom: 350px;
+}
+.entry-item2 {
+    position:absolute;
+    right: 80px;
+    width: 1400px;
+    height: 1220px;
+
+
+}
+.creaMappa2 {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    visibility: hidden;
+    
 }
