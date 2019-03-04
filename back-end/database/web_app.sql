@@ -8,6 +8,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
 SET FOREIGN_KEY_CHECKS = 0;
 
+SET NAMES 'utf8';
+SET CHARACTER SET utf8;
+
 DROP DATABASE web_app;
 
 CREATE DATABASE IF NOT EXISTS web_app;
@@ -37,6 +40,7 @@ CREATE TABLE IF NOT EXISTS user (
   website VARCHAR(50)
 );
 
+ALTER TABLE user AUTO_INCREMENT = 10;
 
 CREATE TABLE IF NOT EXISTS product (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -44,11 +48,11 @@ CREATE TABLE IF NOT EXISTS product (
   /* There are several ways of representing the barcode */
 
   barcode VARCHAR(20) UNIQUE,
-  name VARCHAR(20) NOT NULL, /* A name to identify the product */
+  name VARCHAR(50) NOT NULL, /* A name to identify the product */
   description VARCHAR(100) NOT NULL, /* A short description that will be displayed for every product */
   manufacturer VARCHAR(20),
-  category VARCHAR(20) NOT NULL,
-  stars DECIMAL(2,1),
+  category VARCHAR(50) NOT NULL,
+  stars DECIMAL(4,1),
   number_of_ratings INT,
   image_url VARCHAR(2048),
   withdrawn BOOLEAN DEFAULT 0 NOT NULL
@@ -86,10 +90,10 @@ CREATE TABLE IF NOT EXISTS product_data (
 
 CREATE TABLE IF NOT EXISTS store (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20) NOT NULL,
-  address VARCHAR(50),
-  lat DECIMAL(10,8) NOT NULL,
-  lng DECIMAL(11,8) NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  address VARCHAR(75),
+  lat DECIMAL(16,14) NOT NULL,
+  lng DECIMAL(16,14) NOT NULL,
   withdrawn BOOLEAN DEFAULT 0 NOT NULL
 );
 
@@ -320,13 +324,14 @@ BEGIN
 END$$
 DELIMITER ;
 
-/* Stars constraint, values in {0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0} */
+/* Stars constraint, values greater or equal 0.5 and less than equal 5 */
 
 DELIMITER $$
 
-CREATE PROCEDURE `check_stars`(IN stars DECIMAL(2,1))
+/*
+CREATE PROCEDURE `check_stars`(IN stars DECIMAL(4,3))
 BEGIN
-    IF (stars > 5 OR stars < 0.5 OR FLOOR(2*stars) <> 2*stars) THEN
+    IF (stars > 5 OR stars < 0.5) THEN
         SIGNAL SQLSTATE '45000'
             SET MESSAGE_TEXT = 'Check constraint on stars failed';
     END IF;
@@ -352,6 +357,8 @@ BEGIN
 END$$
 DELIMITER ;
 
+*/
+/*
 insert into product(barcode, name, category, manufacturer, description, stars, number_of_ratings, withdrawn) 
 VALUES ("24263474", "DELL laptop", "Technology", "DELL", "A very nice laptop", 4, 1, false),
        ("2347","Huawei Mobile", "Technology", "Huawei", "A very bad mobile", 1.5, 100, false);
@@ -364,6 +371,12 @@ VALUES (1, "laptop"),
        (2, "Huawei"),
        (2, "Cheap"),
        (2, "Technology");
+
+
+*/
+
+insert into user(first_name, last_name, user_name, email, password) 
+values ("firstame", "lastName", "username", "el15094@central.tnau.gr", "$2a$12$cNrQsMalfMBYyNs2aQV/Euxq8ZbdmxRrMCbG83KXC0a3XoDXBM7eu");
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
