@@ -22,7 +22,7 @@
 		     <div class="list-group ">
 
               <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-              <a href="/home" class="list-group-item list-group-item-action">Επίστρεψε στην Αρχική Σελίδα</a>
+              <a href="/index" class="list-group-item list-group-item-action">Επίστρεψε στην Αρχική Σελίδα</a>
               <a href="/profile/add/entry" class="list-group-item list-group-item-action">Προσθήκη Καταχώρησης</a>
               <a href="/logout" class="list-group-item list-group-item-action">Αποσυνδέσου</a>
 
@@ -49,13 +49,13 @@
                               <div class="form-group row">
                                 <label for="firstName" align="center" class="col-4 col-form-label">Όνομα</label>
                                 <div class="col-8">
-                                  <input type="text" class="form-control" th:field="*{firstName}" id="firstName" name="firstName" placeholder="Όνομα" pattern="^[A-Za-z -]+$" maxlength="15" title="Το όνομα μπορεί να περιέχει μόνο αλφαβητικούς χαρακτήρες" required>
+                                  <input type="text" class="form-control" th:field="*{firstName}" id="firstName" name="firstName" placeholder="Όνομα" maxlength="15" required>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="lastName" align="center" class="col-4 col-form-label">Επώνυμο</label>
                                 <div class="col-8">
-                                  <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="Επώνυμο" pattern="^[A-Za-z -]+$" maxlength="20" title="Το επώνυμο μπορεί να περιέχει μόνο αλφαβητικοί χαρακτήρες" required>
+                                  <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="Επώνυμο" maxlength="20" required>
                                 </div>
                               </div>
 

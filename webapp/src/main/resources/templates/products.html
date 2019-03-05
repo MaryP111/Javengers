@@ -14,8 +14,17 @@
 
             var url_string = window.location.href;
             var url = new URL(url_string);
-            var keyWord = url.searchParams.get("keyWord");
-            window.location.href = "/product/list?keyWord=" + keyWord + "&pageIndex=" + pageIndex;
+
+            if (url_string.includes("list")) {
+                var keyWord = url.searchParams.get("keyWord");
+                window.location.href = "/product/list?keyWord=" + keyWord + "&pageIndex=" + pageIndex;
+            }
+            else {
+                var category = url.searchParams.get("category");
+                window.location.href = "/product/category?category=" + category + "&pageIndex=" + pageIndex;
+
+            }
+
         }
 
     </script>
@@ -81,13 +90,13 @@
       <div class="pagination">
         <a th:if="${leftPage}"th:onclick="'javascript:changePage(' + ${pageIndex-1} + ');'">&laquo;</a>
         <a th:if="${pageIndex == 1}" class="active" href="#">1</a>
-        <a th:if="${pageIndex > 1}" th:onclick="'javascript:changePage(1);'">1</a>
+        <a th:if="${1 <= numberOfPages and pageIndex !=1}" th:onclick="'javascript:changePage(1);'">1</a>
         <a th:if="${pageIndex == 2}" class="active" href="#">2</a>
-        <a th:if="${pageIndex > 2}" th:onclick="'javascript:changePage(2);'">2</a>
+        <a th:if="${2 <= numberOfPages and pageIndex !=2}" th:onclick="'javascript:changePage(2);'">2</a>
         <a th:if="${pageIndex == 3}" class="active" href="#">3</a>
-        <a th:if="${pageIndex > 3}" th:onclick="'javascript:changePage(3);'">3</a>
+        <a th:if="${3 <= numberOfPages and pageIndex !=3}" th:onclick="'javascript:changePage(3);'">3</a>
         <a th:if="${pageIndex == 4}" class="active" href="#">4</a>
-        <a th:if="${pageIndex > 4}" th:onclick="'javascript:changePage(4);'">4</a>
+        <a th:if="${4 <= numberOfPages and pageIndex != 4}" th:onclick="'javascript:changePage(4);'">4</a>
         <a th:if="${rightPage}" th:onclick="'javascript:changePage(' + ${pageIndex+1} + ');'">&raquo;</a>
       </div>
     </div>

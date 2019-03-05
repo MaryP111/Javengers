@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Labels</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLsF3d7bdPcNMcSwPfb8aUfcadkjOMH0"></script>
+    <script>
+        // In the following example, markers appear when the user clicks on the map.
+        // Each marker is labeled with a single alphabetical character.
+
+
+        function initialize() {
+
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var lat = url.searchParams.get("lat");
+            var lng = url.searchParams.get("lng");
+
+
+            var athens = {lat: parseFloat(lat), lng: parseFloat(lng)};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 19,
+                center: athens
+            });
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(parseFloat(lat), parseFloat(lng)),
+                title: "Marker A"
+            });
+
+        }
+
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>

@@ -50,7 +50,7 @@
       <option th:value="Cosmetics">Καλλυντικά</option>
       <option th:value="Sports">Αθλητισμός</option>
       <option th:value="Automotive">Auto-Moto</option>
-      <option th:value="Home">Σπίτι</option>
+      <option th:value="House">Σπίτι</option>
       <option th:value="Other">Άλλη Κατηγορία</option>
     </select>
   </div>
@@ -141,7 +141,7 @@
   <div class="form-group" th:if="${productExists} or ${productAdded}">
     <label class="col-md-4 control-label" for="productStars">Η βαθμολογία του προϊόντος</label>
     <div class="col-md-4">
-      <input type="number" class="form-control input-md" id="productStars" name="productStars" placeholder="Τα αστέρια του προϊόντος" min="0.5" max="5" step="0.5">
+      <input type="number" class="form-control input-md" id="productStars" name="productStars" placeholder="Τα αστέρια του προϊόντος" min="0.5" max="5" step="0.5" required>
     </div>
   </div>
 

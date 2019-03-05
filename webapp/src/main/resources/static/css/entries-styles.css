@@ -98,3 +98,20 @@ img.resize {
     visibility: hidden;
     
 }
+
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .5s;
+    border-radius: 5px;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #e0a800;
+    color: white;
+    border-radius: 5px;
+}

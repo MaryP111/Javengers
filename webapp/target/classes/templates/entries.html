@@ -12,6 +12,10 @@
 
     }
 
+    function showMap(lat, lng) {
+        window.location.href = "/entry/list/map?lat=" + lat + "&lng=" + lng;
+    }
+
   </script>
 
   <script type="text/javascript">
@@ -153,39 +157,20 @@
           <!--<img class="group list-group-image" src="https://ss7.vzw.com/is/image/VerizonWireless/apple-iphonexs-spacegrey-back?$png8alpha256$&hei=410==" alt="" />-->
           <!-- "https://www.gettyimages.com/gi-resources/images/CreativeLandingPage/HP_Sept_24_2018/CR3_GettyImages-159018836.jpg" -->
           <div class="caption" align="center">
-            <p class="group inner list-group-item-text" style="font-size:140%;" th:text="${entry.storeName}"></p>
-            <p class="group inner list-group-item-text" style="font-size:160%;" th:text="${entry.price} + €"></p>
+            <b class="group inner list-group-item-text" style="font-size:130%;" th:text="${entry.price} + €"></b>
+            <hr>
+            <p class="group inner list-group-item-text" style="font-size:120%;" th:text="${entry.storeName}"></p>
+            <p class="group inner list-group-item-text" style="font-size:100%;" th:text="${entry.address}"></p>
             <div class="container" align="center">
-              <button type="button" id = "mapButton" href="#" class="btn btn-primary btn-md modal-trigger" data-modal="modal-place"><b>Δείτε την τοποθεσία στον χάρτη</b></button>
               <div th:if="${isRegisteredUser}">
                 <br>
                 <button th:onclick="'javascript:withdrawEntry(' + ${entry.id} + ');'" class="btn btn-primary">Διαγραφή Καταχώρησης</button>
               </div>
 
-             <div class="modal" id="modal-place" >
-              <div class="modal-sandbox"></div>
-              <div class="modal-box">
-                <div align="center" class="modal-header">
-                  <div class="close-modal">&#10006;</div>
-                  <h3>Δείτε τοποθεσία στο χάρτη</h3>
-                </div>
-                <div class="modal-body">
-                  <input id="address" type="hidden" class="form-control"  th:value="${entry.address}"/>
-                  <br/>
-                  <button id="creaMappa2" type="button" class="creaMappa2" ></button>
-                  <br/>
-                  <br/>
-                  <label class="control-label" for="address" style="font-size: 1.5em">
-                    Διεύθυνση του Καταστήματος
-                  </label>
-                  <p style="font-size:170%;" th:text="${entry.address} "></p>
-                  <div class="map" id="map1"></div>
-
-                </div>
+              <div class="container">
+                <br>
+                <button th:onclick="'showMap('+${entry.lat} + ',' +${entry.lng} +');'" class="btn btn-primary">Δείτε την τοποθεσία στον χάρτη</button>
               </div>
-            </div>
-              <input type="hidden" class="form-control" th:value="${entry.lat}" id="lat" name="lat"/>
-              <input type="hidden" class="form-control" th:value="${entry.lng}" id="lng" name="lng"/>
           </div>
         </div>
       </div>
@@ -194,18 +179,11 @@
 </div>
 </div>
 
-<!--<div align="center">
+<div align="center">
   <div class="pagination">
-    <a href="#">&laquo;</a>
     <a class="active" href="#">1</a>
-    <a href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
   </div>
-</div>-->
+</div>
 
 <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

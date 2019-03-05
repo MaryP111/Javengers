@@ -169,8 +169,6 @@ public class APIController {
             statusProducts = products;
         }
 
-        productList.setTotal(statusProducts.size());
-
         if (parts[0].equalsIgnoreCase("id")) {
             Collections.sort(statusProducts, new SortProductById());
         }
@@ -195,6 +193,8 @@ public class APIController {
 
             productArrayList.add(productService.getProductAndTagsById(tempProduct.getId()));
         }
+
+        productList.setTotal(statusProducts.size());
 
         productList.setProducts(productArrayList);
         return productList;
@@ -384,8 +384,6 @@ public class APIController {
             statusStores= stores;
         }
 
-        shopList.setTotal(statusStores.size());
-
 
         shopList.setTotal(statusStores.size());
 
@@ -417,6 +415,8 @@ public class APIController {
 
             shopArrayList.add(storeService.getStoreAndTagsById(tempStore.getId()));
         }
+
+        shopList.setTotal(statusStores.size());
 
         shopList.setShops(shopArrayList);
         return shopList;
@@ -549,7 +549,7 @@ public class APIController {
     @RequestMapping(value = "prices", method = RequestMethod.GET)
     public PriceInfoList queryEntries (@RequestParam("format") Optional<String> optionalFormat, @RequestParam("start") Optional<Integer> optionalStart, @RequestParam("count") Optional<Integer> optionalCount,
                                        @RequestParam("geoDist") Optional<Integer> optionalGeoDist, @RequestParam("geoLng") Optional<Double> optionalGeoLng, @RequestParam("geoLat") Optional<Double> optionalGeoLat,
-                                       @RequestParam("dateFrom") Optional<Date> optionalDateFrom, @RequestParam("dateTo") Optional<Date> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops, @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort) throws Exception{
+                                       @RequestParam("dateFrom") Optional<String> optionalDateFrom, @RequestParam("dateTo") Optional<String> optionalDateTo, @RequestParam("shops") Optional<List<String> > optionalShops, @RequestParam("products") Optional<List<String> > optionalProducts, @RequestParam("tags") Optional<List<String> > optionalTags, @RequestParam("sort") Optional<String> optionalSort) throws Exception{
 
 
         String format;
@@ -570,7 +570,7 @@ public class APIController {
 
         List<HasProduct> entries = hasProductService.getAllEntries();
 
-        Date dateFrom, dateTo;
+        String dateFrom, dateTo;
 
         if (optionalDateFrom.isPresent() && optionalDateTo.isPresent()) {
 
@@ -580,8 +580,8 @@ public class APIController {
         }
         else if (!optionalDateFrom.isPresent() && !optionalDateTo.isPresent()) {
 
-            dateFrom = getToday();
-            dateTo = getToday();
+            dateFrom = getToday().toString();
+            dateTo = getToday().toString();
 
         }
 
@@ -589,6 +589,15 @@ public class APIController {
 
             throw new BadRequestException();
         }
+
+        java.util.Date tempDate;
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        tempDate = simpleDateFormat.parse(dateFrom);
+        Date dtFrom = new java.sql.Date(tempDate.getTime());
+
+        tempDate = simpleDateFormat.parse(dateTo);
+        Date dtTo = new java.sql.Date(tempDate.getTime());
 
         Iterator<HasProduct> entryIterator = entries.iterator();
         List<PriceInfo> filteredByDate = new ArrayList<>();
@@ -598,9 +607,9 @@ public class APIController {
 
             HasProduct entry = entryIterator.next();
 
-            Date date = dateFrom;
+            Date date = dtFrom;
 
-            while (date.compareTo(dateTo) <= 0) {
+            while (date.compareTo(dtTo) <= 0) {
 
                 if (date.compareTo(entry.getDateFrom()) >= 0 && date.compareTo(entry.getDateTo()) <= 0) {
                     PriceInfo priceInfo = new PriceInfo();
@@ -636,7 +645,7 @@ public class APIController {
 
                 Double distance = distance(geoLat, geoLng, storeService.getStoreById(Long.parseLong(priceInfo.getShopId())).get().getLat(), storeService.getStoreById(Long.parseLong(priceInfo.getShopId())).get().getLng());
 
-                if (distance < geoDist) {
+                if (distance < geoDist*1000) {
                     priceInfo.setShopDist(distance.intValue());
                     filteredByDistance.add(priceInfo);
                 }
@@ -659,7 +668,7 @@ public class APIController {
                 if (optionalShops.get().contains(priceInfo.getShopId())) filteredByShops.add(priceInfo);
             }
         }
-        else filteredByShops = filteredByDate;
+        else filteredByShops = filteredByDistance;
 
 
         List<PriceInfo> filteredByProducts = new ArrayList<>();
@@ -744,7 +753,6 @@ public class APIController {
         PriceInfoList queryList = new PriceInfoList();
         queryList.setStart(start);
         queryList.setCount(count);
-        queryList.setTotal(filteredByTags.size());
 
 
         priceInfoIterator = filteredByTags.iterator();
@@ -768,7 +776,24 @@ public class APIController {
 
         }
 
-        queryList.setPrices(filteredByTags);
+        List<PriceInfo> list = new ArrayList<>();
+
+        priceInfoIterator = filteredByTags.iterator();
+
+        for (int i = 0; i < filteredByTags.size(); i++) {
+
+            if (!priceInfoIterator.hasNext()) break;
+            PriceInfo priceInfo = priceInfoIterator.next();
+            if (i < start) continue;
+            if (i >= start + count) break;
+
+            list.add(priceInfo);
+        }
+
+
+        queryList.setTotal(filteredByTags.size());
+        queryList.setPrices(list);
+
         return queryList;
 
     }
@@ -845,12 +870,13 @@ public class APIController {
         return priceInfoList;
     }
 
+
     public static Double distance(Double lat1, Double lng1, Double lat2, Double lng2) {
 
         int R = 6378137;   /* Earth's mean radius in meter */
         double dLat = rad(lat1 -lat2);
         double dLong = rad(lng1-lng2);
-        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong/2) * Math.sin(dLong/2);
         double c = 2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
         return R*c;
     }

@@ -159,6 +159,8 @@ public class EntryController {
         if (products.size() <= sizeOfPage*pageIndex) rightPage = false;
         model.addAttribute("rightPage", rightPage);
 
+        model.addAttribute("numberOfPages", (products.size()+1)/sizeOfPage+1);
+
         List<Product> productsOfPage = new ArrayList<>();
 
         Integer previousProducts = sizeOfPage*(pageIndex-1);
@@ -183,11 +185,53 @@ public class EntryController {
 
 
 
-    @RequestMapping(value = "/product/{category}", method = RequestMethod.GET)
-    public /*@ResponseBody*/ String getProductsByCategory(@PathVariable("category") String category, Model model){
+    @RequestMapping(value = "/product/category", method = RequestMethod.GET)
+    public String getProductsByCategory(@RequestParam("category") String category, @RequestParam("pageIndex") Optional<Integer> optionalPageIndex, Model model) {
+
+        Integer sizeOfPage = 6;
+
+        Integer pageIndex = 1;
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
+
+        Boolean leftPage = false;
+        if (pageIndex != 1) leftPage = true;
+
+        model.addAttribute("pageIndex", pageIndex);
+        model.addAttribute("leftPage", leftPage);
+
+        if (optionalPageIndex.isPresent()) pageIndex = optionalPageIndex.get();
+
         List<Product> products = productService.getProductsByCategory(category);
-        model.addAttribute("products", products);
+
+        Collections.sort(products, new SortProductByStars());
+
+
+        Boolean rightPage = true;
+        if (products.size() <= sizeOfPage*pageIndex) rightPage = false;
+        model.addAttribute("rightPage", rightPage);
+
+        model.addAttribute("numberOfPages", (products.size()+1)/sizeOfPage+1);
+
+        List<Product> productsOfPage = new ArrayList<>();
+
+        Integer previousProducts = sizeOfPage*(pageIndex-1);
+
+        Iterator<Product> productIterator = products.iterator();
+
+        Integer cnt = 0;
+
+        while (productIterator.hasNext()) {
+
+            Product product = productIterator.next();
+            if (cnt++ < previousProducts) continue;
+            productsOfPage.add(product);
+            if (cnt >= sizeOfPage*pageIndex) break;
+        }
+
+        model.addAttribute("products", productsOfPage);
+
         return "products";
+
     }
 
 
@@ -317,6 +361,17 @@ public class EntryController {
             return "addProduct";
         }
     }
+
+    @RequestMapping(value = "entry/list/map", method = RequestMethod.GET)
+    public String showMap(@RequestParam("lat") Optional<String> optionalLat, @RequestParam("lng") Optional<String> optionalLng) {
+
+        if (!optionalLat.isPresent() || !optionalLng.isPresent()) {
+            throw new RuntimeException();
+        }
+
+        return "map";
+    }
+
 
     /*
     private static Date stringToDate(String strDate) throws Exception {

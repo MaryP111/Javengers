@@ -12,8 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
     @RequestMapping("/home")
-    public String home(Model model) {
+    public String home() {
 
+        return "index";
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(Model model) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
@@ -27,11 +32,9 @@ public class HomeController {
         }
 
         model.addAttribute("isRegisteredUser", isRegisteredUser);
+
         return "index";
     }
-
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index() { return "index"; }
 
 
     /*

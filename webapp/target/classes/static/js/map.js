@@ -157,7 +157,6 @@ $(document).ready(function() {
 
                 $('#reverseGeocodingResult_formatted_address').text(results[0].formatted_address);
 
-                // address components: recupero di tutti gli elementi
                 console.log('Address components:');
                 console.dir(results[0].address_components);
 
